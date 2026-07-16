@@ -1,0 +1,35 @@
+{
+  "board": "AQA 8300",
+  "note": "Pilot clusters only. Expand from aqa-8300-spec-map.md after verifying against the official spec PDF.",
+  "clusters": [
+    {
+      "id": "algebra-core",
+      "name": "Equations & Quadratics",
+      "refs": [
+        { "ref": "A17", "title": "Solving linear equations", "tier": "both" },
+        { "ref": "A18", "title": "Solving quadratic equations", "tier": "both", "higher_extension": "quadratic formula, completing the square" },
+        { "ref": "A11", "title": "Quadratics: factorising, roots, turning points", "tier": "both", "higher_extension": "formula and completing the square" },
+        { "ref": "A21", "title": "Forming equations from context", "tier": "both" }
+      ]
+    },
+    {
+      "id": "ratio-percentages",
+      "name": "Ratio & Percentages",
+      "refs": [
+        { "ref": "R3", "title": "Dividing quantities in a ratio", "tier": "both" },
+        { "ref": "R6", "title": "Percentages of amounts", "tier": "both" },
+        { "ref": "R9", "title": "Percentage change and reverse percentages", "tier": "both" },
+        { "ref": "N11", "title": "Percentage increase/decrease", "tier": "both" }
+      ]
+    },
+    {
+      "id": "geometry-staple",
+      "name": "Pythagoras, Trig & Area",
+      "refs": [
+        { "ref": "G20", "title": "Pythagoras' theorem", "tier": "both", "higher_extension": "3D Pythagoras" },
+        { "ref": "G21", "title": "Trigonometric ratios (SOHCAHTOA), exact values", "tier": "both" },
+        { "ref": "G14", "title": "Perimeter and area of standard shapes", "tier": "both" }
+      ]
+    }
+  ]
+}

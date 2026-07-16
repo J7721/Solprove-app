@@ -1,0 +1,140 @@
+{
+  "note": "Rubric-backed pilot question bank. Every question stores its mark scheme — marking NEVER invents a rubric for these.",
+  "questions": [
+    {
+      "id": "alg-f-01", "cluster": "algebra-core", "spec_ref": "A17", "tier": "foundation",
+      "question": "Solve 3x + 7 = 19",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Subtracts 7 from both sides (3x = 12) or equivalent rearrangement" },
+        { "code": "A1", "criterion": "x = 4" }
+      ],
+      "answer": "x = 4"
+    },
+    {
+      "id": "alg-f-02", "cluster": "algebra-core", "spec_ref": "A17", "tier": "foundation",
+      "question": "Solve 5(x − 2) = 20",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Expands to 5x − 10 = 20 OR divides both sides by 5 to get x − 2 = 4" },
+        { "code": "A1", "criterion": "x = 6" }
+      ],
+      "answer": "x = 6"
+    },
+    {
+      "id": "alg-b-01", "cluster": "algebra-core", "spec_ref": "A18", "tier": "both",
+      "question": "Solve x² − 7x + 10 = 0",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Attempts to factorise into two brackets with numbers multiplying to +10" },
+        { "code": "A1", "criterion": "Correct factors (x − 2)(x − 5)" },
+        { "code": "A1", "criterion": "Both solutions x = 2 and x = 5" }
+      ],
+      "answer": "x = 2 or x = 5"
+    },
+    {
+      "id": "alg-h-01", "cluster": "algebra-core", "spec_ref": "A18", "tier": "higher",
+      "question": "Solve 2x² + 5x − 3 = 0",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Valid method: factorising attempt with 2x in one bracket, or quadratic formula substitution" },
+        { "code": "A1", "criterion": "Correct factors (2x − 1)(x + 3) or correct formula evaluation" },
+        { "code": "A1", "criterion": "Both solutions x = 1/2 and x = −3" }
+      ],
+      "answer": "x = 1/2 or x = −3"
+    },
+    {
+      "id": "alg-h-02", "cluster": "algebra-core", "spec_ref": "A18", "tier": "higher",
+      "question": "Solve x² − 4x − 3 = 0. Give your answers to 2 decimal places.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Substitutes correctly into the quadratic formula: x = (4 ± √(16 + 12)) / 2" },
+        { "code": "A1", "criterion": "Simplifies to 2 ± √7 or (4 ± √28)/2" },
+        { "code": "A1", "criterion": "x = 4.65 and x = −0.65 (2 dp)" }
+      ],
+      "answer": "x = 4.65 or x = −0.65"
+    },
+    {
+      "id": "rat-f-01", "cluster": "ratio-percentages", "spec_ref": "R3", "tier": "foundation",
+      "question": "Share £45 between Ali and Beth in the ratio 2 : 7",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds value of one part: 45 ÷ 9 = 5" },
+        { "code": "A1", "criterion": "Ali £10 and Beth £35" }
+      ],
+      "answer": "£10 and £35"
+    },
+    {
+      "id": "rat-f-02", "cluster": "ratio-percentages", "spec_ref": "R6", "tier": "foundation",
+      "question": "Find 35% of £240",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Valid method: 0.35 × 240, or 10% = 24 built up to 35%" },
+        { "code": "A1", "criterion": "£84" }
+      ],
+      "answer": "£84"
+    },
+    {
+      "id": "rat-b-01", "cluster": "ratio-percentages", "spec_ref": "R9", "tier": "both",
+      "question": "A jacket costs £68 in a sale after a 15% reduction. What was the original price?",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Recognises £68 represents 85% of the original price" },
+        { "code": "M1", "criterion": "Divides: 68 ÷ 0.85 (or 68 ÷ 85 × 100)" },
+        { "code": "A1", "criterion": "£80" }
+      ],
+      "answer": "£80"
+    },
+    {
+      "id": "rat-f-03", "cluster": "ratio-percentages", "spec_ref": "N11", "tier": "foundation",
+      "question": "Increase £150 by 12%",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Valid method: 1.12 × 150, or finds 12% (£18) and adds" },
+        { "code": "A1", "criterion": "£168" }
+      ],
+      "answer": "£168"
+    },
+    {
+      "id": "geo-f-01", "cluster": "geometry-staple", "spec_ref": "G20", "tier": "foundation",
+      "question": "A right-angled triangle has shorter sides 6 cm and 8 cm. Find the length of the hypotenuse.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Applies Pythagoras: 6² + 8² = 100" },
+        { "code": "A1", "criterion": "10 cm" }
+      ],
+      "answer": "10 cm"
+    },
+    {
+      "id": "geo-b-01", "cluster": "geometry-staple", "spec_ref": "G20", "tier": "both",
+      "question": "A right-angled triangle has hypotenuse 13 cm and one shorter side 5 cm. Find the other side.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Rearranges Pythagoras: 13² − 5² = 144" },
+        { "code": "A1", "criterion": "12 cm" }
+      ],
+      "answer": "12 cm"
+    },
+    {
+      "id": "geo-h-01", "cluster": "geometry-staple", "spec_ref": "G21", "tier": "higher",
+      "question": "In a right-angled triangle, the angle is 35° and the hypotenuse is 12 cm. Find the side opposite the angle, to 1 decimal place.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Chooses sine: sin 35° = opposite ÷ 12" },
+        { "code": "M1", "criterion": "Rearranges: opposite = 12 × sin 35°" },
+        { "code": "A1", "criterion": "6.9 cm (1 dp)" }
+      ],
+      "answer": "6.9 cm"
+    },
+    {
+      "id": "geo-f-02", "cluster": "geometry-staple", "spec_ref": "G14", "tier": "foundation",
+      "question": "A rectangle is 8 cm long and 5 cm wide. Work out its area and its perimeter.",
+      "marks": 2,
+      "rubric": [
+        { "code": "B1", "criterion": "Area = 40 cm²" },
+        { "code": "B1", "criterion": "Perimeter = 26 cm" }
+      ],
+      "answer": "Area 40 cm², perimeter 26 cm"
+    }
+  ]
+}
