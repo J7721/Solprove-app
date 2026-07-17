@@ -37,7 +37,7 @@ export default function ResetPassword() {
       <div style={card}>
         <h2 style={{ marginTop: 0 }}>Password updated ✓</h2>
         <p style={{ fontSize: 14.5 }}>You're signed in with your new password.</p>
-        <a href="/" style={{ ...btn, display: "block", textAlign: "center", textDecoration: "none" }}>Go to the tutor →</a>
+        <a href="/app" style={{ ...btn, display: "block", textAlign: "center", textDecoration: "none" }}>Go to the tutor →</a>
       </div>
     );
   }

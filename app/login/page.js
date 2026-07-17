@@ -61,7 +61,7 @@ export default function Login() {
         <h2 style={{ marginTop: 0 }}>You're signed in ✓</h2>
         <p style={{ color: "#5a6482", fontSize: 14.5 }}>{user.email}</p>
         <p style={{ fontSize: 14.5 }}>Everything your child practises is saved to your family account. The Parent view shows only your data.</p>
-        <a href="/" style={{ ...btn, display: "block", textAlign: "center", textDecoration: "none", marginBottom: 8 }}>Go to the tutor →</a>
+        <a href="/app" style={{ ...btn, display: "block", textAlign: "center", textDecoration: "none", marginBottom: 8 }}>Go to the tutor →</a>
         <button onClick={signOut} style={{ ...btn, background: "#eef1f8", color: "#1c2340" }}>Sign out</button>
       </div>
     );

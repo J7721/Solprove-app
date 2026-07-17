@@ -42,7 +42,7 @@ export default function NavAuth() {
         <span style={{ color: "#fff" }}>{name}</span>
       </a>
       <button
-        onClick={async () => { await supabaseBrowser().auth.signOut(); window.location.href = "/"; }}
+        onClick={async () => { await supabaseBrowser().auth.signOut(); window.location.href = "/app"; }}
         style={{ ...link, background: "none", border: "1px solid rgba(255,255,255,.25)", cursor: "pointer" }}
       >
         Sign out

@@ -106,7 +106,7 @@ export default function Account() {
 
   async function signOut() {
     await supabaseBrowser().auth.signOut();
-    window.location.href = "/";
+    window.location.href = "/app";
   }
 
   if (!user) {

@@ -16,8 +16,8 @@ export async function POST(req) {
       line_items: [{ price: process.env.STRIPE_PRICE_ID, quantity: 1 }],
       subscription_data: { trial_period_days: 7 },
       allow_promotion_codes: true,
-      success_url: `${origin}/?subscribed=1`,
-      cancel_url: `${origin}/?subscribed=0`,
+      success_url: `${origin}/app?subscribed=1`,
+      cancel_url: `${origin}/app?subscribed=0`,
     });
 
     return Response.json({ url: session.url });
