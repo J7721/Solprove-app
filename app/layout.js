@@ -1,4 +1,5 @@
 import SiteChrome from "./components/SiteChrome";
+import ChatWidget from "./components/ChatWidget";
 
 export const metadata = {
   title: "Solprove — Solve it to prove. AI GCSE Maths Tutor",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       </head>
       <body style={{ margin: 0, fontFamily: "'Inter', system-ui, sans-serif", background: "#f4f3ef", color: "#12181b" }}>
         <SiteChrome>{children}</SiteChrome>
+        <ChatWidget />
       </body>
     </html>
   );
