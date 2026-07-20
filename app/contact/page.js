@@ -1,5 +1,6 @@
 import MarketingNav from "../components/MarketingNav";
 import MarketingFooter from "../components/MarketingFooter";
+import ContactForm from "../components/ContactForm";
 
 export const metadata = { title: "Contact — Solprove" };
 
@@ -31,24 +32,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <form action="mailto:hello@solprove.co.uk" method="GET" style={{ background: "#f1f0ea", borderRadius: 18, padding: 40, display: "flex", flexDirection: "column", gap: 18 }}>
-            <div className="contact-field">
-              <label style={{ fontSize: 13, fontWeight: 600, color: "#173b4c" }}>Name</label>
-              <input type="text" name="name" placeholder="Your name" />
-            </div>
-            <div className="contact-field">
-              <label style={{ fontSize: 13, fontWeight: 600, color: "#173b4c" }}>Email</label>
-              <input type="email" name="email" placeholder="you@email.com" />
-            </div>
-            <div className="contact-field">
-              <label style={{ fontSize: 13, fontWeight: 600, color: "#173b4c" }}>Message</label>
-              <textarea name="body" placeholder="How can we help?" rows={4} style={{ resize: "vertical" }} />
-            </div>
-            <button type="submit" style={{ background: "#1f9d7c", color: "#ffffff", fontSize: 15, fontWeight: 700, padding: 14, borderRadius: 9, border: "none", cursor: "pointer", marginTop: 6 }}>
-              Send message
-            </button>
-            <p style={{ fontSize: 12.5, color: "#5b6b6f", margin: 0 }}>Opens your email app with this message pre-filled — nothing is sent until you hit send there.</p>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
