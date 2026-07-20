@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { getToken } from "../../lib/supabaseBrowser";
+import { LAUNCHED } from "../../lib/launch";
+import ComingSoon from "../components/ComingSoon";
 
 const card = { background: "#fff", border: "1px solid #e6e9f2", borderRadius: 14, padding: 20, marginBottom: 16 };
 const big = { fontSize: 30, fontWeight: 800, margin: 0 };
@@ -9,12 +11,15 @@ export default function ParentView() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    if (!LAUNCHED) return;
     (async () => {
       const t = await getToken();
       const res = await fetch("/api/parent", { headers: t ? { Authorization: `Bearer ${t}` } : {} });
       setData(await res.json());
     })();
   }, []);
+
+  if (!LAUNCHED) return <ComingSoon title="Reports aren't open yet" body="The parent progress dashboard unlocks when Solprove launches. Join the waitlist and we'll email you." />;
 
   if (!data) return <p style={{ padding: 20 }}>Loading…</p>;
 

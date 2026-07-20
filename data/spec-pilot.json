@@ -1,6 +1,6 @@
 {
-  "board": "AQA 8300",
-  "note": "Pilot clusters only. Expand from aqa-8300-spec-map.md after verifying against the official spec PDF.",
+  "board": "UK GCSE Maths",
+  "note": "Pilot clusters only. Expand from the internal spec-map notes after verifying against the official curriculum documentation.",
   "clusters": [
     {
       "id": "algebra-core",

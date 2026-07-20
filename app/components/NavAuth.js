@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { supabaseBrowser } from "../../lib/supabaseBrowser";
 
-const link = { color: "#c6cde6", textDecoration: "none", fontSize: 14, fontWeight: 600, padding: "6px 12px", borderRadius: 8 };
+const link = { color: "rgba(255,255,255,.85)", textDecoration: "none", fontSize: 13, fontWeight: 600, padding: "8px 14px", borderRadius: 8, fontFamily: "'Inter', sans-serif" };
 
 export default function NavAuth() {
   const [user, setUser] = useState(null);
@@ -30,16 +30,16 @@ export default function NavAuth() {
   const name = profile?.username || user.email.split("@")[0];
 
   return (
-    <>
-      <a href="/account" style={{ ...link, background: "rgba(255,255,255,.08)", display: "flex", alignItems: "center", gap: 8 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+      <a href="/account" style={{ display: "flex", alignItems: "center", gap: 10, paddingLeft: 16, borderLeft: "1px solid rgba(255,255,255,.15)", textDecoration: "none" }}>
         {profile?.avatar_url ? (
-          <img src={profile.avatar_url} alt="" style={{ width: 26, height: 26, borderRadius: "50%", objectFit: "cover", border: "1.5px solid #18b57a" }} />
+          <img src={profile.avatar_url} alt="" style={{ width: 32, height: 32, borderRadius: "50%", objectFit: "cover" }} />
         ) : (
-          <span style={{ width: 26, height: 26, borderRadius: "50%", background: "#18b57a", color: "#fff", display: "grid", placeItems: "center", fontWeight: 800, fontSize: 13 }}>
+          <span style={{ width: 32, height: 32, borderRadius: "50%", background: "#1f9d7c", color: "#fff", display: "grid", placeItems: "center", fontWeight: 700, fontSize: 13, fontFamily: "'Sora', sans-serif" }}>
             {name[0].toUpperCase()}
           </span>
         )}
-        <span style={{ color: "#fff" }}>{name}</span>
+        <span style={{ fontSize: 14, fontWeight: 600, color: "#ffffff" }}>{name}</span>
       </a>
       <button
         onClick={async () => { await supabaseBrowser().auth.signOut(); window.location.href = "/app"; }}
@@ -47,6 +47,6 @@ export default function NavAuth() {
       >
         Sign out
       </button>
-    </>
+    </div>
   );
 }

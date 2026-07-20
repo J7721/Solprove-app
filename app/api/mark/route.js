@@ -20,9 +20,9 @@ export async function POST(req) {
         );
       }
     }
-    const { question, attempt, tier, questionId } = await req.json();
-    if (!question || !attempt) {
-      return Response.json({ error: "Need both the question and the student's attempt." }, { status: 400 });
+    const { question, attempt, tier, questionId, attemptImageBase64, attemptImageType } = await req.json();
+    if (!question || (!attempt && !attemptImageBase64)) {
+      return Response.json({ error: "Need the question, and either typed working or a photo of the attempt." }, { status: 400 });
     }
 
     const bankQ = questionId ? bank.questions.find(q => q.id === questionId) : null;
@@ -32,7 +32,13 @@ export async function POST(req) {
       attempt,
       tier,
       rubric: bankQ?.rubric,
+      attemptImageBase64,
+      attemptImageType,
     });
+
+    const mistakeTypes = (result.awards || [])
+      .filter(a => !a.earned && a.mistake_type)
+      .map(a => a.mistake_type);
 
     await recordAttempt({
       userId: user?.id,
@@ -41,6 +47,7 @@ export async function POST(req) {
       score: result.score,
       outOf: result.out_of,
       question,
+      mistakeTypes,
     });
 
     return Response.json(result);

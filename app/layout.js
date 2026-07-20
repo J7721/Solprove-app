@@ -9,7 +9,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en-GB">
-      <body style={{ margin: 0, fontFamily: "Inter, system-ui, sans-serif", background: "#f7f8fc", color: "#1c2340" }}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+        />
+      </head>
+      <body style={{ margin: 0, fontFamily: "'Inter', system-ui, sans-serif", background: "#f4f3ef", color: "#12181b" }}>
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
