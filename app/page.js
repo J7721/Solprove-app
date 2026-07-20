@@ -1,6 +1,7 @@
 import MarketingNav from "./components/MarketingNav";
 import MarketingFooter from "./components/MarketingFooter";
 import FeatureCarousel from "./components/FeatureCarousel";
+import WaitlistForm from "./components/WaitlistForm";
 import { LAUNCHED, WAITLIST_HREF } from "../lib/launch";
 
 export default function Home() {
@@ -120,6 +121,18 @@ export default function Home() {
           {finalCta.label}
         </a>
       </section>
+
+      {/* WAITLIST */}
+      {!LAUNCHED && (
+        <section id="waitlist" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px 96px" }}>
+          <div style={{ background: "linear-gradient(150deg,#157a61,#1f9d7c)", borderRadius: 24, padding: "56px 48px", textAlign: "center", color: "#fff" }}>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", fontSize: 30, margin: "0 0 10px" }}>Parent of a Year 10 or 11? Get in first.</h2>
+            <p style={{ opacity: .92, maxWidth: 520, margin: "0 auto 28px" }}>Join the waitlist for the free launch beta. Founding members lock their price for life and shape what gets built next.</p>
+            <WaitlistForm />
+            <p style={{ fontSize: 12.5, opacity: .85, marginTop: 16 }}>No spam — a handful of emails between now and launch. Unsubscribe anytime.</p>
+          </div>
+        </section>
+      )}
 
       <MarketingFooter />
     </div>
