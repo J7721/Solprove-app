@@ -38,10 +38,14 @@ export default function Pricing() {
         .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:left}
         .tier-cta{display:block;text-align:center;font-size:14px;font-weight:700;padding:13px;border-radius:9px}
         @media(max-width:860px){.tier-grid{grid-template-columns:1fr}}
+        @media(max-width:640px){
+          .pricing-hero{padding:56px 20px 64px !important}
+          .pricing-h1{font-size:29px !important}
+        }
       `}</style>
       <MarketingNav current="pricing" />
-      <section style={{ maxWidth: 1240, margin: "0 auto", padding: "88px 32px 96px", textAlign: "center" }}>
-        <h1 style={{ fontFamily: "'Sora', sans-serif", fontSize: 42, fontWeight: 700, color: "#12181b", margin: "0 0 14px", letterSpacing: "-0.02em" }}>Simple pricing for serious revision</h1>
+      <section className="pricing-hero" style={{ maxWidth: 1240, margin: "0 auto", padding: "88px 32px 96px", textAlign: "center" }}>
+        <h1 className="pricing-h1" style={{ fontFamily: "'Sora', sans-serif", fontSize: 42, fontWeight: 700, color: "#12181b", margin: "0 0 14px", letterSpacing: "-0.02em" }}>Simple pricing for serious revision</h1>
         <p style={{ fontSize: 16, color: "#5b6b6f", margin: "0 0 56px" }}>Start free. Upgrade whenever you&apos;re ready for unlimited practice.</p>
         <div className="tier-grid">
           {TIERS.map(tier => (

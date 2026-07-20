@@ -40,6 +40,7 @@ export default function ContactForm() {
       action={CONTACT_FORMSPREE_ENDPOINT}
       method="POST"
       onSubmit={submit}
+      className="contact-form-box"
       style={{ background: "#f1f0ea", borderRadius: 18, padding: 40, display: "flex", flexDirection: "column", gap: 18 }}
     >
       <div className="contact-field">

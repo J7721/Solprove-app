@@ -187,28 +187,44 @@ export default function FeatureCarousel() {
   function prev() { setSlide(s => (s - 1 + FEATURES.length) % FEATURES.length); }
 
   return (
-    <section id="feature-carousel" style={{ maxWidth: 1240, margin: "0 auto", padding: "96px 32px" }}>
-      <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 56px" }}>
+    <section id="feature-carousel" className="carousel-section" style={{ maxWidth: 1240, margin: "0 auto", padding: "96px 32px" }}>
+      <style>{`
+        .carousel-slide{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;background:#f1f0ea;border-radius:18px;min-height:380px}
+        .carousel-text{padding:52px}
+        .carousel-visual{width:100%;height:380px;border-radius:0 18px 18px 0;background:#e4e2da;display:flex;align-items:center;justify-content:center;padding:24px}
+        .carousel-arrow{width:44px;height:44px;font-size:18px}
+        @media(max-width:760px){
+          .carousel-section{padding:56px 16px !important}
+          .carousel-slide{grid-template-columns:1fr;min-height:auto}
+          .carousel-text{padding:28px 24px 22px}
+          .carousel-text h3{font-size:21px !important;margin:0 0 10px !important}
+          .carousel-text p{font-size:14.5px !important}
+          .carousel-visual{height:auto;padding:20px 16px 28px;border-radius:0 0 18px 18px}
+          .carousel-arrow{width:36px !important;height:36px !important;font-size:15px !important}
+          .carousel-row{gap:8px !important}
+        }
+      `}</style>
+      <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 40px" }}>
         <div style={{ fontSize: 13, fontWeight: 700, color: "#1f9d7c", letterSpacing: ".06em", marginBottom: 12 }}>EVERYTHING THE PROGRAM DOES</div>
-        <h2 style={{ fontFamily: "'Sora', sans-serif", fontSize: 36, fontWeight: 700, color: "#12181b", margin: 0, letterSpacing: "-0.01em" }}>See Solprove in action</h2>
+        <h2 style={{ fontFamily: "'Sora', sans-serif", fontSize: 32, fontWeight: 700, color: "#12181b", margin: 0, letterSpacing: "-0.01em" }}>See Solprove in action</h2>
       </div>
 
-      <div style={{ position: "relative", display: "flex", alignItems: "center", gap: 20 }}>
-        <button onClick={prev} aria-label="Previous" style={{ width: 44, height: 44, borderRadius: "50%", border: "1px solid rgba(23,59,76,.15)", background: "#ffffff", color: "#173b4c", fontSize: 18, cursor: "pointer", flex: "none", boxShadow: "0 4px 12px rgba(23,59,76,.06)" }}>←</button>
+      <div className="carousel-row" style={{ position: "relative", display: "flex", alignItems: "center", gap: 20 }}>
+        <button onClick={prev} aria-label="Previous" className="carousel-arrow" style={{ borderRadius: "50%", border: "1px solid rgba(23,59,76,.15)", background: "#ffffff", color: "#173b4c", cursor: "pointer", flex: "none", boxShadow: "0 4px 12px rgba(23,59,76,.06)" }}>←</button>
 
-        <div style={{ flex: 1, overflow: "hidden", borderRadius: 18 }}>
+        <div style={{ flex: 1, overflow: "hidden", borderRadius: 18, minWidth: 0 }}>
           <div style={{ display: "flex", width: `${FEATURES.length * 100}%`, transform: `translateX(-${slide * (100 / FEATURES.length)}%)`, transition: "transform .55s cubic-bezier(.4,0,.2,1)" }}>
             {FEATURES.map(f => {
               const Visual = f.Visual;
               const slideWidth = `${100 / FEATURES.length}%`;
               return (
-                <div key={f.num} style={{ flex: `0 0 ${slideWidth}`, width: slideWidth, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, alignItems: "center", background: "#f1f0ea", borderRadius: 18, minHeight: 380 }}>
-                  <div style={{ padding: 52 }}>
+                <div key={f.num} className="carousel-slide" style={{ flex: `0 0 ${slideWidth}`, width: slideWidth }}>
+                  <div className="carousel-text">
                     <div style={{ width: 40, height: 40, borderRadius: 10, background: "#1f9d7c", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: 15, marginBottom: 20 }}>{f.num}</div>
                     <h3 style={{ fontFamily: "'Sora', sans-serif", fontSize: 26, fontWeight: 700, color: "#12181b", margin: "0 0 14px", letterSpacing: "-0.01em" }}>{f.title}</h3>
                     <p style={{ fontSize: 16, lineHeight: 1.6, color: "#5b6b6f", margin: 0 }}>{f.desc}</p>
                   </div>
-                  <div style={{ width: "100%", height: 380, borderRadius: "0 18px 18px 0", background: "#e4e2da", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+                  <div className="carousel-visual">
                     <Visual />
                   </div>
                 </div>
@@ -217,7 +233,7 @@ export default function FeatureCarousel() {
           </div>
         </div>
 
-        <button onClick={next} aria-label="Next" style={{ width: 44, height: 44, borderRadius: "50%", border: "1px solid rgba(23,59,76,.15)", background: "#ffffff", color: "#173b4c", fontSize: 18, cursor: "pointer", flex: "none", boxShadow: "0 4px 12px rgba(23,59,76,.06)" }}>→</button>
+        <button onClick={next} aria-label="Next" className="carousel-arrow" style={{ borderRadius: "50%", border: "1px solid rgba(23,59,76,.15)", background: "#ffffff", color: "#173b4c", cursor: "pointer", flex: "none", boxShadow: "0 4px 12px rgba(23,59,76,.06)" }}>→</button>
       </div>
 
       <div style={{ display: "flex", justifyContent: "center", gap: 8, marginTop: 28 }}>

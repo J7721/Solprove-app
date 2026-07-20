@@ -12,14 +12,19 @@ export default function Contact() {
         .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px}
         .contact-field{display:flex;flex-direction:column;gap:6px}
         .contact-field input,.contact-field textarea{padding:12px 14px;border-radius:9px;border:1px solid rgba(23,59,76,.15);font-size:14px;background:#ffffff;font-family:inherit}
-        @media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
+        @media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+        @media(max-width:640px){
+          .contact-hero{padding:52px 20px 64px !important}
+          .contact-h1{font-size:29px !important}
+          .contact-form-box{padding:26px !important}
+        }
       `}</style>
       <MarketingNav current="contact" />
 
-      <section style={{ maxWidth: 1240, margin: "0 auto", padding: "88px 32px 96px" }}>
+      <section className="contact-hero" style={{ maxWidth: 1240, margin: "0 auto", padding: "88px 32px 96px" }}>
         <div className="contact-grid">
           <div>
-            <h1 style={{ fontFamily: "'Sora', sans-serif", fontSize: 38, fontWeight: 700, color: "#12181b", margin: "0 0 18px", letterSpacing: "-0.02em" }}>Get in touch</h1>
+            <h1 className="contact-h1" style={{ fontFamily: "'Sora', sans-serif", fontSize: 38, fontWeight: 700, color: "#12181b", margin: "0 0 18px", letterSpacing: "-0.02em" }}>Get in touch</h1>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: "#5b6b6f", margin: "0 0 32px" }}>Questions about the program, a school partnership, or press? I read everything.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <div>

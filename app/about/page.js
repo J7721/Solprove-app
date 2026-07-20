@@ -12,11 +12,19 @@ const VALUES = [
 export default function About() {
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", background: "linear-gradient(180deg,#eef8f3 0%,#faf9f6 22%,#faf9f6 100%)", color: "#12181b", minHeight: "100vh" }}>
-      <style>{`*{box-sizing:border-box} .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px} @media(max-width:700px){.about-grid{grid-template-columns:1fr}}`}</style>
+      <style>{`
+        *{box-sizing:border-box}
+        .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+        @media(max-width:700px){.about-grid{grid-template-columns:1fr}}
+        @media(max-width:640px){
+          .about-hero{padding:52px 20px 32px !important}
+          .about-h1{font-size:27px !important}
+        }
+      `}</style>
       <MarketingNav current="about" />
 
-      <section style={{ maxWidth: 900, margin: "0 auto", padding: "88px 32px 40px", textAlign: "center" }}>
-        <h1 style={{ fontFamily: "'Sora', sans-serif", fontSize: 42, fontWeight: 700, color: "#12181b", margin: "0 0 22px", letterSpacing: "-0.02em" }}>
+      <section className="about-hero" style={{ maxWidth: 900, margin: "0 auto", padding: "88px 32px 40px", textAlign: "center" }}>
+        <h1 className="about-h1" style={{ fontFamily: "'Sora', sans-serif", fontSize: 42, fontWeight: 700, color: "#12181b", margin: "0 0 22px", letterSpacing: "-0.02em" }}>
           Built by a solo founder who&apos;s marked a lot of GCSE Maths
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.7, color: "#5b6b6f", margin: 0 }}>

@@ -31,7 +31,15 @@ export default function WaitlistForm() {
 
   return (
     <div>
+      <style>{`
+        @media(max-width:420px){
+          .waitlist-form{flex-direction:column !important}
+          .waitlist-form input{min-width:0 !important;width:100%}
+          .waitlist-form button{width:100%}
+        }
+      `}</style>
       <form
+        className="waitlist-form"
         action={FORMSPREE_ENDPOINT}
         method="POST"
         onSubmit={submit}

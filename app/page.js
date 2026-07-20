@@ -21,27 +21,37 @@ export default function Home() {
         @media(max-width:900px){
           .hero-grid{grid-template-columns:1fr !important}
         }
+        @media(max-width:640px){
+          .hero-section{padding:52px 0 60px !important}
+          .hero-h1{font-size:32px !important}
+          .hero-sub{font-size:16px !important}
+          .hero-sub2{font-size:14.5px !important}
+          .hero-cta-row{flex-direction:column !important;align-items:stretch !important}
+          .hero-cta-row a{text-align:center}
+          .hero-card{padding:20px !important}
+          .trust-bar-row{gap:16px !important;flex-direction:column !important;align-items:flex-start !important}
+        }
       `}</style>
 
       <MarketingNav current="home" />
 
       {/* HERO */}
-      <section style={{ background: "linear-gradient(160deg,#0c2038 0%,#123157 55%,#0c2038 100%)", padding: "88px 0 100px" }}>
-        <div className="hero-grid" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px", display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 56, alignItems: "center" }}>
+      <section className="hero-section" style={{ background: "linear-gradient(160deg,#0c2038 0%,#123157 55%,#0c2038 100%)", padding: "88px 0 100px" }}>
+        <div className="hero-grid" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 20px", display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 40, alignItems: "center" }}>
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.85)", fontSize: 13, fontWeight: 700, padding: "9px 18px", borderRadius: 100, marginBottom: 26 }}>
               🇬🇧 Built for UK GCSE Maths · Launching September
             </div>
-            <h1 style={{ fontFamily: "'Sora', sans-serif", fontSize: 52, lineHeight: 1.1, fontWeight: 800, color: "#ffffff", margin: "0 0 26px", letterSpacing: "-0.02em" }}>
+            <h1 className="hero-h1" style={{ fontFamily: "'Sora', sans-serif", fontSize: 52, lineHeight: 1.1, fontWeight: 800, color: "#ffffff", margin: "0 0 26px", letterSpacing: "-0.02em" }}>
               Solve it to prove.<br /><span style={{ color: "#3ddc97" }}>Every time.</span>
             </h1>
-            <p style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,.82)", margin: "0 0 18px", maxWidth: 520 }}>
+            <p className="hero-sub" style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,.82)", margin: "0 0 18px", maxWidth: 520 }}>
               The AI maths tutor that marks like a real examiner — your child photographs their GCSE maths homework, works through it, and <strong style={{ color: "#3ddc97" }}>proves</strong> they&apos;ve got it.
             </p>
-            <p style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,.55)", margin: "0 0 34px", maxWidth: 520 }}>
+            <p className="hero-sub2" style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,.55)", margin: "0 0 34px", maxWidth: 520 }}>
               Step-by-step help matched to the GCSE Maths curriculum, plus a weekly report showing exactly where they&apos;re improving.
             </p>
-            <div style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", marginBottom: 20 }}>
+            <div className="hero-cta-row" style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", marginBottom: 20 }}>
               <a href={heroCta.href} style={{ background: "#1f9d7c", color: "#ffffff", fontSize: 15, fontWeight: 700, padding: "16px 28px", borderRadius: 10, boxShadow: "0 8px 20px rgba(31,157,124,.35)" }}>
                 {heroCta.label}
               </a>
@@ -51,7 +61,7 @@ export default function Home() {
             </div>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,.45)", margin: 0 }}>£11.99/month at launch · 7-day free trial · Cancel in two clicks, always</p>
           </div>
-          <div style={{ background: "#ffffff", borderRadius: 20, padding: 32, boxShadow: "0 30px 60px -20px rgba(0,0,0,.4)" }}>
+          <div className="hero-card" style={{ background: "#ffffff", borderRadius: 20, padding: 32, boxShadow: "0 30px 60px -20px rgba(0,0,0,.4)" }}>
             <div style={{ fontSize: 14, lineHeight: 1.5, color: "#12181b", marginBottom: 20 }}>
               <strong>Q7. Solve <em style={{ fontStyle: "normal" }}>x² − 5x + 6 = 0</em></strong> · <strong>Maya&apos;s answer:</strong> x = 2, x = 3<br />
               <span style={{ color: "#5b6b6f" }}>(working shown)</span>
@@ -80,7 +90,7 @@ export default function Home() {
 
       {/* TRUST BAR */}
       <section style={{ background: "#173b4c", padding: "22px 0" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px", display: "flex", justifyContent: "center", gap: 56, flexWrap: "wrap" }}>
+        <div className="trust-bar-row" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 20px", display: "flex", justifyContent: "center", gap: 40, flexWrap: "wrap" }}>
           {["Aligned to the UK GCSE Maths curriculum, with more subjects coming soon", "Full worked solutions and reports, not just answers", "Free to start — no card required"].map((t, i) => (
             <div key={i} style={{ color: "rgba(255,255,255,.82)", fontSize: 14, fontWeight: 600, letterSpacing: ".01em" }}>{t}</div>
           ))}
@@ -91,13 +101,17 @@ export default function Home() {
       <FeatureCarousel />
 
       {/* THREE STEPS */}
+      <style>{`
+        .three-steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+        @media(max-width:760px){.three-steps-grid{grid-template-columns:1fr;gap:20px}}
+      `}</style>
       <section style={{ background: "#f1f0ea", padding: "96px 0" }}>
-        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px" }}>
+        <div style={{ maxWidth: 1240, margin: "0 auto", padding: "0 20px" }}>
           <div style={{ textAlign: "center", maxWidth: 560, margin: "0 auto 56px" }}>
             <h2 style={{ fontFamily: "'Sora', sans-serif", fontSize: 34, fontWeight: 700, color: "#12181b", margin: "0 0 14px", letterSpacing: "-0.01em" }}>Three steps to a better mark</h2>
             <p style={{ fontSize: 16, color: "#5b6b6f", margin: 0 }}>No setup, no scanning apps — just a question and a photo.</p>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 32 }}>
+          <div className="three-steps-grid">
             {[
               { n: "STEP 1", t: "Upload", d: "Photo or PDF of the question and your attempt." },
               { n: "STEP 2", t: "Get instant feedback", d: "See exactly which step needs work." },
@@ -114,8 +128,15 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section style={{ maxWidth: 1240, margin: "0 auto", padding: "96px 32px", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "'Sora', sans-serif", fontSize: 38, fontWeight: 700, color: "#12181b", margin: "0 0 16px", letterSpacing: "-0.01em" }}>Ready to see your marks improve?</h2>
+      <style>{`
+        @media(max-width:640px){
+          .final-cta-h2{font-size:27px !important}
+          .waitlist-box{padding:36px 24px !important}
+          .waitlist-h2{font-size:23px !important}
+        }
+      `}</style>
+      <section style={{ maxWidth: 1240, margin: "0 auto", padding: "72px 20px", textAlign: "center" }}>
+        <h2 className="final-cta-h2" style={{ fontFamily: "'Sora', sans-serif", fontSize: 38, fontWeight: 700, color: "#12181b", margin: "0 0 16px", letterSpacing: "-0.01em" }}>Ready to see your marks improve?</h2>
         <p style={{ fontSize: 17, color: "#5b6b6f", margin: "0 0 32px" }}>{finalCta.sub}</p>
         <a href={finalCta.href} style={{ background: "#1f9d7c", color: "#ffffff", fontSize: 16, fontWeight: 700, padding: "16px 32px", borderRadius: 10, boxShadow: "0 8px 20px rgba(31,157,124,.28)", display: "inline-block" }}>
           {finalCta.label}
@@ -124,9 +145,9 @@ export default function Home() {
 
       {/* WAITLIST */}
       {!LAUNCHED && (
-        <section id="waitlist" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 32px 96px" }}>
-          <div style={{ background: "linear-gradient(150deg,#157a61,#1f9d7c)", borderRadius: 24, padding: "56px 48px", textAlign: "center", color: "#fff" }}>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", fontSize: 30, margin: "0 0 10px" }}>Parent of a Year 10 or 11? Get in first.</h2>
+        <section id="waitlist" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 20px 72px" }}>
+          <div className="waitlist-box" style={{ background: "linear-gradient(150deg,#157a61,#1f9d7c)", borderRadius: 24, padding: "56px 48px", textAlign: "center", color: "#fff" }}>
+            <h2 className="waitlist-h2" style={{ fontFamily: "'Sora', sans-serif", fontSize: 30, margin: "0 0 10px" }}>Parent of a Year 10 or 11? Get in first.</h2>
             <p style={{ opacity: .92, maxWidth: 520, margin: "0 auto 28px" }}>Join the waitlist for the free launch beta. Founding members lock their price for life and shape what gets built next.</p>
             <WaitlistForm />
             <p style={{ fontSize: 12.5, opacity: .85, marginTop: 16 }}>No spam — a handful of emails between now and launch. Unsubscribe anytime.</p>
