@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import SiteChrome from "./components/SiteChrome";
 import ChatWidget from "./components/ChatWidget";
 
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
       <body style={{ margin: 0, fontFamily: "'Inter', system-ui, sans-serif", background: "#f4f3ef", color: "#12181b" }}>
         <SiteChrome>{children}</SiteChrome>
         <ChatWidget />
+        <Analytics />
       </body>
     </html>
   );
