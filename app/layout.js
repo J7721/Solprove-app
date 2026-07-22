@@ -4,7 +4,7 @@ import ChatWidget from "./components/ChatWidget";
 
 const SITE_URL = "https://www.solprove.co.uk";
 const TITLE = "Solprove — Solve it to prove. AI GCSE Maths Tutor";
-const DESCRIPTION = "Solve it to prove. Photo your maths homework, get step-by-step help and consistent examiner-style marking — plus a weekly progress report for parents. Join the waitlist.";
+const DESCRIPTION = "AI GCSE Maths tutor with examiner-style marking and weekly parent reports. Join the waitlist.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
