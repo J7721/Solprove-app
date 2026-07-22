@@ -15,7 +15,7 @@ const tabStyle = (active) => ({
 
 export default function SiteChrome({ children }) {
   const pathname = usePathname();
-  const isLanding = pathname === "/" || ["/pricing", "/about", "/contact"].includes(pathname);
+  const isLanding = pathname === "/" || ["/pricing", "/about", "/contact", "/privacy", "/terms"].includes(pathname);
 
   // The marketing pages ship their own full-bleed nav/header/footer,
   // so skip the app's utility nav + constrained width wrapper on those routes.
