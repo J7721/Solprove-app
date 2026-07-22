@@ -1,10 +1,30 @@
 import SiteChrome from "./components/SiteChrome";
 import ChatWidget from "./components/ChatWidget";
 
+const SITE_URL = "https://www.solprove.co.uk";
+const TITLE = "Solprove — Solve it to prove. AI GCSE Maths Tutor";
+const DESCRIPTION = "Solve it to prove. Photo your maths homework, get step-by-step help and consistent examiner-style marking — plus a weekly progress report for parents. Join the waitlist.";
+
 export const metadata = {
-  title: "Solprove — Solve it to prove. AI GCSE Maths Tutor",
-  description: "Solve it to prove. Photo your maths homework, get step-by-step help and consistent examiner-style marking — plus a weekly progress report for parents. Join the waitlist.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
   icons: { icon: "/solprove-logo.png" },
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Solprove",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Solprove — Solve it to prove. Every time." }],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }) {

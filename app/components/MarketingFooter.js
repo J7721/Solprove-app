@@ -6,6 +6,8 @@ const ALL_FOOTER_ITEMS = [
   { key: "pricing", label: "Pricing", href: "/pricing" },
   { key: "about", label: "About", href: "/about" },
   { key: "contact", label: "Contact", href: "/contact" },
+  { key: "privacy", label: "Privacy", href: "/privacy" },
+  { key: "terms", label: "Terms", href: "/terms" },
 ];
 
 export default function MarketingFooter() {
