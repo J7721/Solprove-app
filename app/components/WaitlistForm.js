@@ -2,27 +2,26 @@
 import { useState } from "react";
 import { FORMSPREE_ENDPOINT } from "../../lib/launch";
 
-const INTERESTS = [
-  "GCSE Maths (available now)",
-  "A-Level Maths",
-  "GCSE Science",
-  "A-Level Science",
-  "Another subject",
-];
+const OTHER = "Other";
+const INTERESTS = ["A-Level Maths", "GCSE Science", "A-Level Science", OTHER];
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [interest, setInterest] = useState(INTERESTS[0]);
+  const [otherText, setOtherText] = useState("");
   const [status, setStatus] = useState("idle"); // idle | sending | done | error
 
   async function submit(e) {
     e.preventDefault();
     setStatus("sending");
+    const finalInterest = interest === OTHER
+      ? (otherText.trim() ? `Other: ${otherText.trim()}` : OTHER)
+      : interest;
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ email, interest }),
+        body: JSON.stringify({ email, interest: finalInterest }),
       });
       setStatus(res.ok ? "done" : "error");
     } catch {
@@ -66,7 +65,7 @@ export default function WaitlistForm() {
         />
         <select
           name="interest"
-          aria-label="What are you most interested in?"
+          aria-label="Which subject would you like next?"
           value={interest}
           onChange={e => setInterest(e.target.value)}
           style={{ minWidth: 190, padding: "15px 14px", borderRadius: 12, border: "none", fontSize: 14.5, fontFamily: "inherit", color: "#12181b", background: "#fff" }}
@@ -75,6 +74,17 @@ export default function WaitlistForm() {
             <option key={opt} value={opt}>{opt}</option>
           ))}
         </select>
+        {interest === OTHER && (
+          <input
+            type="text"
+            name="interest_other"
+            placeholder="Tell us the subject…"
+            aria-label="Which subject would you like?"
+            value={otherText}
+            onChange={e => setOtherText(e.target.value)}
+            style={{ flex: 1, minWidth: 220, padding: "15px 18px", borderRadius: 12, border: "none", fontSize: 15.5, fontFamily: "inherit" }}
+          />
+        )}
         <button
           type="submit"
           disabled={status === "sending"}
