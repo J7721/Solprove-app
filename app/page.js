@@ -9,7 +9,7 @@ export default function Home() {
     ? { label: "Start free trial", href: "/app" }
     : { label: "Coming Soon - Join The Waitlist", href: WAITLIST_HREF };
   const finalCta = LAUNCHED
-    ? { label: "Start free trial", href: "/app", sub: "3 questions marked free every day — no card required." }
+    ? { label: "Start free trial", href: "/app", sub: "5 questions marked free every day — no card required." }
     : { label: "Coming Soon - Join The Waitlist", href: WAITLIST_HREF, sub: "Be the first to know the moment we launch." };
 
   return (

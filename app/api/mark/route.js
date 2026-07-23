@@ -4,7 +4,7 @@ import { getUserFromRequest } from "../../../lib/auth";
 import { isSubscribed, billingEnabled } from "../../../lib/billing";
 import bank from "../../../data/question-bank.json";
 
-const FREE_MARKS_PER_DAY = 3; // signed-in accounts get this many free marks per day before the paywall
+const FREE_MARKS_PER_DAY = 5; // signed-in accounts get this many free marks per day before the paywall
 
 export async function POST(req) {
   try {

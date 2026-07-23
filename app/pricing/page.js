@@ -8,7 +8,7 @@ function buildTiers() {
   return [
     {
       name: "Free", price: "£0", period: "", border: "1px solid rgba(23,59,76,.12)", bg: "#ffffff", textColor: "#12181b", perkColor: "#5b6b6f",
-      perks: ["3 questions marked free every day", "Full worked solutions", "Basic progress tracking"],
+      perks: ["5 questions marked free every day", "Full worked solutions", "Basic progress tracking"],
       cta: LAUNCHED ? "Start free" : "Coming Soon - Join The Waitlist",
       href: LAUNCHED ? "/app" : WAITLIST_HREF,
       ctaStyle: { background: "transparent", color: "#173b4c", border: "1px solid rgba(23,59,76,.2)" },
