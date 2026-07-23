@@ -147,8 +147,8 @@ export default function Home() {
       {!LAUNCHED && (
         <section id="waitlist" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 20px 72px" }}>
           <div className="waitlist-box" style={{ background: "linear-gradient(150deg,#157a61,#1f9d7c)", borderRadius: 24, padding: "56px 48px", textAlign: "center", color: "#fff" }}>
-            <h2 className="waitlist-h2" style={{ fontFamily: "'Sora', sans-serif", fontSize: 30, margin: "0 0 10px" }}>GCSE Maths is live now — help us pick what's next.</h2>
-            <p style={{ opacity: .92, maxWidth: 520, margin: "0 auto 28px" }}>Join the waitlist for GCSE Maths today, and choose the subject or level you&apos;d like us to build next. Founding members lock their price for life.</p>
+            <h2 className="waitlist-h2" style={{ fontFamily: "'Sora', sans-serif", fontSize: 30, margin: "0 0 10px" }}>GCSE Maths is live soon — help us pick what's next.</h2>
+            <p style={{ opacity: .92, maxWidth: 520, margin: "0 auto 28px" }}>Join the waitlist for GCSE Maths, and choose the subject or level you&apos;d like us to build next. Founding members lock their price for life.</p>
             <WaitlistForm />
             <p style={{ fontSize: 12.5, opacity: .85, marginTop: 16 }}>No spam — a handful of emails between now and launch. Unsubscribe anytime.</p>
           </div>

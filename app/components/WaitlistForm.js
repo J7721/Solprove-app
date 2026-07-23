@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FORMSPREE_ENDPOINT } from "../../lib/launch";
 
 const OTHER = "Other";
-const INTERESTS = ["A-Level Maths", "GCSE Science", "A-Level Science", OTHER];
+const INTERESTS = ["A-Level Maths", "GCSE Science", "A-Level Science", "GCSE English", "A-Level English", OTHER];
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
