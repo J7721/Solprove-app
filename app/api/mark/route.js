@@ -4,7 +4,7 @@ import { getUserFromRequest } from "../../../lib/auth";
 import { isSubscribed, billingEnabled } from "../../../lib/billing";
 import bank from "../../../data/question-bank.json";
 
-const FREE_MARKS = 5; // signed-in accounts get this many free marks before the paywall
+const FREE_MARKS_PER_DAY = 3; // signed-in accounts get this many free marks per day before the paywall
 
 export async function POST(req) {
   try {
@@ -12,10 +12,14 @@ export async function POST(req) {
 
     // Paywall gate (only once billing is configured, and only for signed-in accounts)
     if (user && billingEnabled() && !(await isSubscribed(user.email))) {
-      const used = (await allAttempts(user.id)).length;
-      if (used >= FREE_MARKS) {
+      // Daily reset: only count marks from the current UTC calendar day. (Simplification —
+      // resets at midnight UTC regardless of the student's own timezone.)
+      const todayStart = new Date();
+      todayStart.setUTCHours(0, 0, 0, 0);
+      const usedToday = (await allAttempts(user.id)).filter(a => new Date(a.ts) >= todayStart).length;
+      if (usedToday >= FREE_MARKS_PER_DAY) {
         return Response.json(
-          { needsSubscription: true, error: `You've used your ${FREE_MARKS} free marked questions.` },
+          { needsSubscription: true, error: `You've used your ${FREE_MARKS_PER_DAY} free marked questions for today — come back tomorrow, or upgrade for unlimited.` },
           { status: 402 }
         );
       }
