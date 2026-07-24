@@ -1,10 +1,20 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { SOLVE_SYSTEM } from "../../../lib/prompts";
+import { getUserFromRequest } from "../../../lib/auth";
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 export async function POST(req) {
   try {
+    // Solving costs an API call too — same rule as marking: account required.
+    const user = await getUserFromRequest(req);
+    if (!user) {
+      return Response.json(
+        { error: "Please sign in (top right) to use the tutor — it's free, no card needed." },
+        { status: 401 }
+      );
+    }
+
     const { question, tier, imageBase64, imageType } = await req.json();
 
     const content = [];

@@ -10,8 +10,17 @@ export async function POST(req) {
   try {
     const user = await getUserFromRequest(req);
 
-    // Paywall gate (only once billing is configured, and only for signed-in accounts)
-    if (user && billingEnabled() && !(await isSubscribed(user.email))) {
+    // Marking costs real API money, so it always requires an account — otherwise the
+    // daily free limit below could be bypassed by simply not signing in.
+    if (!user) {
+      return Response.json(
+        { error: "Please sign in (top right) to get your work marked — it's free, no card needed." },
+        { status: 401 }
+      );
+    }
+
+    // Paywall gate (only once billing is configured)
+    if (billingEnabled() && !(await isSubscribed(user.email))) {
       // Daily reset: only count marks from the current UTC calendar day. (Simplification —
       // resets at midnight UTC regardless of the student's own timezone.)
       const todayStart = new Date();
