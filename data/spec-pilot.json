@@ -1,6 +1,6 @@
 {
   "board": "UK GCSE Maths",
-  "note": "Pilot clusters only. Expand from the internal spec-map notes after verifying against the official curriculum documentation.",
+  "note": "Board-neutral curriculum map. Content is drawn from the shared Ofqual-regulated GCSE Maths subject content that AQA, Edexcel, OCR and WJEC/Eduqas all examine — spec refs here are internal identifiers, not any single board's official codes, and must never be surfaced to users as board-specific.",
   "clusters": [
     {
       "id": "algebra-core",
@@ -40,7 +40,8 @@
         { "ref": "N4", "title": "Laws of indices", "tier": "both", "higher_extension": "fractional and negative indices" },
         { "ref": "N6", "title": "HCF and LCM", "tier": "foundation" },
         { "ref": "N7", "title": "Simplifying surds", "tier": "higher" },
-        { "ref": "N8", "title": "Rationalising the denominator", "tier": "higher" }
+        { "ref": "N8", "title": "Rationalising the denominator", "tier": "higher" },
+        { "ref": "N9", "title": "Error intervals and bounds", "tier": "higher" }
       ]
     },
     {
@@ -87,6 +88,7 @@
         { "ref": "P2", "title": "Probabilities summing to 1", "tier": "foundation" },
         { "ref": "P4", "title": "Combined events: independent (AND)", "tier": "both" },
         { "ref": "P5", "title": "Relative frequency and estimating probability", "tier": "both" },
+        { "ref": "P3", "title": "Mutually exclusive events (the OR rule)", "tier": "both" },
         { "ref": "P6", "title": "Tree diagrams without replacement", "tier": "higher" },
         { "ref": "P8", "title": "Venn diagrams", "tier": "higher" }
       ]
@@ -100,7 +102,32 @@
         { "ref": "S3", "title": "Range", "tier": "foundation" },
         { "ref": "S4", "title": "Scatter graphs and correlation", "tier": "both" },
         { "ref": "S6", "title": "Estimating the mean from grouped data", "tier": "higher" },
-        { "ref": "S7", "title": "Quartiles and interquartile range", "tier": "higher" }
+        { "ref": "S7", "title": "Quartiles and interquartile range", "tier": "higher" },
+        { "ref": "S9", "title": "Histograms with unequal class widths", "tier": "higher" }
+      ]
+    },
+    {
+      "id": "algebra-functions",
+      "name": "Functions, Quadratic Sequences & Proof",
+      "refs": [
+        { "ref": "A6", "title": "Equations with algebraic fractions", "tier": "both", "higher_extension": "denominators requiring a common multiple of two expressions" },
+        { "ref": "A16", "title": "Quadratic sequences: nth term", "tier": "higher" },
+        { "ref": "A24", "title": "Function notation: evaluating f(x)", "tier": "both" },
+        { "ref": "A25", "title": "Composite functions", "tier": "higher" },
+        { "ref": "A26", "title": "Inverse functions", "tier": "higher" },
+        { "ref": "A27", "title": "Algebraic proof", "tier": "higher" }
+      ]
+    },
+    {
+      "id": "geometry-construction",
+      "name": "Circles, Bearings & Congruence",
+      "refs": [
+        { "ref": "G1", "title": "Circumference of a circle", "tier": "foundation" },
+        { "ref": "G2", "title": "Area of a circle", "tier": "both" },
+        { "ref": "G3", "title": "Conditions for congruent triangles (SSS, SAS, ASA, RHS)", "tier": "higher" },
+        { "ref": "G4", "title": "Arc length", "tier": "higher" },
+        { "ref": "G5", "title": "Sector area", "tier": "higher" },
+        { "ref": "G25", "title": "Bearings", "tier": "both" }
       ]
     }
   ]

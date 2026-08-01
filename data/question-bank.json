@@ -499,6 +499,158 @@
         { "code": "A1", "criterion": "13" }
       ],
       "answer": "13"
+    },
+    {
+      "id": "num-h-03", "cluster": "number-fluency", "spec_ref": "N9", "tier": "higher",
+      "question": "A length is measured as 8 cm, correct to the nearest cm. Write down the error interval for the actual length.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds the lower bound 8 − 0.5 = 7.5" },
+        { "code": "A1", "criterion": "7.5 ≤ length < 8.5" }
+      ],
+      "answer": "7.5 ≤ length < 8.5"
+    },
+    {
+      "id": "prob-b-03", "cluster": "probability-core", "spec_ref": "P3", "tier": "both",
+      "question": "A bag contains counters that are red, blue or green. The probability of picking red is 0.3 and the probability of picking blue is 0.25. Find the probability of picking red OR blue.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Recognises the events are mutually exclusive, so the probabilities can be added" },
+        { "code": "A1", "criterion": "0.55" }
+      ],
+      "answer": "0.55"
+    },
+    {
+      "id": "stat-h-03", "cluster": "statistics-core", "spec_ref": "S9", "tier": "higher",
+      "question": "The table shows the time, in minutes, that 60 people spent in a shop: 0-10 min (frequency 12), 10-20 min (frequency 18), 20-40 min (frequency 20), 40-70 min (frequency 10). Find the frequency density for the 20-40 minute class.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Identifies the class width for 20-40 minutes is 20" },
+        { "code": "A1", "criterion": "1 (frequency density = frequency ÷ class width = 20 ÷ 20)" }
+      ],
+      "answer": "1"
+    },
+    {
+      "id": "algf-f-01", "cluster": "algebra-functions", "spec_ref": "A24", "tier": "both",
+      "question": "f(x) = 2x + 5. Find f(3).",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Substitutes x = 3 into 2x + 5" },
+        { "code": "A1", "criterion": "f(3) = 11" }
+      ],
+      "answer": "11"
+    },
+    {
+      "id": "algf-b-01", "cluster": "algebra-functions", "spec_ref": "A6", "tier": "both",
+      "question": "Solve (x + 1)/2 + (x − 1)/3 = 3",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Multiplies every term by a common denominator (6): 3(x + 1) + 2(x − 1) = 18" },
+        { "code": "M1", "criterion": "Expands and simplifies to 5x + 1 = 18" },
+        { "code": "A1", "criterion": "x = 3.4 (or 17/5)" }
+      ],
+      "answer": "x = 3.4"
+    },
+    {
+      "id": "algf-h-01", "cluster": "algebra-functions", "spec_ref": "A25", "tier": "higher",
+      "question": "f(x) = x + 2 and g(x) = 3x. Find fg(x).",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Substitutes g(x) into f, i.e. f(3x)" },
+        { "code": "A1", "criterion": "fg(x) = 3x + 2" }
+      ],
+      "answer": "fg(x) = 3x + 2"
+    },
+    {
+      "id": "algf-h-02", "cluster": "algebra-functions", "spec_ref": "A26", "tier": "higher",
+      "question": "f(x) = 2x − 5. Find f⁻¹(x).",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Sets y = 2x − 5 and rearranges to make x the subject (x = (y + 5)/2)" },
+        { "code": "A1", "criterion": "f⁻¹(x) = (x + 5)/2" }
+      ],
+      "answer": "f⁻¹(x) = (x + 5)/2"
+    },
+    {
+      "id": "algf-h-03", "cluster": "algebra-functions", "spec_ref": "A16", "tier": "higher",
+      "question": "Find the nth term of the quadratic sequence 3, 8, 15, 24, 35, ...",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds the second difference is constant (2) and halves it to get the n² coefficient (1)" },
+        { "code": "M1", "criterion": "Subtracts n² from the sequence to find the remaining linear part (2n)" },
+        { "code": "A1", "criterion": "n² + 2n" }
+      ],
+      "answer": "n² + 2n"
+    },
+    {
+      "id": "algf-h-04", "cluster": "algebra-functions", "spec_ref": "A27", "tier": "higher",
+      "question": "Prove that the sum of three consecutive integers is always a multiple of 3.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Represents three consecutive integers algebraically, e.g. n, n + 1, n + 2" },
+        { "code": "M1", "criterion": "Sums them to get 3n + 3" },
+        { "code": "A1", "criterion": "Factorises to 3(n + 1) and concludes this is always a multiple of 3" }
+      ],
+      "answer": "n + (n+1) + (n+2) = 3n + 3 = 3(n + 1), a multiple of 3"
+    },
+    {
+      "id": "geo3-f-01", "cluster": "geometry-construction", "spec_ref": "G1", "tier": "foundation",
+      "question": "Find the circumference of a circle with radius 7 cm. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Uses C = 2πr (or πd)" },
+        { "code": "A1", "criterion": "44.0 cm" }
+      ],
+      "answer": "44.0 cm"
+    },
+    {
+      "id": "geo3-b-02", "cluster": "geometry-construction", "spec_ref": "G2", "tier": "both",
+      "question": "Find the area of a circle with radius 5 cm. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Uses A = πr²" },
+        { "code": "A1", "criterion": "78.5 cm²" }
+      ],
+      "answer": "78.5 cm²"
+    },
+    {
+      "id": "geo3-b-01", "cluster": "geometry-construction", "spec_ref": "G25", "tier": "both",
+      "question": "The bearing of B from A is 070°. Find the bearing of A from B.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Recognises the back bearing requires adding or subtracting 180°" },
+        { "code": "A1", "criterion": "250°" }
+      ],
+      "answer": "250°"
+    },
+    {
+      "id": "geo3-h-01", "cluster": "geometry-construction", "spec_ref": "G4", "tier": "higher",
+      "question": "A sector of a circle has radius 6 cm and angle 60°. Find the arc length. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Sets up (60/360) × 2π × 6" },
+        { "code": "A1", "criterion": "6.3 cm" }
+      ],
+      "answer": "6.3 cm"
+    },
+    {
+      "id": "geo3-h-02", "cluster": "geometry-construction", "spec_ref": "G5", "tier": "higher",
+      "question": "A sector of a circle has radius 8 cm and angle 45°. Find the area of the sector. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Sets up (45/360) × π × 8²" },
+        { "code": "A1", "criterion": "25.1 cm²" }
+      ],
+      "answer": "25.1 cm²"
+    },
+    {
+      "id": "geo3-h-03", "cluster": "geometry-construction", "spec_ref": "G3", "tier": "higher",
+      "question": "Triangle ABC has AB = 5 cm, BC = 7 cm and angle B = 40°. Triangle DEF has DE = 5 cm, EF = 7 cm and angle E = 40°. State the condition that proves triangles ABC and DEF are congruent.",
+      "marks": 1,
+      "rubric": [
+        { "code": "B1", "criterion": "States SAS (Side-Angle-Side) — two pairs of equal sides with the equal angle included between them" }
+      ],
+      "answer": "SAS"
     }
   ]
 }
