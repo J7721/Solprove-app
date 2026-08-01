@@ -135,6 +135,370 @@
         { "code": "B1", "criterion": "Perimeter = 26 cm" }
       ],
       "answer": "Area 40 cm², perimeter 26 cm"
+    },
+    {
+      "id": "num-f-01", "cluster": "number-fluency", "spec_ref": "N1", "tier": "foundation",
+      "question": "Write 3,400,000 in standard form.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Writes as a number between 1 and 10 multiplied by a power of 10, e.g. 3.4 × 10ⁿ" },
+        { "code": "A1", "criterion": "3.4 × 10⁶" }
+      ],
+      "answer": "3.4 × 10⁶"
+    },
+    {
+      "id": "num-f-02", "cluster": "number-fluency", "spec_ref": "N2", "tier": "foundation",
+      "question": "Write 5.2 × 10⁻³ as an ordinary number.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Shows correct place-value shift for a negative power of 10 (e.g. moves the decimal point 3 places left)" },
+        { "code": "A1", "criterion": "0.0052" }
+      ],
+      "answer": "0.0052"
+    },
+    {
+      "id": "num-b-01", "cluster": "number-fluency", "spec_ref": "N4", "tier": "both",
+      "question": "Simplify (3x²)³",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Applies the power to both the coefficient and the index correctly (attempt at 3³ and x²ˣ³)" },
+        { "code": "A1", "criterion": "27x⁶" }
+      ],
+      "answer": "27x⁶"
+    },
+    {
+      "id": "num-f-03", "cluster": "number-fluency", "spec_ref": "N6", "tier": "foundation",
+      "question": "Find the HCF of 36 and 48.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Valid method: lists factors of both numbers, or finds prime factorisations (36 = 2² × 3², 48 = 2⁴ × 3)" },
+        { "code": "A1", "criterion": "12" }
+      ],
+      "answer": "12"
+    },
+    {
+      "id": "num-h-01", "cluster": "number-fluency", "spec_ref": "N7", "tier": "higher",
+      "question": "Simplify √72 fully.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Identifies 36 as a square factor of 72 (72 = 36 × 2)" },
+        { "code": "A1", "criterion": "6√2" }
+      ],
+      "answer": "6√2"
+    },
+    {
+      "id": "num-h-02", "cluster": "number-fluency", "spec_ref": "N8", "tier": "higher",
+      "question": "Rationalise the denominator: 3/√3. Give your answer in its simplest form.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Multiplies numerator and denominator by √3" },
+        { "code": "A1", "criterion": "√3 (from 3√3/3 simplified)" }
+      ],
+      "answer": "√3"
+    },
+    {
+      "id": "alg2-f-01", "cluster": "algebra-graphs", "spec_ref": "A9", "tier": "foundation",
+      "question": "Find the nth term of the sequence 5, 8, 11, 14, ...",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Identifies the common difference is 3" },
+        { "code": "A1", "criterion": "3n + 2" }
+      ],
+      "answer": "3n + 2"
+    },
+    {
+      "id": "alg2-f-02", "cluster": "algebra-graphs", "spec_ref": "A22", "tier": "foundation",
+      "question": "Solve 2x − 3 < 7",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Adds 3 to both sides: 2x < 10" },
+        { "code": "A1", "criterion": "x < 5" }
+      ],
+      "answer": "x < 5"
+    },
+    {
+      "id": "alg2-b-02", "cluster": "algebra-graphs", "spec_ref": "A5", "tier": "both",
+      "question": "Expand and simplify (x + 3)(x − 5)",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Expands to get at least 3 of the 4 terms correct (x² − 5x + 3x − 15)" },
+        { "code": "A1", "criterion": "x² − 2x − 15" }
+      ],
+      "answer": "x² − 2x − 15"
+    },
+    {
+      "id": "alg2-b-01", "cluster": "algebra-graphs", "spec_ref": "A19", "tier": "both",
+      "question": "Solve the simultaneous equations: 2x + y = 11 and x − y = 1",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Valid method to eliminate one variable (e.g. adds the two equations to eliminate y)" },
+        { "code": "A1", "criterion": "x = 4" },
+        { "code": "A1", "criterion": "y = 3" }
+      ],
+      "answer": "x = 4, y = 3"
+    },
+    {
+      "id": "alg2-h-01", "cluster": "algebra-graphs", "spec_ref": "A10", "tier": "higher",
+      "question": "A line has gradient 4 and passes through the point (2, 9). Find the equation of the line.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Substitutes the point and gradient into y = mx + c: 9 = 4(2) + c" },
+        { "code": "M1", "criterion": "Rearranges to find c = 1" },
+        { "code": "A1", "criterion": "y = 4x + 1" }
+      ],
+      "answer": "y = 4x + 1"
+    },
+    {
+      "id": "alg2-h-02", "cluster": "algebra-graphs", "spec_ref": "A12", "tier": "higher",
+      "question": "Solve the inequality x² < 9, giving your answer as an inequality.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Recognises the critical value x = 3 (from √9)" },
+        { "code": "A1", "criterion": "−3 < x < 3" }
+      ],
+      "answer": "−3 < x < 3"
+    },
+    {
+      "id": "ratp-f-01", "cluster": "ratio-proportion", "spec_ref": "R11", "tier": "foundation",
+      "question": "y is directly proportional to x. When x = 5, y = 20. Find y when x = 8.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds the constant of proportionality k = 20 ÷ 5 = 4" },
+        { "code": "A1", "criterion": "y = 32" }
+      ],
+      "answer": "y = 32"
+    },
+    {
+      "id": "ratp-f-02", "cluster": "ratio-proportion", "spec_ref": "R4", "tier": "foundation",
+      "question": "A 500 g bag of rice costs £2.00 and a 750 g bag costs £2.70. Which is better value? Show your working.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds a comparable unit price for both bags (e.g. price per gram or per 100 g)" },
+        { "code": "A1", "criterion": "The 750 g bag is better value (0.36p per g vs 0.4p per g)" }
+      ],
+      "answer": "750 g bag is better value"
+    },
+    {
+      "id": "ratp-b-01", "cluster": "ratio-proportion", "spec_ref": "R14", "tier": "both",
+      "question": "A car travels 150 miles in 3 hours. Find its average speed in mph.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Divides distance by time: 150 ÷ 3" },
+        { "code": "A1", "criterion": "50 mph" }
+      ],
+      "answer": "50 mph"
+    },
+    {
+      "id": "ratp-b-02", "cluster": "ratio-proportion", "spec_ref": "R5", "tier": "both",
+      "question": "£2000 is invested at 3% compound interest per year. Find the value of the investment after 2 years.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Uses the multiplier 1.03 for each year, or calculates year by year" },
+        { "code": "M1", "criterion": "Applies the multiplier twice (2000 × 1.03²)" },
+        { "code": "A1", "criterion": "£2121.80" }
+      ],
+      "answer": "£2121.80"
+    },
+    {
+      "id": "ratp-h-01", "cluster": "ratio-proportion", "spec_ref": "R12", "tier": "higher",
+      "question": "y is inversely proportional to x. When x = 4, y = 15. Find y when x = 6.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds the constant k = xy = 4 × 15 = 60" },
+        { "code": "A1", "criterion": "y = 10" }
+      ],
+      "answer": "y = 10"
+    },
+    {
+      "id": "ratp-h-02", "cluster": "ratio-proportion", "spec_ref": "R15", "tier": "higher",
+      "question": "A metal block has mass 540 g and volume 60 cm³. Find its density.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Divides mass by volume: 540 ÷ 60" },
+        { "code": "A1", "criterion": "9 g/cm³" }
+      ],
+      "answer": "9 g/cm³"
+    },
+    {
+      "id": "geo2-f-01", "cluster": "geometry-shape", "spec_ref": "G16", "tier": "foundation",
+      "question": "Find the volume of a cuboid with length 8 cm, width 5 cm and height 3 cm.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Multiplies all three dimensions: 8 × 5 × 3" },
+        { "code": "A1", "criterion": "120 cm³" }
+      ],
+      "answer": "120 cm³"
+    },
+    {
+      "id": "geo2-f-02", "cluster": "geometry-shape", "spec_ref": "G24", "tier": "foundation",
+      "question": "Triangle A has vertices (1, 1), (3, 1) and (1, 4). Find the coordinates of the image after a translation by the vector (2, −1).",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Adds 2 to each x-coordinate and subtracts 1 from each y-coordinate for at least one vertex" },
+        { "code": "A1", "criterion": "(3, 0), (5, 0) and (3, 3)" }
+      ],
+      "answer": "(3, 0), (5, 0), (3, 3)"
+    },
+    {
+      "id": "geo2-b-01", "cluster": "geometry-shape", "spec_ref": "G17", "tier": "both",
+      "question": "Find the volume of a cylinder with radius 4 cm and height 10 cm. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Correctly substitutes into V = πr²h (π × 4² × 10)" },
+        { "code": "A1", "criterion": "502.7 cm³ (accept 160π cm³)" }
+      ],
+      "answer": "502.7 cm³"
+    },
+    {
+      "id": "geo2-b-02", "cluster": "geometry-shape", "spec_ref": "G18", "tier": "both",
+      "question": "Find the total surface area of a cuboid with length 6 cm, width 4 cm and height 2 cm.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds the area of at least 3 different faces and doubles appropriately (2 × (6×4 + 6×2 + 4×2))" },
+        { "code": "A1", "criterion": "88 cm²" }
+      ],
+      "answer": "88 cm²"
+    },
+    {
+      "id": "geo2-h-01", "cluster": "geometry-shape", "spec_ref": "G10", "tier": "higher",
+      "question": "A and B are points on a circle with centre O. The angle at the centre, AOB, is 100°. Find the angle at the circumference on the same arc, ACB.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Uses the circle theorem: the angle at the centre is twice the angle at the circumference" },
+        { "code": "A1", "criterion": "50°" }
+      ],
+      "answer": "50°"
+    },
+    {
+      "id": "geo2-h-02", "cluster": "geometry-shape", "spec_ref": "G6", "tier": "higher",
+      "question": "Two similar triangles have a linear scale factor of 3. The area of the smaller triangle is 8 cm². Find the area of the larger triangle.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Recognises the area scale factor is the linear scale factor squared (3² = 9)" },
+        { "code": "A1", "criterion": "72 cm²" }
+      ],
+      "answer": "72 cm²"
+    },
+    {
+      "id": "prob-f-01", "cluster": "probability-core", "spec_ref": "P1", "tier": "foundation",
+      "question": "A bag contains 5 red balls, 3 blue balls and 2 green balls. A ball is picked at random. Find the probability it is blue.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Identifies the total number of balls is 10" },
+        { "code": "A1", "criterion": "3/10" }
+      ],
+      "answer": "3/10"
+    },
+    {
+      "id": "prob-f-02", "cluster": "probability-core", "spec_ref": "P2", "tier": "foundation",
+      "question": "The probability that it rains tomorrow is 0.35. Find the probability that it does not rain tomorrow.",
+      "marks": 1,
+      "rubric": [
+        { "code": "B1", "criterion": "0.65 (from 1 − 0.35)" }
+      ],
+      "answer": "0.65"
+    },
+    {
+      "id": "prob-b-01", "cluster": "probability-core", "spec_ref": "P4", "tier": "both",
+      "question": "A fair coin is flipped and a fair six-sided dice is rolled. Find the probability of getting heads AND a 6.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Multiplies the two individual probabilities (1/2 × 1/6)" },
+        { "code": "A1", "criterion": "1/12" }
+      ],
+      "answer": "1/12"
+    },
+    {
+      "id": "prob-b-02", "cluster": "probability-core", "spec_ref": "P5", "tier": "both",
+      "question": "A spinner is spun 200 times. It lands on red 56 times. Based on this, estimate the probability that the spinner lands on red.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Sets up the fraction 56/200" },
+        { "code": "A1", "criterion": "0.28 (accept 7/25 or 28%)" }
+      ],
+      "answer": "0.28"
+    },
+    {
+      "id": "prob-h-01", "cluster": "probability-core", "spec_ref": "P6", "tier": "higher",
+      "question": "A bag contains 4 red counters and 6 blue counters. Two counters are taken at random without replacement. Find the probability that both counters are red.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Uses 4/10 for the probability of red on the first pick" },
+        { "code": "M1", "criterion": "Uses 3/9 for the probability of red on the second pick, reflecting no replacement" },
+        { "code": "A1", "criterion": "2/15 (accept 12/90)" }
+      ],
+      "answer": "2/15"
+    },
+    {
+      "id": "prob-h-02", "cluster": "probability-core", "spec_ref": "P8", "tier": "higher",
+      "question": "In a class of 30 students, 18 study French, 15 study Spanish, and 8 study both. Find the number of students who study neither.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Finds the number studying at least one subject: 18 + 15 − 8 = 25" },
+        { "code": "A1", "criterion": "5" }
+      ],
+      "answer": "5"
+    },
+    {
+      "id": "stat-f-01", "cluster": "statistics-core", "spec_ref": "S1", "tier": "foundation",
+      "question": "Find the mean of 4, 7, 9, 12, 18.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Sums the values: 4 + 7 + 9 + 12 + 18 = 50" },
+        { "code": "A1", "criterion": "10" }
+      ],
+      "answer": "10"
+    },
+    {
+      "id": "stat-f-02", "cluster": "statistics-core", "spec_ref": "S2", "tier": "foundation",
+      "question": "The table shows the number of goals scored in 10 matches: 0 goals (2 matches), 1 goal (3 matches), 2 goals (4 matches), 3 goals (1 match). Find the mean number of goals per match.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Calculates the total goals: (0×2) + (1×3) + (2×4) + (3×1) = 14" },
+        { "code": "A1", "criterion": "1.4" }
+      ],
+      "answer": "1.4"
+    },
+    {
+      "id": "stat-b-02", "cluster": "statistics-core", "spec_ref": "S3", "tier": "both",
+      "question": "The high temperatures over a week were: 18, 21, 19, 23, 17, 20, 22 (°C). Find the range.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Identifies the maximum (23) and minimum (17) values" },
+        { "code": "A1", "criterion": "6°C" }
+      ],
+      "answer": "6°C"
+    },
+    {
+      "id": "stat-b-01", "cluster": "statistics-core", "spec_ref": "S4", "tier": "both",
+      "question": "A scatter graph shows a strong positive correlation between hours studied and exam score. Describe what this means.",
+      "marks": 2,
+      "rubric": [
+        { "code": "B1", "criterion": "States that as one variable increases, the other tends to increase too (as hours studied increases, exam score tends to increase)" },
+        { "code": "B1", "criterion": "Uses the correct term \"positive correlation\" (or equivalent correct description of the relationship)" }
+      ],
+      "answer": "As hours studied increases, exam score tends to increase (positive correlation)"
+    },
+    {
+      "id": "stat-h-01", "cluster": "statistics-core", "spec_ref": "S6", "tier": "higher",
+      "question": "The table shows the ages of 40 people grouped in class intervals: 0-19 (frequency 8), 20-39 (frequency 15), 40-59 (frequency 12), 60-79 (frequency 5). Estimate the mean age using midpoints.",
+      "marks": 3,
+      "rubric": [
+        { "code": "M1", "criterion": "Uses correct midpoints for each class (9.5, 29.5, 49.5, 69.5)" },
+        { "code": "M1", "criterion": "Calculates Σfx correctly: (8×9.5) + (15×29.5) + (12×49.5) + (5×69.5) = 1460" },
+        { "code": "A1", "criterion": "36.5 years (from 1460 ÷ 40)" }
+      ],
+      "answer": "36.5 years"
+    },
+    {
+      "id": "stat-h-02", "cluster": "statistics-core", "spec_ref": "S7", "tier": "higher",
+      "question": "A set of data has lower quartile 12, median 18, and upper quartile 25. Find the interquartile range.",
+      "marks": 2,
+      "rubric": [
+        { "code": "M1", "criterion": "Sets up upper quartile minus lower quartile: 25 − 12" },
+        { "code": "A1", "criterion": "13" }
+      ],
+      "answer": "13"
     }
   ]
 }

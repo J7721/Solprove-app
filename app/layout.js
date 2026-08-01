@@ -6,11 +6,24 @@ const SITE_URL = "https://www.solprove.co.uk";
 const TITLE = "Solprove — Solve it to prove. AI GCSE Maths Tutor";
 const DESCRIPTION = "AI GCSE Maths tutor with examiner-style marking and weekly parent reports. Join the waitlist.";
 
+export const viewport = {
+  themeColor: "#0c2038",
+};
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  icons: { icon: "/solprove-logo.png" },
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/solprove-logo.png",
+    apple: "/icons/apple-touch-icon.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Solprove",
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
