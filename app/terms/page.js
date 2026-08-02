@@ -64,7 +64,7 @@ function buildSections(launched) {
       h: "Cancellation and refunds",
       body: [
         "You can cancel a Premium subscription at any time from your account settings, or by emailing hello@solprove.co.uk. Cancelling stops future billing; your plan stays active until the end of the period you've already paid for.",
-        "If you're on the 7-day free trial, cancel before the trial ends to avoid being charged. We don't offer refunds for partial billing periods, except where required by law.",
+        "If you're on the 7-day free trial, cancel before the trial ends to avoid being charged. If your trial converts into a paid subscription, UK subscription contract protections give you a further short cooling-off window afterwards to cancel and get a refund if it's not for you — we'll confirm the exact details at checkout. Outside of that window, we don't offer refunds for partial billing periods, except where required by law.",
       ],
     });
   }
