@@ -21,7 +21,8 @@ export default function SiteChrome({ children }) {
   // so skip the app's utility nav + constrained width wrapper on those routes.
   if (isLanding) return children;
 
-  const onWorkspace = pathname.startsWith("/app");
+  const onWorkspace = pathname === "/app" || pathname === "/app/mock-exam";
+  const onFriends = pathname.startsWith("/app/friends");
   const onReports = pathname.startsWith("/parent");
 
   return (
@@ -37,6 +38,7 @@ export default function SiteChrome({ children }) {
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <div style={{ display: "flex", background: "rgba(255,255,255,.08)", borderRadius: 9, padding: 3 }}>
             <a href="/app" style={tabStyle(onWorkspace)}>Workspace</a>
+            <a href="/app/friends" style={tabStyle(onFriends)}>Friends</a>
             <a href="/parent" style={tabStyle(onReports)}>Reports</a>
           </div>
           <NavAuth />

@@ -127,6 +127,8 @@ export default function Workspace() {
   const sidebarItems = [
     { label: "Ask a question", active: true, onClick: () => document.getElementById("question-card")?.scrollIntoView({ behavior: "smooth" }) },
     { label: "Practice weak spots", active: false, onClick: practice },
+    { label: "Mock exam", active: false, onClick: () => { window.location.href = "/app/mock-exam"; } },
+    { label: "Friends", active: false, onClick: () => { window.location.href = "/app/friends"; } },
     { label: "Progress", active: false, onClick: scrollToProgress },
   ];
 
