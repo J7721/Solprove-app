@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { getToken } from "../../../lib/supabaseBrowser";
 import { LAUNCHED } from "../../../lib/launch";
 import ComingSoon from "../../components/ComingSoon";
+import Calculator from "../../components/Calculator";
 
 async function authHeaders() {
   const t = await getToken();
@@ -184,6 +185,9 @@ export default function MockExam() {
   const answeredCount = paper.filter((q) => answers[q.id]?.attempt || answers[q.id]?.image).length;
 
   return (
+    <>
+    {/* Only rendered on Papers 2/3 — a real non-calculator paper shouldn't have one handy. */}
+    {stage === "exam" && paperMeta?.calculatorAllowed && <Calculator />}
     <div style={{ maxWidth: 720, margin: "0 auto", padding: "48px 0 80px" }}>
       <h1 style={{ fontFamily: "'Sora', sans-serif", fontSize: 30, fontWeight: 700, color: "#12181b", margin: "0 0 6px" }}>Mock exam</h1>
       <p style={{ fontSize: 15.5, color: "#5b6b6f", margin: "0 0 28px" }}>
@@ -336,5 +340,6 @@ export default function MockExam() {
         </>
       )}
     </div>
+    </>
   );
 }

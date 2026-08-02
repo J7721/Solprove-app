@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getToken } from "../../lib/supabaseBrowser";
 import { LAUNCHED } from "../../lib/launch";
 import ComingSoon from "../components/ComingSoon";
+import Calculator from "../components/Calculator";
 
 async function authHeaders() {
   const t = await getToken();
@@ -133,6 +134,8 @@ export default function Workspace() {
   ];
 
   return (
+    <>
+    <Calculator />
     <div style={{ display: "grid", gridTemplateColumns: "220px 1fr", gap: 40, padding: "48px 0 80px" }}>
       {/* SIDEBAR */}
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -357,5 +360,6 @@ export default function Workspace() {
         ) : null}
       </div>
     </div>
+    </>
   );
 }
