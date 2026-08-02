@@ -39,12 +39,12 @@ const ta = { width: "100%", padding: 16, borderRadius: 10, border: "1px solid rg
 const chip = (bg, color) => ({ background: bg, color, padding: "3px 11px", borderRadius: 99, fontSize: 12, fontWeight: 700 });
 const sectionLabel = { fontFamily: "'Sora', sans-serif", fontSize: 17, fontWeight: 700, color: "#12181b" };
 
-// "Quick" is sized to fit inside the free daily 5-mark allowance so anyone can try a
-// mock exam without paying; "Full" intentionally needs Premium (matches the workspace's
-// own free/paid split).
+// Mock exams are Premium-only, both lengths — see the subscription check in
+// app/api/mock-exam/route.js. Single-question marking still has a free daily allowance;
+// this is intentionally a paid-tier feature.
 const LENGTHS = [
-  { key: "quick", label: "Quick check", count: 5, blurb: "5 questions · ~12 minutes · free" },
-  { key: "full", label: "Full mock", count: 14, blurb: "14 questions · ~35 minutes · Premium" },
+  { key: "quick", label: "Quick check", count: 5, blurb: "5 questions · ~12 minutes" },
+  { key: "full", label: "Full mock", count: 14, blurb: "14 questions · ~35 minutes" },
 ];
 
 function RedPen({ img, awards, steps }) {
@@ -196,6 +196,7 @@ export default function MockExam() {
 
       {stage === "setup" && (
         <div style={card}>
+          <span style={{ ...chip("rgba(31,157,124,.12)", "#157a61"), display: "inline-block", marginBottom: 18 }}>Premium feature</span>
           <div style={{ ...sectionLabel, marginBottom: 14 }}>Tier</div>
           <div style={{ display: "flex", gap: 10, marginBottom: 26 }}>
             {["foundation", "higher"].map((t) => (

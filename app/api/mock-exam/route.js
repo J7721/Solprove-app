@@ -5,12 +5,10 @@
 // on each answer photo exactly like the normal workspace does.
 import bank from "../../../data/question-bank.json";
 import { markAttempt } from "../../../lib/marking";
-import { recordAttempt, allAttempts } from "../../../lib/store";
+import { recordAttempt } from "../../../lib/store";
 import { getUserFromRequest } from "../../../lib/auth";
 import { isSubscribed, billingEnabled } from "../../../lib/billing";
 import { touchStreak } from "../../../lib/social";
-
-const FREE_MARKS_PER_DAY = 5; // same daily pool as single-question marking — a mock exam spends from it too
 
 function pickPaper(tier, count) {
   const tierOk = (q) => q.tier === "both" || q.tier === tier;
@@ -39,20 +37,13 @@ export async function GET(req) {
   const tier = searchParams.get("tier") === "higher" ? "higher" : "foundation";
   const count = Math.min(20, Math.max(3, parseInt(searchParams.get("count") || "8", 10)));
 
+  // Mock exams are a Premium-only feature — no free allowance, unlike single-question
+  // marking. Any tier/length requires an active subscription.
   if (billingEnabled() && !(await isSubscribed(user.email))) {
-    const todayStart = new Date();
-    todayStart.setUTCHours(0, 0, 0, 0);
-    const usedToday = (await allAttempts(user.id)).filter((a) => new Date(a.ts) >= todayStart).length;
-    const remaining = FREE_MARKS_PER_DAY - usedToday;
-    if (remaining < count) {
-      return Response.json(
-        {
-          needsSubscription: true,
-          error: `A ${count}-question mock exam needs ${count} marked questions, but you've only got ${Math.max(0, remaining)} free marks left today. Upgrade for unlimited, or come back tomorrow.`,
-        },
-        { status: 402 }
-      );
-    }
+    return Response.json(
+      { needsSubscription: true, error: "Mock exams are a Premium feature. Upgrade to unlock timed mock exams, plus unlimited single-question marking." },
+      { status: 402 }
+    );
   }
 
   const paper = pickPaper(tier, count);
