@@ -39,9 +39,12 @@ const ta = { width: "100%", padding: 16, borderRadius: 10, border: "1px solid rg
 const chip = (bg, color) => ({ background: bg, color, padding: "3px 11px", borderRadius: 99, fontSize: 12, fontWeight: 700 });
 const sectionLabel = { fontFamily: "'Sora', sans-serif", fontSize: 17, fontWeight: 700, color: "#12181b" };
 
+// "Quick" is sized to fit inside the free daily 5-mark allowance so anyone can try a
+// mock exam without paying; "Full" intentionally needs Premium (matches the workspace's
+// own free/paid split).
 const LENGTHS = [
-  { key: "quick", label: "Quick check", count: 6, blurb: "6 questions · ~15 minutes" },
-  { key: "full", label: "Full mock", count: 14, blurb: "14 questions · ~35 minutes" },
+  { key: "quick", label: "Quick check", count: 5, blurb: "5 questions · ~12 minutes · free" },
+  { key: "full", label: "Full mock", count: 14, blurb: "14 questions · ~35 minutes · Premium" },
 ];
 
 function RedPen({ img, awards, steps }) {
@@ -82,6 +85,7 @@ export default function MockExam() {
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
   const [busy, setBusy] = useState(false);
+  const [needsSubscription, setNeedsSubscription] = useState(false);
   const timerRef = useRef(null);
   const submittedRef = useRef(false);
 
@@ -105,18 +109,29 @@ export default function MockExam() {
   }, [secondsLeft, stage]);
 
   async function startExam() {
-    setBusy(true); setError(null);
+    setBusy(true); setError(null); setNeedsSubscription(false);
     const length = LENGTHS.find((l) => l.key === lengthKey);
     const res = await fetch(`/api/mock-exam?tier=${tier}&count=${length.count}`, { headers: await authHeaders() });
     const data = await res.json();
     setBusy(false);
-    if (!res.ok) { setError(data.error || "Couldn't start the mock exam."); return; }
+    if (!res.ok) {
+      setError(data.error || "Couldn't start the mock exam.");
+      setNeedsSubscription(Boolean(data.needsSubscription));
+      return;
+    }
     setPaper(data.paper);
     setAnswers({});
     setIndex(0);
     setSecondsLeft(data.suggestedMinutes * 60);
     submittedRef.current = false;
     setStage("exam");
+  }
+
+  async function subscribe() {
+    const res = await fetch("/api/checkout", { method: "POST", headers: await authHeaders() });
+    const data = await res.json();
+    if (data.url) window.location.href = data.url;
+    else alert(data.error || "Could not start checkout — are you signed in?");
   }
 
   function setAnswer(id, patch) {
@@ -172,7 +187,12 @@ export default function MockExam() {
         Original, exam-style questions, timed like the real thing — marked and red-penned like an examiner when you're done.
       </p>
 
-      {error && <div style={{ ...card, background: "rgba(226,121,60,.1)" }}><p style={{ margin: 0, color: "#c9622e" }}>{error}</p></div>}
+      {error && (
+        <div style={{ ...card, background: "rgba(226,121,60,.1)" }}>
+          <p style={{ margin: needsSubscription ? "0 0 14px" : 0, color: "#c9622e" }}>{error}</p>
+          {needsSubscription && <button style={btn()} onClick={subscribe}>Start free trial — £11.99/month after 7 days</button>}
+        </div>
+      )}
 
       {stage === "setup" && (
         <div style={card}>
