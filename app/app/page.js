@@ -9,6 +9,32 @@ async function authHeaders() {
   return { "Content-Type": "application/json", ...(t ? { Authorization: `Bearer ${t}` } : {}) };
 }
 
+// Converts any uploaded photo — including iPhone HEIC/HEIC, which Claude's vision
+// API can't read directly — into a JPEG the API accepts. Also downscales huge
+// camera photos so uploads stay fast. Safari decodes HEIC natively via <img>,
+// which is what makes this work without a separate conversion library.
+function fileToJpegBase64(file, maxDim = 1600, quality = 0.85) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      let { width, height } = img;
+      if (width > maxDim || height > maxDim) {
+        const scale = maxDim / Math.max(width, height);
+        width = Math.round(width * scale);
+        height = Math.round(height * scale);
+      }
+      const canvas = document.createElement("canvas");
+      canvas.width = width; canvas.height = height;
+      canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+      URL.revokeObjectURL(url);
+      resolve({ base64: canvas.toDataURL("image/jpeg", quality).split(",")[1], type: "image/jpeg" });
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("unsupported image format")); };
+    img.src = url;
+  });
+}
+
 const card = { background: "#fff", border: "1px solid rgba(23,59,76,.08)", boxShadow: "0 1px 3px rgba(23,59,76,.05)", borderRadius: 16, padding: 32, marginBottom: 24 };
 const btn = (bg = "#1f9d7c") => ({ background: bg, color: "#fff", border: "none", borderRadius: 9, padding: "13px 24px", fontWeight: 700, fontSize: 14, cursor: "pointer", fontFamily: "'Inter', sans-serif" });
 const ta = { width: "100%", padding: 16, borderRadius: 10, border: "1px solid rgba(23,59,76,.15)", fontSize: 15, color: "#12181b", resize: "vertical", background: "#faf9f6", fontFamily: "inherit", boxSizing: "border-box" };
@@ -37,16 +63,24 @@ export default function Workspace() {
   async function onFile(e) {
     const f = e.target.files?.[0];
     if (!f) return;
-    const b64 = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result.split(",")[1]); r.readAsDataURL(f); });
-    setImage({ base64: b64, type: f.type, name: f.name });
-    setQuestionId(null);
+    try {
+      const { base64, type } = await fileToJpegBase64(f);
+      setImage({ base64, type, name: f.name });
+      setQuestionId(null);
+    } catch {
+      alert("Sorry, that photo couldn't be opened. Try a different photo, or a JPEG/PNG file.");
+    }
   }
 
   async function onAttemptFile(e) {
     const f = e.target.files?.[0];
     if (!f) return;
-    const b64 = await new Promise(res => { const r = new FileReader(); r.onload = () => res(r.result.split(",")[1]); r.readAsDataURL(f); });
-    setAttemptImage({ base64: b64, type: f.type, name: f.name });
+    try {
+      const { base64, type } = await fileToJpegBase64(f);
+      setAttemptImage({ base64, type, name: f.name });
+    } catch {
+      alert("Sorry, that photo couldn't be opened. Try a different photo, or a JPEG/PNG file.");
+    }
   }
 
   async function solve() {
@@ -281,13 +315,14 @@ export default function Workspace() {
                 {marking.awards.map((a, i) => {
                   const y = a.step_index != null ? marking.extracted?.steps?.[a.step_index]?.y : null;
                   if (y == null) return null;
+                  const markColor = a.earned ? "#1f9d7c" : "#c81e3a";
                   return (
                     <div key={i} title={a.reason} style={{
                       position: "absolute", top: `${y}%`, right: 6, transform: "translateY(-50%)",
                       width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
                       background: "rgba(255,255,255,.88)", boxShadow: "0 1px 4px rgba(0,0,0,.25)",
-                      color: "#c81e3a", fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: 16,
-                      border: "2px solid #c81e3a", cursor: "default",
+                      color: markColor, fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: 16,
+                      border: `2px solid ${markColor}`, cursor: "default",
                     }}>
                       {a.earned ? "✓" : "✗"}
                     </div>
