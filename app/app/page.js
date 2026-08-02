@@ -269,6 +269,33 @@ export default function Workspace() {
         {marking && !marking.error && (
           <div style={card}>
             <h3 style={{ fontFamily: "'Sora', sans-serif", margin: "0 0 4px", color: "#12181b" }}>Result: {marking.score} / {marking.out_of}</h3>
+
+            {/* RED PEN — marks overlaid directly on the student's own photo, like a real examiner's margin */}
+            {attemptImage && marking.awards?.some(a => a.step_index != null && marking.extracted?.steps?.[a.step_index]?.y != null) && (
+              <div style={{ position: "relative", display: "inline-block", maxWidth: "100%", margin: "14px 0 20px", borderRadius: 10, overflow: "hidden", border: "1px solid rgba(23,59,76,.1)" }}>
+                <img
+                  src={`data:${attemptImage.type};base64,${attemptImage.base64}`}
+                  alt="Your marked attempt"
+                  style={{ display: "block", width: "100%", maxWidth: 520, height: "auto" }}
+                />
+                {marking.awards.map((a, i) => {
+                  const y = a.step_index != null ? marking.extracted?.steps?.[a.step_index]?.y : null;
+                  if (y == null) return null;
+                  return (
+                    <div key={i} title={a.reason} style={{
+                      position: "absolute", top: `${y}%`, right: 6, transform: "translateY(-50%)",
+                      width: 26, height: 26, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
+                      background: "rgba(255,255,255,.88)", boxShadow: "0 1px 4px rgba(0,0,0,.25)",
+                      color: "#c81e3a", fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: 16,
+                      border: "2px solid #c81e3a", cursor: "default",
+                    }}>
+                      {a.earned ? "✓" : "✗"}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+
             {marking.awards?.map((a, i) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", background: a.earned ? "rgba(31,157,124,.1)" : "rgba(226,121,60,.12)", padding: "10px 14px", borderRadius: 9, margin: "8px 0", fontSize: 14 }}>
                 <span style={{ color: "#12181b" }}>{a.reason}</span>
