@@ -1,133 +1,409 @@
 {
   "board": "UK GCSE Maths",
-  "note": "Board-neutral curriculum map. Content is drawn from the shared Ofqual-regulated GCSE Maths subject content that AQA, Edexcel, OCR and WJEC/Eduqas all examine — spec refs here are internal identifiers, not any single board's official codes, and must never be surfaced to users as board-specific.",
+  "note": "Board-neutral curriculum map. Content is drawn from the shared Ofqual-regulated GCSE Maths subject content that AQA, Edexcel, OCR and WJEC/Eduqas all examine \u2014 spec refs here are internal identifiers, not any single board's official codes, and must never be surfaced to users as board-specific.",
   "clusters": [
     {
       "id": "algebra-core",
       "name": "Equations & Quadratics",
       "refs": [
-        { "ref": "A17", "title": "Solving linear equations", "tier": "both" },
-        { "ref": "A18", "title": "Solving quadratic equations", "tier": "both", "higher_extension": "quadratic formula, completing the square" },
-        { "ref": "A11", "title": "Quadratics: factorising, roots, turning points", "tier": "both", "higher_extension": "formula and completing the square" },
-        { "ref": "A21", "title": "Forming equations from context", "tier": "both" }
+        {
+          "ref": "A17",
+          "title": "Solving linear equations",
+          "tier": "both"
+        },
+        {
+          "ref": "A18",
+          "title": "Solving quadratic equations",
+          "tier": "both",
+          "higher_extension": "quadratic formula, completing the square"
+        },
+        {
+          "ref": "A11",
+          "title": "Quadratics: factorising, roots, turning points",
+          "tier": "both",
+          "higher_extension": "formula and completing the square"
+        },
+        {
+          "ref": "A21",
+          "title": "Forming equations from context",
+          "tier": "both"
+        },
+        {
+          "ref": "A20",
+          "title": "Expanding single brackets and collecting like terms",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "ratio-percentages",
       "name": "Ratio & Percentages",
       "refs": [
-        { "ref": "R3", "title": "Dividing quantities in a ratio", "tier": "both" },
-        { "ref": "R6", "title": "Percentages of amounts", "tier": "both" },
-        { "ref": "R9", "title": "Percentage change and reverse percentages", "tier": "both" },
-        { "ref": "N11", "title": "Percentage increase/decrease", "tier": "both" }
+        {
+          "ref": "R3",
+          "title": "Dividing quantities in a ratio",
+          "tier": "both"
+        },
+        {
+          "ref": "R6",
+          "title": "Percentages of amounts",
+          "tier": "both"
+        },
+        {
+          "ref": "R9",
+          "title": "Percentage change and reverse percentages",
+          "tier": "both"
+        },
+        {
+          "ref": "N11",
+          "title": "Percentage increase/decrease",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "geometry-staple",
       "name": "Pythagoras, Trig & Area",
       "refs": [
-        { "ref": "G20", "title": "Pythagoras' theorem", "tier": "both", "higher_extension": "3D Pythagoras" },
-        { "ref": "G21", "title": "Trigonometric ratios (SOHCAHTOA), exact values", "tier": "both" },
-        { "ref": "G14", "title": "Perimeter and area of standard shapes", "tier": "both" }
+        {
+          "ref": "G20",
+          "title": "Pythagoras' theorem",
+          "tier": "both",
+          "higher_extension": "3D Pythagoras"
+        },
+        {
+          "ref": "G21",
+          "title": "Trigonometric ratios (SOHCAHTOA), exact values",
+          "tier": "both"
+        },
+        {
+          "ref": "G14",
+          "title": "Perimeter and area of standard shapes",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "number-fluency",
       "name": "Number: Standard Form, Indices & Surds",
       "refs": [
-        { "ref": "N1", "title": "Standard form: converting large numbers", "tier": "both" },
-        { "ref": "N2", "title": "Standard form: converting small numbers", "tier": "both" },
-        { "ref": "N4", "title": "Laws of indices", "tier": "both", "higher_extension": "fractional and negative indices" },
-        { "ref": "N6", "title": "HCF and LCM", "tier": "foundation" },
-        { "ref": "N7", "title": "Simplifying surds", "tier": "higher" },
-        { "ref": "N8", "title": "Rationalising the denominator", "tier": "higher" },
-        { "ref": "N9", "title": "Error intervals and bounds", "tier": "higher" }
+        {
+          "ref": "N1",
+          "title": "Standard form: converting large numbers",
+          "tier": "both"
+        },
+        {
+          "ref": "N2",
+          "title": "Standard form: converting small numbers",
+          "tier": "both"
+        },
+        {
+          "ref": "N4",
+          "title": "Laws of indices",
+          "tier": "both",
+          "higher_extension": "fractional and negative indices"
+        },
+        {
+          "ref": "N6",
+          "title": "HCF and LCM",
+          "tier": "foundation"
+        },
+        {
+          "ref": "N7",
+          "title": "Simplifying surds",
+          "tier": "higher"
+        },
+        {
+          "ref": "N8",
+          "title": "Rationalising the denominator",
+          "tier": "higher"
+        },
+        {
+          "ref": "N9",
+          "title": "Error intervals and bounds",
+          "tier": "higher"
+        },
+        {
+          "ref": "N3",
+          "title": "Calculating with numbers in standard form",
+          "tier": "higher"
+        },
+        {
+          "ref": "N5",
+          "title": "Rounding to decimal places and significant figures",
+          "tier": "both"
+        },
+        {
+          "ref": "N10",
+          "title": "Adding and subtracting fractions",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "algebra-graphs",
       "name": "Sequences, Inequalities & Graphs",
       "refs": [
-        { "ref": "A5", "title": "Expanding and simplifying double brackets", "tier": "both" },
-        { "ref": "A9", "title": "nth term of a linear sequence", "tier": "both" },
-        { "ref": "A10", "title": "Equation of a straight line, y = mx + c", "tier": "both", "higher_extension": "parallel and perpendicular lines" },
-        { "ref": "A12", "title": "Quadratic inequalities", "tier": "higher" },
-        { "ref": "A19", "title": "Simultaneous equations (linear)", "tier": "both", "higher_extension": "one linear, one quadratic" },
-        { "ref": "A22", "title": "Solving linear inequalities", "tier": "both" }
+        {
+          "ref": "A5",
+          "title": "Expanding and simplifying double brackets",
+          "tier": "both"
+        },
+        {
+          "ref": "A9",
+          "title": "nth term of a linear sequence",
+          "tier": "both"
+        },
+        {
+          "ref": "A10",
+          "title": "Equation of a straight line, y = mx + c",
+          "tier": "both",
+          "higher_extension": "parallel and perpendicular lines"
+        },
+        {
+          "ref": "A12",
+          "title": "Quadratic inequalities",
+          "tier": "higher"
+        },
+        {
+          "ref": "A19",
+          "title": "Simultaneous equations (linear)",
+          "tier": "both",
+          "higher_extension": "one linear, one quadratic"
+        },
+        {
+          "ref": "A22",
+          "title": "Solving linear inequalities",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "ratio-proportion",
       "name": "Proportion & Compound Measures",
       "refs": [
-        { "ref": "R4", "title": "Best value and unit pricing", "tier": "foundation" },
-        { "ref": "R5", "title": "Compound interest", "tier": "both", "higher_extension": "depreciation" },
-        { "ref": "R11", "title": "Direct proportion", "tier": "both" },
-        { "ref": "R12", "title": "Inverse proportion", "tier": "higher" },
-        { "ref": "R14", "title": "Compound measures: speed, distance, time", "tier": "both" },
-        { "ref": "R15", "title": "Compound measures: density", "tier": "both" }
+        {
+          "ref": "R4",
+          "title": "Best value and unit pricing",
+          "tier": "foundation"
+        },
+        {
+          "ref": "R5",
+          "title": "Compound interest",
+          "tier": "both",
+          "higher_extension": "depreciation"
+        },
+        {
+          "ref": "R11",
+          "title": "Direct proportion",
+          "tier": "both"
+        },
+        {
+          "ref": "R12",
+          "title": "Inverse proportion",
+          "tier": "higher"
+        },
+        {
+          "ref": "R14",
+          "title": "Compound measures: speed, distance, time",
+          "tier": "both"
+        },
+        {
+          "ref": "R15",
+          "title": "Compound measures: density",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "geometry-shape",
       "name": "Volume, Circles & Similarity",
       "refs": [
-        { "ref": "G6", "title": "Similar shapes: area and volume scale factors", "tier": "higher" },
-        { "ref": "G10", "title": "Circle theorems", "tier": "higher" },
-        { "ref": "G16", "title": "Volume of prisms", "tier": "foundation" },
-        { "ref": "G17", "title": "Volume of cylinders", "tier": "both" },
-        { "ref": "G18", "title": "Surface area of 3D shapes", "tier": "both" },
-        { "ref": "G24", "title": "Vectors and translations", "tier": "both" }
+        {
+          "ref": "G6",
+          "title": "Similar shapes: area and volume scale factors",
+          "tier": "higher"
+        },
+        {
+          "ref": "G10",
+          "title": "Circle theorems",
+          "tier": "higher"
+        },
+        {
+          "ref": "G16",
+          "title": "Volume of prisms",
+          "tier": "foundation"
+        },
+        {
+          "ref": "G17",
+          "title": "Volume of cylinders",
+          "tier": "both"
+        },
+        {
+          "ref": "G18",
+          "title": "Surface area of 3D shapes",
+          "tier": "both"
+        },
+        {
+          "ref": "G24",
+          "title": "Vectors and translations",
+          "tier": "both"
+        }
       ]
     },
     {
       "id": "probability-core",
       "name": "Probability",
       "refs": [
-        { "ref": "P1", "title": "Probability from equally likely outcomes", "tier": "foundation" },
-        { "ref": "P2", "title": "Probabilities summing to 1", "tier": "foundation" },
-        { "ref": "P4", "title": "Combined events: independent (AND)", "tier": "both" },
-        { "ref": "P5", "title": "Relative frequency and estimating probability", "tier": "both" },
-        { "ref": "P3", "title": "Mutually exclusive events (the OR rule)", "tier": "both" },
-        { "ref": "P6", "title": "Tree diagrams without replacement", "tier": "higher" },
-        { "ref": "P8", "title": "Venn diagrams", "tier": "higher" }
+        {
+          "ref": "P1",
+          "title": "Probability from equally likely outcomes",
+          "tier": "foundation"
+        },
+        {
+          "ref": "P2",
+          "title": "Probabilities summing to 1",
+          "tier": "foundation"
+        },
+        {
+          "ref": "P4",
+          "title": "Combined events: independent (AND)",
+          "tier": "both"
+        },
+        {
+          "ref": "P5",
+          "title": "Relative frequency and estimating probability",
+          "tier": "both"
+        },
+        {
+          "ref": "P3",
+          "title": "Mutually exclusive events (the OR rule)",
+          "tier": "both"
+        },
+        {
+          "ref": "P6",
+          "title": "Tree diagrams without replacement",
+          "tier": "higher"
+        },
+        {
+          "ref": "P8",
+          "title": "Venn diagrams",
+          "tier": "higher"
+        }
       ]
     },
     {
       "id": "statistics-core",
       "name": "Averages, Spread & Correlation",
       "refs": [
-        { "ref": "S1", "title": "Mean, median and mode from a list", "tier": "foundation" },
-        { "ref": "S2", "title": "Averages from a frequency table", "tier": "foundation" },
-        { "ref": "S3", "title": "Range", "tier": "foundation" },
-        { "ref": "S4", "title": "Scatter graphs and correlation", "tier": "both" },
-        { "ref": "S6", "title": "Estimating the mean from grouped data", "tier": "higher" },
-        { "ref": "S7", "title": "Quartiles and interquartile range", "tier": "higher" },
-        { "ref": "S9", "title": "Histograms with unequal class widths", "tier": "higher" }
+        {
+          "ref": "S1",
+          "title": "Mean, median and mode from a list",
+          "tier": "foundation"
+        },
+        {
+          "ref": "S2",
+          "title": "Averages from a frequency table",
+          "tier": "foundation"
+        },
+        {
+          "ref": "S3",
+          "title": "Range",
+          "tier": "foundation"
+        },
+        {
+          "ref": "S4",
+          "title": "Scatter graphs and correlation",
+          "tier": "both"
+        },
+        {
+          "ref": "S6",
+          "title": "Estimating the mean from grouped data",
+          "tier": "higher"
+        },
+        {
+          "ref": "S7",
+          "title": "Quartiles and interquartile range",
+          "tier": "higher"
+        },
+        {
+          "ref": "S9",
+          "title": "Histograms with unequal class widths",
+          "tier": "higher"
+        }
       ]
     },
     {
       "id": "algebra-functions",
       "name": "Functions, Quadratic Sequences & Proof",
       "refs": [
-        { "ref": "A6", "title": "Equations with algebraic fractions", "tier": "both", "higher_extension": "denominators requiring a common multiple of two expressions" },
-        { "ref": "A16", "title": "Quadratic sequences: nth term", "tier": "higher" },
-        { "ref": "A24", "title": "Function notation: evaluating f(x)", "tier": "both" },
-        { "ref": "A25", "title": "Composite functions", "tier": "higher" },
-        { "ref": "A26", "title": "Inverse functions", "tier": "higher" },
-        { "ref": "A27", "title": "Algebraic proof", "tier": "higher" }
+        {
+          "ref": "A6",
+          "title": "Equations with algebraic fractions",
+          "tier": "both",
+          "higher_extension": "denominators requiring a common multiple of two expressions"
+        },
+        {
+          "ref": "A16",
+          "title": "Quadratic sequences: nth term",
+          "tier": "higher"
+        },
+        {
+          "ref": "A24",
+          "title": "Function notation: evaluating f(x)",
+          "tier": "both"
+        },
+        {
+          "ref": "A25",
+          "title": "Composite functions",
+          "tier": "higher"
+        },
+        {
+          "ref": "A26",
+          "title": "Inverse functions",
+          "tier": "higher"
+        },
+        {
+          "ref": "A27",
+          "title": "Algebraic proof",
+          "tier": "higher"
+        }
       ]
     },
     {
       "id": "geometry-construction",
       "name": "Circles, Bearings & Congruence",
       "refs": [
-        { "ref": "G1", "title": "Circumference of a circle", "tier": "foundation" },
-        { "ref": "G2", "title": "Area of a circle", "tier": "both" },
-        { "ref": "G3", "title": "Conditions for congruent triangles (SSS, SAS, ASA, RHS)", "tier": "higher" },
-        { "ref": "G4", "title": "Arc length", "tier": "higher" },
-        { "ref": "G5", "title": "Sector area", "tier": "higher" },
-        { "ref": "G25", "title": "Bearings", "tier": "both" }
+        {
+          "ref": "G1",
+          "title": "Circumference of a circle",
+          "tier": "foundation"
+        },
+        {
+          "ref": "G2",
+          "title": "Area of a circle",
+          "tier": "both"
+        },
+        {
+          "ref": "G3",
+          "title": "Conditions for congruent triangles (SSS, SAS, ASA, RHS)",
+          "tier": "higher"
+        },
+        {
+          "ref": "G4",
+          "title": "Arc length",
+          "tier": "higher"
+        },
+        {
+          "ref": "G5",
+          "title": "Sector area",
+          "tier": "higher"
+        },
+        {
+          "ref": "G25",
+          "title": "Bearings",
+          "tier": "both"
+        }
       ]
     }
   ]

@@ -39,12 +39,14 @@ const ta = { width: "100%", padding: 16, borderRadius: 10, border: "1px solid rg
 const chip = (bg, color) => ({ background: bg, color, padding: "3px 11px", borderRadius: 99, fontSize: 12, fontWeight: 700 });
 const sectionLabel = { fontFamily: "'Sora', sans-serif", fontSize: 17, fontWeight: 700, color: "#12181b" };
 
-// Mock exams are Premium-only, both lengths — see the subscription check in
-// app/api/mock-exam/route.js. Single-question marking still has a free daily allowance;
-// this is intentionally a paid-tier feature.
-const LENGTHS = [
-  { key: "quick", label: "Quick check", count: 5, blurb: "5 questions · ~12 minutes" },
-  { key: "full", label: "Full mock", count: 14, blurb: "14 questions · ~35 minutes" },
+// Mirrors the real GCSE structure — 3 papers per sitting: Paper 1 is non-calculator,
+// Papers 2 and 3 are calculator. Premium-only, all three — see the subscription check
+// in app/api/mock-exam/route.js. Each paper's actual length grows as the question bank
+// grows (see paper_group in data/question-bank.json); it's not yet full 80-mark length.
+const PAPERS = [
+  { num: 1, label: "Paper 1", sub: "Non-calculator" },
+  { num: 2, label: "Paper 2", sub: "Calculator" },
+  { num: 3, label: "Paper 3", sub: "Calculator" },
 ];
 
 function RedPen({ img, awards, steps }) {
@@ -77,7 +79,8 @@ function RedPen({ img, awards, steps }) {
 export default function MockExam() {
   const [stage, setStage] = useState("setup"); // setup | exam | marking | results
   const [tier, setTier] = useState("foundation");
-  const [lengthKey, setLengthKey] = useState("quick");
+  const [paperNum, setPaperNum] = useState(1);
+  const [paperMeta, setPaperMeta] = useState(null); // { paperLabel, calculatorAllowed, totalMarks }
   const [paper, setPaper] = useState([]);
   const [answers, setAnswers] = useState({}); // { [questionId]: { attempt, image } }
   const [index, setIndex] = useState(0);
@@ -110,8 +113,7 @@ export default function MockExam() {
 
   async function startExam() {
     setBusy(true); setError(null); setNeedsSubscription(false);
-    const length = LENGTHS.find((l) => l.key === lengthKey);
-    const res = await fetch(`/api/mock-exam?tier=${tier}&count=${length.count}`, { headers: await authHeaders() });
+    const res = await fetch(`/api/mock-exam?tier=${tier}&paper=${paperNum}`, { headers: await authHeaders() });
     const data = await res.json();
     setBusy(false);
     if (!res.ok) {
@@ -120,6 +122,7 @@ export default function MockExam() {
       return;
     }
     setPaper(data.paper);
+    setPaperMeta({ paperLabel: data.paperLabel, calculatorAllowed: data.calculatorAllowed, totalMarks: data.totalMarks });
     setAnswers({});
     setIndex(0);
     setSecondsLeft(data.suggestedMinutes * 60);
@@ -169,7 +172,7 @@ export default function MockExam() {
   }
 
   function restart() {
-    setStage("setup"); setResults(null); setError(null); setPaper([]); setAnswers({});
+    setStage("setup"); setResults(null); setError(null); setPaper([]); setAnswers({}); setPaperMeta(null);
   }
 
   if (!LAUNCHED) return <ComingSoon />;
@@ -207,16 +210,17 @@ export default function MockExam() {
             ))}
           </div>
 
-          <div style={{ ...sectionLabel, marginBottom: 14 }}>Length</div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 28 }}>
-            {LENGTHS.map((l) => (
-              <div key={l.key} onClick={() => setLengthKey(l.key)} style={{
-                border: lengthKey === l.key ? "2px solid #1f9d7c" : "1px solid rgba(23,59,76,.15)",
-                borderRadius: 10, padding: "14px 18px", cursor: "pointer",
-                background: lengthKey === l.key ? "rgba(31,157,124,.06)" : "#fff",
+          <div style={{ ...sectionLabel, marginBottom: 4 }}>Paper</div>
+          <p style={{ fontSize: 12.5, color: "#5b6b6f", margin: "0 0 14px" }}>Same 3-paper structure as the real exam — each paper only draws from its own set of questions, so nothing repeats across papers 1–3.</p>
+          <div style={{ display: "flex", gap: 10, marginBottom: 28 }}>
+            {PAPERS.map((p) => (
+              <div key={p.num} onClick={() => setPaperNum(p.num)} style={{
+                flex: 1, border: paperNum === p.num ? "2px solid #1f9d7c" : "1px solid rgba(23,59,76,.15)",
+                borderRadius: 10, padding: "14px 12px", cursor: "pointer", textAlign: "center",
+                background: paperNum === p.num ? "rgba(31,157,124,.06)" : "#fff",
               }}>
-                <div style={{ fontWeight: 700, fontSize: 15, color: "#12181b" }}>{l.label}</div>
-                <div style={{ fontSize: 13, color: "#5b6b6f", marginTop: 2 }}>{l.blurb}</div>
+                <div style={{ fontWeight: 700, fontSize: 14.5, color: "#12181b" }}>{p.label}</div>
+                <div style={{ fontSize: 12, color: "#5b6b6f", marginTop: 2 }}>{p.sub}</div>
               </div>
             ))}
           </div>
@@ -227,6 +231,11 @@ export default function MockExam() {
 
       {stage === "exam" && current && (
         <>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6, flexWrap: "wrap", gap: 10 }}>
+            <span style={{ ...chip(paperMeta?.calculatorAllowed ? "rgba(31,157,124,.12)" : "rgba(226,121,60,.12)", paperMeta?.calculatorAllowed ? "#157a61" : "#c9622e") }}>
+              {paperMeta?.paperLabel} {paperMeta?.calculatorAllowed ? "— calculator allowed" : "— no calculator"}
+            </span>
+          </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18, flexWrap: "wrap", gap: 10 }}>
             <div style={{ fontSize: 13.5, color: "#5b6b6f", fontWeight: 600 }}>
               Question {index + 1} of {paper.length} · {answeredCount} answered
@@ -283,6 +292,7 @@ export default function MockExam() {
       {stage === "results" && results && (
         <>
           <div style={{ ...card, textAlign: "center", background: "#0f2740" }}>
+            <div style={{ color: "rgba(255,255,255,.6)", fontSize: 13, fontWeight: 700, letterSpacing: ".04em" }}>{paperMeta?.paperLabel?.toUpperCase()}</div>
             <div style={{ fontFamily: "'Sora', sans-serif", fontSize: 42, fontWeight: 800, color: "#fff" }}>
               {results.totalScore} / {results.totalOutOf}
             </div>

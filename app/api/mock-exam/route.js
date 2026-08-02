@@ -10,23 +10,29 @@ import { getUserFromRequest } from "../../../lib/auth";
 import { isSubscribed, billingEnabled } from "../../../lib/billing";
 import { touchStreak } from "../../../lib/social";
 
-function pickPaper(tier, count) {
-  const tierOk = (q) => q.tier === "both" || q.tier === tier;
-  const pool = bank.questions.filter(tierOk);
-  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+// Mirrors the real GCSE Maths structure: 3 papers per sitting, paper 1 is
+// non-calculator, papers 2 and 3 are calculator. Every question in the bank is
+// pre-assigned to exactly one of the three (see data/question-bank.json's
+// "paper_group" field), so the three papers never share a question — same as a
+// real exam board's 3-paper set never repeats a question across papers.
+const PAPER_LABELS = { 1: "Paper 1 — Non-calculator", 2: "Paper 2 — Calculator", 3: "Paper 3 — Calculator" };
 
-  // Spread across topic clusters first so a paper isn't 5 algebra questions in a row,
-  // then fill any remaining slots from whatever's left.
+function pickPaper(tier, paperNum) {
+  const pool = bank.questions.filter((q) => (q.tier === "both" || q.tier === tier) && q.paper_group === paperNum);
+  // Spread across topic clusters first so the paper isn't clumped by topic, same shuffle
+  // approach as before, but now we return everything assigned to this paper rather than
+  // truncating to a fixed count — length reflects however much bank content exists so far.
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
   const seenClusters = new Set();
   const spread = [];
   for (const q of shuffled) {
     if (!seenClusters.has(q.cluster)) { seenClusters.add(q.cluster); spread.push(q); }
   }
   const rest = shuffled.filter((q) => !spread.includes(q));
-  return [...spread, ...rest].slice(0, count);
+  return [...spread, ...rest];
 }
 
-// GET /api/mock-exam?tier=foundation&count=8 — starts a paper
+// GET /api/mock-exam?tier=foundation&paper=1 — starts a paper (1, 2, or 3)
 export async function GET(req) {
   const user = await getUserFromRequest(req);
   if (!user) {
@@ -35,10 +41,10 @@ export async function GET(req) {
 
   const { searchParams } = new URL(req.url);
   const tier = searchParams.get("tier") === "higher" ? "higher" : "foundation";
-  const count = Math.min(20, Math.max(3, parseInt(searchParams.get("count") || "8", 10)));
+  const paperNum = [1, 2, 3].includes(Number(searchParams.get("paper"))) ? Number(searchParams.get("paper")) : 1;
 
   // Mock exams are a Premium-only feature — no free allowance, unlike single-question
-  // marking. Any tier/length requires an active subscription.
+  // marking. Any paper requires an active subscription.
   if (billingEnabled() && !(await isSubscribed(user.email))) {
     return Response.json(
       { needsSubscription: true, error: "Mock exams are a Premium feature. Upgrade to unlock timed mock exams, plus unlimited single-question marking." },
@@ -46,14 +52,20 @@ export async function GET(req) {
     );
   }
 
-  const paper = pickPaper(tier, count);
+  const paper = pickPaper(tier, paperNum);
+  if (!paper.length) {
+    return Response.json({ error: "Not enough questions banked for this paper yet — check back as the question bank grows." }, { status: 400 });
+  }
   const totalMarks = paper.reduce((s, q) => s + q.marks, 0);
 
   return Response.json({
     tier,
+    paperNum,
+    paperLabel: PAPER_LABELS[paperNum],
+    calculatorAllowed: paperNum !== 1,
     paper: paper.map((q) => ({ id: q.id, question: q.question, marks: q.marks, spec_ref: q.spec_ref, cluster: q.cluster })),
     totalMarks,
-    suggestedMinutes: Math.max(10, Math.round(totalMarks * 1.5)), // roughly mirrors real GCSE pacing (~1.5 min/mark)
+    suggestedMinutes: Math.max(15, Math.round(totalMarks * 1.125)), // same per-mark pacing as a real 90-min/80-mark GCSE paper
   });
 }
 

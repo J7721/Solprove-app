@@ -1,656 +1,1791 @@
 {
-  "note": "Rubric-backed pilot question bank. Every question stores its mark scheme — marking NEVER invents a rubric for these.",
+  "note": "Rubric-backed pilot question bank. Every question stores its mark scheme \u2014 marking NEVER invents a rubric for these. Board-neutral: spec refs are internal identifiers, never presented to users as any exam board's official codes. Each question also carries \"calculator\" (true = needs a calculator, so it can only appear on a calculator paper) and \"paper_group\" (1 = non-calculator mock paper, 2/3 = calculator mock papers) \u2014 these three groups never share a question, mirroring a real GCSE's 3-paper structure. When adding new questions, keep paper_group balanced across 1/2/3 per tier.",
   "questions": [
     {
-      "id": "alg-f-01", "cluster": "algebra-core", "spec_ref": "A17", "tier": "foundation",
+      "id": "alg-f-01",
+      "cluster": "algebra-core",
+      "spec_ref": "A17",
+      "tier": "foundation",
       "question": "Solve 3x + 7 = 19",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Subtracts 7 from both sides (3x = 12) or equivalent rearrangement" },
-        { "code": "A1", "criterion": "x = 4" }
+        {
+          "code": "M1",
+          "criterion": "Subtracts 7 from both sides (3x = 12) or equivalent rearrangement"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 4"
+        }
       ],
-      "answer": "x = 4"
+      "answer": "x = 4",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "alg-f-02", "cluster": "algebra-core", "spec_ref": "A17", "tier": "foundation",
-      "question": "Solve 5(x − 2) = 20",
+      "id": "alg-f-02",
+      "cluster": "algebra-core",
+      "spec_ref": "A17",
+      "tier": "foundation",
+      "question": "Solve 5(x \u2212 2) = 20",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Expands to 5x − 10 = 20 OR divides both sides by 5 to get x − 2 = 4" },
-        { "code": "A1", "criterion": "x = 6" }
+        {
+          "code": "M1",
+          "criterion": "Expands to 5x \u2212 10 = 20 OR divides both sides by 5 to get x \u2212 2 = 4"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 6"
+        }
       ],
-      "answer": "x = 6"
+      "answer": "x = 6",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "alg-b-01", "cluster": "algebra-core", "spec_ref": "A18", "tier": "both",
-      "question": "Solve x² − 7x + 10 = 0",
+      "id": "alg-b-01",
+      "cluster": "algebra-core",
+      "spec_ref": "A18",
+      "tier": "both",
+      "question": "Solve x\u00b2 \u2212 7x + 10 = 0",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Attempts to factorise into two brackets with numbers multiplying to +10" },
-        { "code": "A1", "criterion": "Correct factors (x − 2)(x − 5)" },
-        { "code": "A1", "criterion": "Both solutions x = 2 and x = 5" }
+        {
+          "code": "M1",
+          "criterion": "Attempts to factorise into two brackets with numbers multiplying to +10"
+        },
+        {
+          "code": "A1",
+          "criterion": "Correct factors (x \u2212 2)(x \u2212 5)"
+        },
+        {
+          "code": "A1",
+          "criterion": "Both solutions x = 2 and x = 5"
+        }
       ],
-      "answer": "x = 2 or x = 5"
+      "answer": "x = 2 or x = 5",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "alg-h-01", "cluster": "algebra-core", "spec_ref": "A18", "tier": "higher",
-      "question": "Solve 2x² + 5x − 3 = 0",
+      "id": "alg-h-01",
+      "cluster": "algebra-core",
+      "spec_ref": "A18",
+      "tier": "higher",
+      "question": "Solve 2x\u00b2 + 5x \u2212 3 = 0",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Valid method: factorising attempt with 2x in one bracket, or quadratic formula substitution" },
-        { "code": "A1", "criterion": "Correct factors (2x − 1)(x + 3) or correct formula evaluation" },
-        { "code": "A1", "criterion": "Both solutions x = 1/2 and x = −3" }
+        {
+          "code": "M1",
+          "criterion": "Valid method: factorising attempt with 2x in one bracket, or quadratic formula substitution"
+        },
+        {
+          "code": "A1",
+          "criterion": "Correct factors (2x \u2212 1)(x + 3) or correct formula evaluation"
+        },
+        {
+          "code": "A1",
+          "criterion": "Both solutions x = 1/2 and x = \u22123"
+        }
       ],
-      "answer": "x = 1/2 or x = −3"
+      "answer": "x = 1/2 or x = \u22123",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "alg-h-02", "cluster": "algebra-core", "spec_ref": "A18", "tier": "higher",
-      "question": "Solve x² − 4x − 3 = 0. Give your answers to 2 decimal places.",
+      "id": "alg-h-02",
+      "cluster": "algebra-core",
+      "spec_ref": "A18",
+      "tier": "higher",
+      "question": "Solve x\u00b2 \u2212 4x \u2212 3 = 0. Give your answers to 2 decimal places.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Substitutes correctly into the quadratic formula: x = (4 ± √(16 + 12)) / 2" },
-        { "code": "A1", "criterion": "Simplifies to 2 ± √7 or (4 ± √28)/2" },
-        { "code": "A1", "criterion": "x = 4.65 and x = −0.65 (2 dp)" }
+        {
+          "code": "M1",
+          "criterion": "Substitutes correctly into the quadratic formula: x = (4 \u00b1 \u221a(16 + 12)) / 2"
+        },
+        {
+          "code": "A1",
+          "criterion": "Simplifies to 2 \u00b1 \u221a7 or (4 \u00b1 \u221a28)/2"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 4.65 and x = \u22120.65 (2 dp)"
+        }
       ],
-      "answer": "x = 4.65 or x = −0.65"
+      "answer": "x = 4.65 or x = \u22120.65",
+      "calculator": true,
+      "paper_group": 2
     },
     {
-      "id": "rat-f-01", "cluster": "ratio-percentages", "spec_ref": "R3", "tier": "foundation",
-      "question": "Share £45 between Ali and Beth in the ratio 2 : 7",
+      "id": "rat-f-01",
+      "cluster": "ratio-percentages",
+      "spec_ref": "R3",
+      "tier": "foundation",
+      "question": "Share \u00a345 between Ali and Beth in the ratio 2 : 7",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds value of one part: 45 ÷ 9 = 5" },
-        { "code": "A1", "criterion": "Ali £10 and Beth £35" }
+        {
+          "code": "M1",
+          "criterion": "Finds value of one part: 45 \u00f7 9 = 5"
+        },
+        {
+          "code": "A1",
+          "criterion": "Ali \u00a310 and Beth \u00a335"
+        }
       ],
-      "answer": "£10 and £35"
+      "answer": "\u00a310 and \u00a335",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "rat-f-02", "cluster": "ratio-percentages", "spec_ref": "R6", "tier": "foundation",
-      "question": "Find 35% of £240",
+      "id": "rat-f-02",
+      "cluster": "ratio-percentages",
+      "spec_ref": "R6",
+      "tier": "foundation",
+      "question": "Find 35% of \u00a3240",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Valid method: 0.35 × 240, or 10% = 24 built up to 35%" },
-        { "code": "A1", "criterion": "£84" }
+        {
+          "code": "M1",
+          "criterion": "Valid method: 0.35 \u00d7 240, or 10% = 24 built up to 35%"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u00a384"
+        }
       ],
-      "answer": "£84"
+      "answer": "\u00a384",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "rat-b-01", "cluster": "ratio-percentages", "spec_ref": "R9", "tier": "both",
-      "question": "A jacket costs £68 in a sale after a 15% reduction. What was the original price?",
+      "id": "rat-b-01",
+      "cluster": "ratio-percentages",
+      "spec_ref": "R9",
+      "tier": "both",
+      "question": "A jacket costs \u00a368 in a sale after a 15% reduction. What was the original price?",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Recognises £68 represents 85% of the original price" },
-        { "code": "M1", "criterion": "Divides: 68 ÷ 0.85 (or 68 ÷ 85 × 100)" },
-        { "code": "A1", "criterion": "£80" }
+        {
+          "code": "M1",
+          "criterion": "Recognises \u00a368 represents 85% of the original price"
+        },
+        {
+          "code": "M1",
+          "criterion": "Divides: 68 \u00f7 0.85 (or 68 \u00f7 85 \u00d7 100)"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u00a380"
+        }
       ],
-      "answer": "£80"
+      "answer": "\u00a380",
+      "calculator": true,
+      "paper_group": 3
     },
     {
-      "id": "rat-f-03", "cluster": "ratio-percentages", "spec_ref": "N11", "tier": "foundation",
-      "question": "Increase £150 by 12%",
+      "id": "rat-f-03",
+      "cluster": "ratio-percentages",
+      "spec_ref": "N11",
+      "tier": "foundation",
+      "question": "Increase \u00a3150 by 12%",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Valid method: 1.12 × 150, or finds 12% (£18) and adds" },
-        { "code": "A1", "criterion": "£168" }
+        {
+          "code": "M1",
+          "criterion": "Valid method: 1.12 \u00d7 150, or finds 12% (\u00a318) and adds"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u00a3168"
+        }
       ],
-      "answer": "£168"
+      "answer": "\u00a3168",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "geo-f-01", "cluster": "geometry-staple", "spec_ref": "G20", "tier": "foundation",
+      "id": "geo-f-01",
+      "cluster": "geometry-staple",
+      "spec_ref": "G20",
+      "tier": "foundation",
       "question": "A right-angled triangle has shorter sides 6 cm and 8 cm. Find the length of the hypotenuse.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Applies Pythagoras: 6² + 8² = 100" },
-        { "code": "A1", "criterion": "10 cm" }
+        {
+          "code": "M1",
+          "criterion": "Applies Pythagoras: 6\u00b2 + 8\u00b2 = 100"
+        },
+        {
+          "code": "A1",
+          "criterion": "10 cm"
+        }
       ],
-      "answer": "10 cm"
+      "answer": "10 cm",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "geo-b-01", "cluster": "geometry-staple", "spec_ref": "G20", "tier": "both",
+      "id": "geo-b-01",
+      "cluster": "geometry-staple",
+      "spec_ref": "G20",
+      "tier": "both",
       "question": "A right-angled triangle has hypotenuse 13 cm and one shorter side 5 cm. Find the other side.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Rearranges Pythagoras: 13² − 5² = 144" },
-        { "code": "A1", "criterion": "12 cm" }
+        {
+          "code": "M1",
+          "criterion": "Rearranges Pythagoras: 13\u00b2 \u2212 5\u00b2 = 144"
+        },
+        {
+          "code": "A1",
+          "criterion": "12 cm"
+        }
       ],
-      "answer": "12 cm"
+      "answer": "12 cm",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "geo-h-01", "cluster": "geometry-staple", "spec_ref": "G21", "tier": "higher",
-      "question": "In a right-angled triangle, the angle is 35° and the hypotenuse is 12 cm. Find the side opposite the angle, to 1 decimal place.",
+      "id": "geo-h-01",
+      "cluster": "geometry-staple",
+      "spec_ref": "G21",
+      "tier": "higher",
+      "question": "In a right-angled triangle, the angle is 35\u00b0 and the hypotenuse is 12 cm. Find the side opposite the angle, to 1 decimal place.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Chooses sine: sin 35° = opposite ÷ 12" },
-        { "code": "M1", "criterion": "Rearranges: opposite = 12 × sin 35°" },
-        { "code": "A1", "criterion": "6.9 cm (1 dp)" }
+        {
+          "code": "M1",
+          "criterion": "Chooses sine: sin 35\u00b0 = opposite \u00f7 12"
+        },
+        {
+          "code": "M1",
+          "criterion": "Rearranges: opposite = 12 \u00d7 sin 35\u00b0"
+        },
+        {
+          "code": "A1",
+          "criterion": "6.9 cm (1 dp)"
+        }
       ],
-      "answer": "6.9 cm"
+      "answer": "6.9 cm",
+      "calculator": true,
+      "paper_group": 2
     },
     {
-      "id": "geo-f-02", "cluster": "geometry-staple", "spec_ref": "G14", "tier": "foundation",
+      "id": "geo-f-02",
+      "cluster": "geometry-staple",
+      "spec_ref": "G14",
+      "tier": "foundation",
       "question": "A rectangle is 8 cm long and 5 cm wide. Work out its area and its perimeter.",
       "marks": 2,
       "rubric": [
-        { "code": "B1", "criterion": "Area = 40 cm²" },
-        { "code": "B1", "criterion": "Perimeter = 26 cm" }
+        {
+          "code": "B1",
+          "criterion": "Area = 40 cm\u00b2"
+        },
+        {
+          "code": "B1",
+          "criterion": "Perimeter = 26 cm"
+        }
       ],
-      "answer": "Area 40 cm², perimeter 26 cm"
+      "answer": "Area 40 cm\u00b2, perimeter 26 cm",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "num-f-01", "cluster": "number-fluency", "spec_ref": "N1", "tier": "foundation",
+      "id": "num-f-01",
+      "cluster": "number-fluency",
+      "spec_ref": "N1",
+      "tier": "foundation",
       "question": "Write 3,400,000 in standard form.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Writes as a number between 1 and 10 multiplied by a power of 10, e.g. 3.4 × 10ⁿ" },
-        { "code": "A1", "criterion": "3.4 × 10⁶" }
+        {
+          "code": "M1",
+          "criterion": "Writes as a number between 1 and 10 multiplied by a power of 10, e.g. 3.4 \u00d7 10\u207f"
+        },
+        {
+          "code": "A1",
+          "criterion": "3.4 \u00d7 10\u2076"
+        }
       ],
-      "answer": "3.4 × 10⁶"
+      "answer": "3.4 \u00d7 10\u2076",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "num-f-02", "cluster": "number-fluency", "spec_ref": "N2", "tier": "foundation",
-      "question": "Write 5.2 × 10⁻³ as an ordinary number.",
+      "id": "num-f-02",
+      "cluster": "number-fluency",
+      "spec_ref": "N2",
+      "tier": "foundation",
+      "question": "Write 5.2 \u00d7 10\u207b\u00b3 as an ordinary number.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Shows correct place-value shift for a negative power of 10 (e.g. moves the decimal point 3 places left)" },
-        { "code": "A1", "criterion": "0.0052" }
+        {
+          "code": "M1",
+          "criterion": "Shows correct place-value shift for a negative power of 10 (e.g. moves the decimal point 3 places left)"
+        },
+        {
+          "code": "A1",
+          "criterion": "0.0052"
+        }
       ],
-      "answer": "0.0052"
+      "answer": "0.0052",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "num-b-01", "cluster": "number-fluency", "spec_ref": "N4", "tier": "both",
-      "question": "Simplify (3x²)³",
+      "id": "num-b-01",
+      "cluster": "number-fluency",
+      "spec_ref": "N4",
+      "tier": "both",
+      "question": "Simplify (3x\u00b2)\u00b3",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Applies the power to both the coefficient and the index correctly (attempt at 3³ and x²ˣ³)" },
-        { "code": "A1", "criterion": "27x⁶" }
+        {
+          "code": "M1",
+          "criterion": "Applies the power to both the coefficient and the index correctly (attempt at 3\u00b3 and x\u00b2\u02e3\u00b3)"
+        },
+        {
+          "code": "A1",
+          "criterion": "27x\u2076"
+        }
       ],
-      "answer": "27x⁶"
+      "answer": "27x\u2076",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "num-f-03", "cluster": "number-fluency", "spec_ref": "N6", "tier": "foundation",
+      "id": "num-f-03",
+      "cluster": "number-fluency",
+      "spec_ref": "N6",
+      "tier": "foundation",
       "question": "Find the HCF of 36 and 48.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Valid method: lists factors of both numbers, or finds prime factorisations (36 = 2² × 3², 48 = 2⁴ × 3)" },
-        { "code": "A1", "criterion": "12" }
+        {
+          "code": "M1",
+          "criterion": "Valid method: lists factors of both numbers, or finds prime factorisations (36 = 2\u00b2 \u00d7 3\u00b2, 48 = 2\u2074 \u00d7 3)"
+        },
+        {
+          "code": "A1",
+          "criterion": "12"
+        }
       ],
-      "answer": "12"
+      "answer": "12",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "num-h-01", "cluster": "number-fluency", "spec_ref": "N7", "tier": "higher",
-      "question": "Simplify √72 fully.",
+      "id": "num-h-01",
+      "cluster": "number-fluency",
+      "spec_ref": "N7",
+      "tier": "higher",
+      "question": "Simplify \u221a72 fully.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Identifies 36 as a square factor of 72 (72 = 36 × 2)" },
-        { "code": "A1", "criterion": "6√2" }
+        {
+          "code": "M1",
+          "criterion": "Identifies 36 as a square factor of 72 (72 = 36 \u00d7 2)"
+        },
+        {
+          "code": "A1",
+          "criterion": "6\u221a2"
+        }
       ],
-      "answer": "6√2"
+      "answer": "6\u221a2",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "num-h-02", "cluster": "number-fluency", "spec_ref": "N8", "tier": "higher",
-      "question": "Rationalise the denominator: 3/√3. Give your answer in its simplest form.",
+      "id": "num-h-02",
+      "cluster": "number-fluency",
+      "spec_ref": "N8",
+      "tier": "higher",
+      "question": "Rationalise the denominator: 3/\u221a3. Give your answer in its simplest form.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Multiplies numerator and denominator by √3" },
-        { "code": "A1", "criterion": "√3 (from 3√3/3 simplified)" }
+        {
+          "code": "M1",
+          "criterion": "Multiplies numerator and denominator by \u221a3"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u221a3 (from 3\u221a3/3 simplified)"
+        }
       ],
-      "answer": "√3"
+      "answer": "\u221a3",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "alg2-f-01", "cluster": "algebra-graphs", "spec_ref": "A9", "tier": "foundation",
+      "id": "alg2-f-01",
+      "cluster": "algebra-graphs",
+      "spec_ref": "A9",
+      "tier": "foundation",
       "question": "Find the nth term of the sequence 5, 8, 11, 14, ...",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Identifies the common difference is 3" },
-        { "code": "A1", "criterion": "3n + 2" }
+        {
+          "code": "M1",
+          "criterion": "Identifies the common difference is 3"
+        },
+        {
+          "code": "A1",
+          "criterion": "3n + 2"
+        }
       ],
-      "answer": "3n + 2"
+      "answer": "3n + 2",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "alg2-f-02", "cluster": "algebra-graphs", "spec_ref": "A22", "tier": "foundation",
-      "question": "Solve 2x − 3 < 7",
+      "id": "alg2-f-02",
+      "cluster": "algebra-graphs",
+      "spec_ref": "A22",
+      "tier": "foundation",
+      "question": "Solve 2x \u2212 3 < 7",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Adds 3 to both sides: 2x < 10" },
-        { "code": "A1", "criterion": "x < 5" }
+        {
+          "code": "M1",
+          "criterion": "Adds 3 to both sides: 2x < 10"
+        },
+        {
+          "code": "A1",
+          "criterion": "x < 5"
+        }
       ],
-      "answer": "x < 5"
+      "answer": "x < 5",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "alg2-b-02", "cluster": "algebra-graphs", "spec_ref": "A5", "tier": "both",
-      "question": "Expand and simplify (x + 3)(x − 5)",
+      "id": "alg2-b-02",
+      "cluster": "algebra-graphs",
+      "spec_ref": "A5",
+      "tier": "both",
+      "question": "Expand and simplify (x + 3)(x \u2212 5)",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Expands to get at least 3 of the 4 terms correct (x² − 5x + 3x − 15)" },
-        { "code": "A1", "criterion": "x² − 2x − 15" }
+        {
+          "code": "M1",
+          "criterion": "Expands to get at least 3 of the 4 terms correct (x\u00b2 \u2212 5x + 3x \u2212 15)"
+        },
+        {
+          "code": "A1",
+          "criterion": "x\u00b2 \u2212 2x \u2212 15"
+        }
       ],
-      "answer": "x² − 2x − 15"
+      "answer": "x\u00b2 \u2212 2x \u2212 15",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "alg2-b-01", "cluster": "algebra-graphs", "spec_ref": "A19", "tier": "both",
-      "question": "Solve the simultaneous equations: 2x + y = 11 and x − y = 1",
+      "id": "alg2-b-01",
+      "cluster": "algebra-graphs",
+      "spec_ref": "A19",
+      "tier": "both",
+      "question": "Solve the simultaneous equations: 2x + y = 11 and x \u2212 y = 1",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Valid method to eliminate one variable (e.g. adds the two equations to eliminate y)" },
-        { "code": "A1", "criterion": "x = 4" },
-        { "code": "A1", "criterion": "y = 3" }
+        {
+          "code": "M1",
+          "criterion": "Valid method to eliminate one variable (e.g. adds the two equations to eliminate y)"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 4"
+        },
+        {
+          "code": "A1",
+          "criterion": "y = 3"
+        }
       ],
-      "answer": "x = 4, y = 3"
+      "answer": "x = 4, y = 3",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "alg2-h-01", "cluster": "algebra-graphs", "spec_ref": "A10", "tier": "higher",
+      "id": "alg2-h-01",
+      "cluster": "algebra-graphs",
+      "spec_ref": "A10",
+      "tier": "higher",
       "question": "A line has gradient 4 and passes through the point (2, 9). Find the equation of the line.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Substitutes the point and gradient into y = mx + c: 9 = 4(2) + c" },
-        { "code": "M1", "criterion": "Rearranges to find c = 1" },
-        { "code": "A1", "criterion": "y = 4x + 1" }
+        {
+          "code": "M1",
+          "criterion": "Substitutes the point and gradient into y = mx + c: 9 = 4(2) + c"
+        },
+        {
+          "code": "M1",
+          "criterion": "Rearranges to find c = 1"
+        },
+        {
+          "code": "A1",
+          "criterion": "y = 4x + 1"
+        }
       ],
-      "answer": "y = 4x + 1"
+      "answer": "y = 4x + 1",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "alg2-h-02", "cluster": "algebra-graphs", "spec_ref": "A12", "tier": "higher",
-      "question": "Solve the inequality x² < 9, giving your answer as an inequality.",
+      "id": "alg2-h-02",
+      "cluster": "algebra-graphs",
+      "spec_ref": "A12",
+      "tier": "higher",
+      "question": "Solve the inequality x\u00b2 < 9, giving your answer as an inequality.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Recognises the critical value x = 3 (from √9)" },
-        { "code": "A1", "criterion": "−3 < x < 3" }
+        {
+          "code": "M1",
+          "criterion": "Recognises the critical value x = 3 (from \u221a9)"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u22123 < x < 3"
+        }
       ],
-      "answer": "−3 < x < 3"
+      "answer": "\u22123 < x < 3",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "ratp-f-01", "cluster": "ratio-proportion", "spec_ref": "R11", "tier": "foundation",
+      "id": "ratp-f-01",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R11",
+      "tier": "foundation",
       "question": "y is directly proportional to x. When x = 5, y = 20. Find y when x = 8.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds the constant of proportionality k = 20 ÷ 5 = 4" },
-        { "code": "A1", "criterion": "y = 32" }
+        {
+          "code": "M1",
+          "criterion": "Finds the constant of proportionality k = 20 \u00f7 5 = 4"
+        },
+        {
+          "code": "A1",
+          "criterion": "y = 32"
+        }
       ],
-      "answer": "y = 32"
+      "answer": "y = 32",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "ratp-f-02", "cluster": "ratio-proportion", "spec_ref": "R4", "tier": "foundation",
-      "question": "A 500 g bag of rice costs £2.00 and a 750 g bag costs £2.70. Which is better value? Show your working.",
+      "id": "ratp-f-02",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R4",
+      "tier": "foundation",
+      "question": "A 500 g bag of rice costs \u00a32.00 and a 750 g bag costs \u00a32.70. Which is better value? Show your working.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds a comparable unit price for both bags (e.g. price per gram or per 100 g)" },
-        { "code": "A1", "criterion": "The 750 g bag is better value (0.36p per g vs 0.4p per g)" }
+        {
+          "code": "M1",
+          "criterion": "Finds a comparable unit price for both bags (e.g. price per gram or per 100 g)"
+        },
+        {
+          "code": "A1",
+          "criterion": "The 750 g bag is better value (0.36p per g vs 0.4p per g)"
+        }
       ],
-      "answer": "750 g bag is better value"
+      "answer": "750 g bag is better value",
+      "calculator": true,
+      "paper_group": 3
     },
     {
-      "id": "ratp-b-01", "cluster": "ratio-proportion", "spec_ref": "R14", "tier": "both",
+      "id": "ratp-b-01",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R14",
+      "tier": "both",
       "question": "A car travels 150 miles in 3 hours. Find its average speed in mph.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Divides distance by time: 150 ÷ 3" },
-        { "code": "A1", "criterion": "50 mph" }
+        {
+          "code": "M1",
+          "criterion": "Divides distance by time: 150 \u00f7 3"
+        },
+        {
+          "code": "A1",
+          "criterion": "50 mph"
+        }
       ],
-      "answer": "50 mph"
+      "answer": "50 mph",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "ratp-b-02", "cluster": "ratio-proportion", "spec_ref": "R5", "tier": "both",
-      "question": "£2000 is invested at 3% compound interest per year. Find the value of the investment after 2 years.",
+      "id": "ratp-b-02",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R5",
+      "tier": "both",
+      "question": "\u00a32000 is invested at 3% compound interest per year. Find the value of the investment after 2 years.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Uses the multiplier 1.03 for each year, or calculates year by year" },
-        { "code": "M1", "criterion": "Applies the multiplier twice (2000 × 1.03²)" },
-        { "code": "A1", "criterion": "£2121.80" }
+        {
+          "code": "M1",
+          "criterion": "Uses the multiplier 1.03 for each year, or calculates year by year"
+        },
+        {
+          "code": "M1",
+          "criterion": "Applies the multiplier twice (2000 \u00d7 1.03\u00b2)"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u00a32121.80"
+        }
       ],
-      "answer": "£2121.80"
+      "answer": "\u00a32121.80",
+      "calculator": true,
+      "paper_group": 3
     },
     {
-      "id": "ratp-h-01", "cluster": "ratio-proportion", "spec_ref": "R12", "tier": "higher",
+      "id": "ratp-h-01",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R12",
+      "tier": "higher",
       "question": "y is inversely proportional to x. When x = 4, y = 15. Find y when x = 6.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds the constant k = xy = 4 × 15 = 60" },
-        { "code": "A1", "criterion": "y = 10" }
+        {
+          "code": "M1",
+          "criterion": "Finds the constant k = xy = 4 \u00d7 15 = 60"
+        },
+        {
+          "code": "A1",
+          "criterion": "y = 10"
+        }
       ],
-      "answer": "y = 10"
+      "answer": "y = 10",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "ratp-h-02", "cluster": "ratio-proportion", "spec_ref": "R15", "tier": "higher",
-      "question": "A metal block has mass 540 g and volume 60 cm³. Find its density.",
+      "id": "ratp-h-02",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R15",
+      "tier": "higher",
+      "question": "A metal block has mass 540 g and volume 60 cm\u00b3. Find its density.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Divides mass by volume: 540 ÷ 60" },
-        { "code": "A1", "criterion": "9 g/cm³" }
+        {
+          "code": "M1",
+          "criterion": "Divides mass by volume: 540 \u00f7 60"
+        },
+        {
+          "code": "A1",
+          "criterion": "9 g/cm\u00b3"
+        }
       ],
-      "answer": "9 g/cm³"
+      "answer": "9 g/cm\u00b3",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "geo2-f-01", "cluster": "geometry-shape", "spec_ref": "G16", "tier": "foundation",
+      "id": "geo2-f-01",
+      "cluster": "geometry-shape",
+      "spec_ref": "G16",
+      "tier": "foundation",
       "question": "Find the volume of a cuboid with length 8 cm, width 5 cm and height 3 cm.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Multiplies all three dimensions: 8 × 5 × 3" },
-        { "code": "A1", "criterion": "120 cm³" }
+        {
+          "code": "M1",
+          "criterion": "Multiplies all three dimensions: 8 \u00d7 5 \u00d7 3"
+        },
+        {
+          "code": "A1",
+          "criterion": "120 cm\u00b3"
+        }
       ],
-      "answer": "120 cm³"
+      "answer": "120 cm\u00b3",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "geo2-f-02", "cluster": "geometry-shape", "spec_ref": "G24", "tier": "foundation",
-      "question": "Triangle A has vertices (1, 1), (3, 1) and (1, 4). Find the coordinates of the image after a translation by the vector (2, −1).",
+      "id": "geo2-f-02",
+      "cluster": "geometry-shape",
+      "spec_ref": "G24",
+      "tier": "foundation",
+      "question": "Triangle A has vertices (1, 1), (3, 1) and (1, 4). Find the coordinates of the image after a translation by the vector (2, \u22121).",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Adds 2 to each x-coordinate and subtracts 1 from each y-coordinate for at least one vertex" },
-        { "code": "A1", "criterion": "(3, 0), (5, 0) and (3, 3)" }
+        {
+          "code": "M1",
+          "criterion": "Adds 2 to each x-coordinate and subtracts 1 from each y-coordinate for at least one vertex"
+        },
+        {
+          "code": "A1",
+          "criterion": "(3, 0), (5, 0) and (3, 3)"
+        }
       ],
-      "answer": "(3, 0), (5, 0), (3, 3)"
+      "answer": "(3, 0), (5, 0), (3, 3)",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "geo2-b-01", "cluster": "geometry-shape", "spec_ref": "G17", "tier": "both",
+      "id": "geo2-b-01",
+      "cluster": "geometry-shape",
+      "spec_ref": "G17",
+      "tier": "both",
       "question": "Find the volume of a cylinder with radius 4 cm and height 10 cm. Give your answer to 1 decimal place.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Correctly substitutes into V = πr²h (π × 4² × 10)" },
-        { "code": "A1", "criterion": "502.7 cm³ (accept 160π cm³)" }
+        {
+          "code": "M1",
+          "criterion": "Correctly substitutes into V = \u03c0r\u00b2h (\u03c0 \u00d7 4\u00b2 \u00d7 10)"
+        },
+        {
+          "code": "A1",
+          "criterion": "502.7 cm\u00b3 (accept 160\u03c0 cm\u00b3)"
+        }
       ],
-      "answer": "502.7 cm³"
+      "answer": "502.7 cm\u00b3",
+      "calculator": true,
+      "paper_group": 2
     },
     {
-      "id": "geo2-b-02", "cluster": "geometry-shape", "spec_ref": "G18", "tier": "both",
+      "id": "geo2-b-02",
+      "cluster": "geometry-shape",
+      "spec_ref": "G18",
+      "tier": "both",
       "question": "Find the total surface area of a cuboid with length 6 cm, width 4 cm and height 2 cm.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds the area of at least 3 different faces and doubles appropriately (2 × (6×4 + 6×2 + 4×2))" },
-        { "code": "A1", "criterion": "88 cm²" }
+        {
+          "code": "M1",
+          "criterion": "Finds the area of at least 3 different faces and doubles appropriately (2 \u00d7 (6\u00d74 + 6\u00d72 + 4\u00d72))"
+        },
+        {
+          "code": "A1",
+          "criterion": "88 cm\u00b2"
+        }
       ],
-      "answer": "88 cm²"
+      "answer": "88 cm\u00b2",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "geo2-h-01", "cluster": "geometry-shape", "spec_ref": "G10", "tier": "higher",
-      "question": "A and B are points on a circle with centre O. The angle at the centre, AOB, is 100°. Find the angle at the circumference on the same arc, ACB.",
+      "id": "geo2-h-01",
+      "cluster": "geometry-shape",
+      "spec_ref": "G10",
+      "tier": "higher",
+      "question": "A and B are points on a circle with centre O. The angle at the centre, AOB, is 100\u00b0. Find the angle at the circumference on the same arc, ACB.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Uses the circle theorem: the angle at the centre is twice the angle at the circumference" },
-        { "code": "A1", "criterion": "50°" }
+        {
+          "code": "M1",
+          "criterion": "Uses the circle theorem: the angle at the centre is twice the angle at the circumference"
+        },
+        {
+          "code": "A1",
+          "criterion": "50\u00b0"
+        }
       ],
-      "answer": "50°"
+      "answer": "50\u00b0",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "geo2-h-02", "cluster": "geometry-shape", "spec_ref": "G6", "tier": "higher",
-      "question": "Two similar triangles have a linear scale factor of 3. The area of the smaller triangle is 8 cm². Find the area of the larger triangle.",
+      "id": "geo2-h-02",
+      "cluster": "geometry-shape",
+      "spec_ref": "G6",
+      "tier": "higher",
+      "question": "Two similar triangles have a linear scale factor of 3. The area of the smaller triangle is 8 cm\u00b2. Find the area of the larger triangle.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Recognises the area scale factor is the linear scale factor squared (3² = 9)" },
-        { "code": "A1", "criterion": "72 cm²" }
+        {
+          "code": "M1",
+          "criterion": "Recognises the area scale factor is the linear scale factor squared (3\u00b2 = 9)"
+        },
+        {
+          "code": "A1",
+          "criterion": "72 cm\u00b2"
+        }
       ],
-      "answer": "72 cm²"
+      "answer": "72 cm\u00b2",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "prob-f-01", "cluster": "probability-core", "spec_ref": "P1", "tier": "foundation",
+      "id": "prob-f-01",
+      "cluster": "probability-core",
+      "spec_ref": "P1",
+      "tier": "foundation",
       "question": "A bag contains 5 red balls, 3 blue balls and 2 green balls. A ball is picked at random. Find the probability it is blue.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Identifies the total number of balls is 10" },
-        { "code": "A1", "criterion": "3/10" }
+        {
+          "code": "M1",
+          "criterion": "Identifies the total number of balls is 10"
+        },
+        {
+          "code": "A1",
+          "criterion": "3/10"
+        }
       ],
-      "answer": "3/10"
+      "answer": "3/10",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "prob-f-02", "cluster": "probability-core", "spec_ref": "P2", "tier": "foundation",
+      "id": "prob-f-02",
+      "cluster": "probability-core",
+      "spec_ref": "P2",
+      "tier": "foundation",
       "question": "The probability that it rains tomorrow is 0.35. Find the probability that it does not rain tomorrow.",
       "marks": 1,
       "rubric": [
-        { "code": "B1", "criterion": "0.65 (from 1 − 0.35)" }
+        {
+          "code": "B1",
+          "criterion": "0.65 (from 1 \u2212 0.35)"
+        }
       ],
-      "answer": "0.65"
+      "answer": "0.65",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "prob-b-01", "cluster": "probability-core", "spec_ref": "P4", "tier": "both",
+      "id": "prob-b-01",
+      "cluster": "probability-core",
+      "spec_ref": "P4",
+      "tier": "both",
       "question": "A fair coin is flipped and a fair six-sided dice is rolled. Find the probability of getting heads AND a 6.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Multiplies the two individual probabilities (1/2 × 1/6)" },
-        { "code": "A1", "criterion": "1/12" }
+        {
+          "code": "M1",
+          "criterion": "Multiplies the two individual probabilities (1/2 \u00d7 1/6)"
+        },
+        {
+          "code": "A1",
+          "criterion": "1/12"
+        }
       ],
-      "answer": "1/12"
+      "answer": "1/12",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "prob-b-02", "cluster": "probability-core", "spec_ref": "P5", "tier": "both",
+      "id": "prob-b-02",
+      "cluster": "probability-core",
+      "spec_ref": "P5",
+      "tier": "both",
       "question": "A spinner is spun 200 times. It lands on red 56 times. Based on this, estimate the probability that the spinner lands on red.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Sets up the fraction 56/200" },
-        { "code": "A1", "criterion": "0.28 (accept 7/25 or 28%)" }
+        {
+          "code": "M1",
+          "criterion": "Sets up the fraction 56/200"
+        },
+        {
+          "code": "A1",
+          "criterion": "0.28 (accept 7/25 or 28%)"
+        }
       ],
-      "answer": "0.28"
+      "answer": "0.28",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "prob-h-01", "cluster": "probability-core", "spec_ref": "P6", "tier": "higher",
+      "id": "prob-h-01",
+      "cluster": "probability-core",
+      "spec_ref": "P6",
+      "tier": "higher",
       "question": "A bag contains 4 red counters and 6 blue counters. Two counters are taken at random without replacement. Find the probability that both counters are red.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Uses 4/10 for the probability of red on the first pick" },
-        { "code": "M1", "criterion": "Uses 3/9 for the probability of red on the second pick, reflecting no replacement" },
-        { "code": "A1", "criterion": "2/15 (accept 12/90)" }
+        {
+          "code": "M1",
+          "criterion": "Uses 4/10 for the probability of red on the first pick"
+        },
+        {
+          "code": "M1",
+          "criterion": "Uses 3/9 for the probability of red on the second pick, reflecting no replacement"
+        },
+        {
+          "code": "A1",
+          "criterion": "2/15 (accept 12/90)"
+        }
       ],
-      "answer": "2/15"
+      "answer": "2/15",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "prob-h-02", "cluster": "probability-core", "spec_ref": "P8", "tier": "higher",
+      "id": "prob-h-02",
+      "cluster": "probability-core",
+      "spec_ref": "P8",
+      "tier": "higher",
       "question": "In a class of 30 students, 18 study French, 15 study Spanish, and 8 study both. Find the number of students who study neither.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds the number studying at least one subject: 18 + 15 − 8 = 25" },
-        { "code": "A1", "criterion": "5" }
+        {
+          "code": "M1",
+          "criterion": "Finds the number studying at least one subject: 18 + 15 \u2212 8 = 25"
+        },
+        {
+          "code": "A1",
+          "criterion": "5"
+        }
       ],
-      "answer": "5"
+      "answer": "5",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "stat-f-01", "cluster": "statistics-core", "spec_ref": "S1", "tier": "foundation",
+      "id": "stat-f-01",
+      "cluster": "statistics-core",
+      "spec_ref": "S1",
+      "tier": "foundation",
       "question": "Find the mean of 4, 7, 9, 12, 18.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Sums the values: 4 + 7 + 9 + 12 + 18 = 50" },
-        { "code": "A1", "criterion": "10" }
+        {
+          "code": "M1",
+          "criterion": "Sums the values: 4 + 7 + 9 + 12 + 18 = 50"
+        },
+        {
+          "code": "A1",
+          "criterion": "10"
+        }
       ],
-      "answer": "10"
+      "answer": "10",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "stat-f-02", "cluster": "statistics-core", "spec_ref": "S2", "tier": "foundation",
+      "id": "stat-f-02",
+      "cluster": "statistics-core",
+      "spec_ref": "S2",
+      "tier": "foundation",
       "question": "The table shows the number of goals scored in 10 matches: 0 goals (2 matches), 1 goal (3 matches), 2 goals (4 matches), 3 goals (1 match). Find the mean number of goals per match.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Calculates the total goals: (0×2) + (1×3) + (2×4) + (3×1) = 14" },
-        { "code": "A1", "criterion": "1.4" }
+        {
+          "code": "M1",
+          "criterion": "Calculates the total goals: (0\u00d72) + (1\u00d73) + (2\u00d74) + (3\u00d71) = 14"
+        },
+        {
+          "code": "A1",
+          "criterion": "1.4"
+        }
       ],
-      "answer": "1.4"
+      "answer": "1.4",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "stat-b-02", "cluster": "statistics-core", "spec_ref": "S3", "tier": "both",
-      "question": "The high temperatures over a week were: 18, 21, 19, 23, 17, 20, 22 (°C). Find the range.",
+      "id": "stat-b-02",
+      "cluster": "statistics-core",
+      "spec_ref": "S3",
+      "tier": "both",
+      "question": "The high temperatures over a week were: 18, 21, 19, 23, 17, 20, 22 (\u00b0C). Find the range.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Identifies the maximum (23) and minimum (17) values" },
-        { "code": "A1", "criterion": "6°C" }
+        {
+          "code": "M1",
+          "criterion": "Identifies the maximum (23) and minimum (17) values"
+        },
+        {
+          "code": "A1",
+          "criterion": "6\u00b0C"
+        }
       ],
-      "answer": "6°C"
+      "answer": "6\u00b0C",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "stat-b-01", "cluster": "statistics-core", "spec_ref": "S4", "tier": "both",
+      "id": "stat-b-01",
+      "cluster": "statistics-core",
+      "spec_ref": "S4",
+      "tier": "both",
       "question": "A scatter graph shows a strong positive correlation between hours studied and exam score. Describe what this means.",
       "marks": 2,
       "rubric": [
-        { "code": "B1", "criterion": "States that as one variable increases, the other tends to increase too (as hours studied increases, exam score tends to increase)" },
-        { "code": "B1", "criterion": "Uses the correct term \"positive correlation\" (or equivalent correct description of the relationship)" }
+        {
+          "code": "B1",
+          "criterion": "States that as one variable increases, the other tends to increase too (as hours studied increases, exam score tends to increase)"
+        },
+        {
+          "code": "B1",
+          "criterion": "Uses the correct term \"positive correlation\" (or equivalent correct description of the relationship)"
+        }
       ],
-      "answer": "As hours studied increases, exam score tends to increase (positive correlation)"
+      "answer": "As hours studied increases, exam score tends to increase (positive correlation)",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "stat-h-01", "cluster": "statistics-core", "spec_ref": "S6", "tier": "higher",
+      "id": "stat-h-01",
+      "cluster": "statistics-core",
+      "spec_ref": "S6",
+      "tier": "higher",
       "question": "The table shows the ages of 40 people grouped in class intervals: 0-19 (frequency 8), 20-39 (frequency 15), 40-59 (frequency 12), 60-79 (frequency 5). Estimate the mean age using midpoints.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Uses correct midpoints for each class (9.5, 29.5, 49.5, 69.5)" },
-        { "code": "M1", "criterion": "Calculates Σfx correctly: (8×9.5) + (15×29.5) + (12×49.5) + (5×69.5) = 1460" },
-        { "code": "A1", "criterion": "36.5 years (from 1460 ÷ 40)" }
+        {
+          "code": "M1",
+          "criterion": "Uses correct midpoints for each class (9.5, 29.5, 49.5, 69.5)"
+        },
+        {
+          "code": "M1",
+          "criterion": "Calculates \u03a3fx correctly: (8\u00d79.5) + (15\u00d729.5) + (12\u00d749.5) + (5\u00d769.5) = 1460"
+        },
+        {
+          "code": "A1",
+          "criterion": "36.5 years (from 1460 \u00f7 40)"
+        }
       ],
-      "answer": "36.5 years"
+      "answer": "36.5 years",
+      "calculator": true,
+      "paper_group": 3
     },
     {
-      "id": "stat-h-02", "cluster": "statistics-core", "spec_ref": "S7", "tier": "higher",
+      "id": "stat-h-02",
+      "cluster": "statistics-core",
+      "spec_ref": "S7",
+      "tier": "higher",
       "question": "A set of data has lower quartile 12, median 18, and upper quartile 25. Find the interquartile range.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Sets up upper quartile minus lower quartile: 25 − 12" },
-        { "code": "A1", "criterion": "13" }
+        {
+          "code": "M1",
+          "criterion": "Sets up upper quartile minus lower quartile: 25 \u2212 12"
+        },
+        {
+          "code": "A1",
+          "criterion": "13"
+        }
       ],
-      "answer": "13"
+      "answer": "13",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "num-h-03", "cluster": "number-fluency", "spec_ref": "N9", "tier": "higher",
+      "id": "num-h-03",
+      "cluster": "number-fluency",
+      "spec_ref": "N9",
+      "tier": "higher",
       "question": "A length is measured as 8 cm, correct to the nearest cm. Write down the error interval for the actual length.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Finds the lower bound 8 − 0.5 = 7.5" },
-        { "code": "A1", "criterion": "7.5 ≤ length < 8.5" }
+        {
+          "code": "M1",
+          "criterion": "Finds the lower bound 8 \u2212 0.5 = 7.5"
+        },
+        {
+          "code": "A1",
+          "criterion": "7.5 \u2264 length < 8.5"
+        }
       ],
-      "answer": "7.5 ≤ length < 8.5"
+      "answer": "7.5 \u2264 length < 8.5",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "prob-b-03", "cluster": "probability-core", "spec_ref": "P3", "tier": "both",
+      "id": "prob-b-03",
+      "cluster": "probability-core",
+      "spec_ref": "P3",
+      "tier": "both",
       "question": "A bag contains counters that are red, blue or green. The probability of picking red is 0.3 and the probability of picking blue is 0.25. Find the probability of picking red OR blue.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Recognises the events are mutually exclusive, so the probabilities can be added" },
-        { "code": "A1", "criterion": "0.55" }
+        {
+          "code": "M1",
+          "criterion": "Recognises the events are mutually exclusive, so the probabilities can be added"
+        },
+        {
+          "code": "A1",
+          "criterion": "0.55"
+        }
       ],
-      "answer": "0.55"
+      "answer": "0.55",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "stat-h-03", "cluster": "statistics-core", "spec_ref": "S9", "tier": "higher",
+      "id": "stat-h-03",
+      "cluster": "statistics-core",
+      "spec_ref": "S9",
+      "tier": "higher",
       "question": "The table shows the time, in minutes, that 60 people spent in a shop: 0-10 min (frequency 12), 10-20 min (frequency 18), 20-40 min (frequency 20), 40-70 min (frequency 10). Find the frequency density for the 20-40 minute class.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Identifies the class width for 20-40 minutes is 20" },
-        { "code": "A1", "criterion": "1 (frequency density = frequency ÷ class width = 20 ÷ 20)" }
+        {
+          "code": "M1",
+          "criterion": "Identifies the class width for 20-40 minutes is 20"
+        },
+        {
+          "code": "A1",
+          "criterion": "1 (frequency density = frequency \u00f7 class width = 20 \u00f7 20)"
+        }
       ],
-      "answer": "1"
+      "answer": "1",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "algf-f-01", "cluster": "algebra-functions", "spec_ref": "A24", "tier": "both",
+      "id": "algf-f-01",
+      "cluster": "algebra-functions",
+      "spec_ref": "A24",
+      "tier": "both",
       "question": "f(x) = 2x + 5. Find f(3).",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Substitutes x = 3 into 2x + 5" },
-        { "code": "A1", "criterion": "f(3) = 11" }
+        {
+          "code": "M1",
+          "criterion": "Substitutes x = 3 into 2x + 5"
+        },
+        {
+          "code": "A1",
+          "criterion": "f(3) = 11"
+        }
       ],
-      "answer": "11"
+      "answer": "11",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "algf-b-01", "cluster": "algebra-functions", "spec_ref": "A6", "tier": "both",
-      "question": "Solve (x + 1)/2 + (x − 1)/3 = 3",
+      "id": "algf-b-01",
+      "cluster": "algebra-functions",
+      "spec_ref": "A6",
+      "tier": "both",
+      "question": "Solve (x + 1)/2 + (x \u2212 1)/3 = 3",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Multiplies every term by a common denominator (6): 3(x + 1) + 2(x − 1) = 18" },
-        { "code": "M1", "criterion": "Expands and simplifies to 5x + 1 = 18" },
-        { "code": "A1", "criterion": "x = 3.4 (or 17/5)" }
+        {
+          "code": "M1",
+          "criterion": "Multiplies every term by a common denominator (6): 3(x + 1) + 2(x \u2212 1) = 18"
+        },
+        {
+          "code": "M1",
+          "criterion": "Expands and simplifies to 5x + 1 = 18"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 3.4 (or 17/5)"
+        }
       ],
-      "answer": "x = 3.4"
+      "answer": "x = 3.4",
+      "calculator": false,
+      "paper_group": 2
     },
     {
-      "id": "algf-h-01", "cluster": "algebra-functions", "spec_ref": "A25", "tier": "higher",
+      "id": "algf-h-01",
+      "cluster": "algebra-functions",
+      "spec_ref": "A25",
+      "tier": "higher",
       "question": "f(x) = x + 2 and g(x) = 3x. Find fg(x).",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Substitutes g(x) into f, i.e. f(3x)" },
-        { "code": "A1", "criterion": "fg(x) = 3x + 2" }
+        {
+          "code": "M1",
+          "criterion": "Substitutes g(x) into f, i.e. f(3x)"
+        },
+        {
+          "code": "A1",
+          "criterion": "fg(x) = 3x + 2"
+        }
       ],
-      "answer": "fg(x) = 3x + 2"
+      "answer": "fg(x) = 3x + 2",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "algf-h-02", "cluster": "algebra-functions", "spec_ref": "A26", "tier": "higher",
-      "question": "f(x) = 2x − 5. Find f⁻¹(x).",
+      "id": "algf-h-02",
+      "cluster": "algebra-functions",
+      "spec_ref": "A26",
+      "tier": "higher",
+      "question": "f(x) = 2x \u2212 5. Find f\u207b\u00b9(x).",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Sets y = 2x − 5 and rearranges to make x the subject (x = (y + 5)/2)" },
-        { "code": "A1", "criterion": "f⁻¹(x) = (x + 5)/2" }
+        {
+          "code": "M1",
+          "criterion": "Sets y = 2x \u2212 5 and rearranges to make x the subject (x = (y + 5)/2)"
+        },
+        {
+          "code": "A1",
+          "criterion": "f\u207b\u00b9(x) = (x + 5)/2"
+        }
       ],
-      "answer": "f⁻¹(x) = (x + 5)/2"
+      "answer": "f\u207b\u00b9(x) = (x + 5)/2",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "algf-h-03", "cluster": "algebra-functions", "spec_ref": "A16", "tier": "higher",
+      "id": "algf-h-03",
+      "cluster": "algebra-functions",
+      "spec_ref": "A16",
+      "tier": "higher",
       "question": "Find the nth term of the quadratic sequence 3, 8, 15, 24, 35, ...",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Finds the second difference is constant (2) and halves it to get the n² coefficient (1)" },
-        { "code": "M1", "criterion": "Subtracts n² from the sequence to find the remaining linear part (2n)" },
-        { "code": "A1", "criterion": "n² + 2n" }
+        {
+          "code": "M1",
+          "criterion": "Finds the second difference is constant (2) and halves it to get the n\u00b2 coefficient (1)"
+        },
+        {
+          "code": "M1",
+          "criterion": "Subtracts n\u00b2 from the sequence to find the remaining linear part (2n)"
+        },
+        {
+          "code": "A1",
+          "criterion": "n\u00b2 + 2n"
+        }
       ],
-      "answer": "n² + 2n"
+      "answer": "n\u00b2 + 2n",
+      "calculator": false,
+      "paper_group": 3
     },
     {
-      "id": "algf-h-04", "cluster": "algebra-functions", "spec_ref": "A27", "tier": "higher",
+      "id": "algf-h-04",
+      "cluster": "algebra-functions",
+      "spec_ref": "A27",
+      "tier": "higher",
       "question": "Prove that the sum of three consecutive integers is always a multiple of 3.",
       "marks": 3,
       "rubric": [
-        { "code": "M1", "criterion": "Represents three consecutive integers algebraically, e.g. n, n + 1, n + 2" },
-        { "code": "M1", "criterion": "Sums them to get 3n + 3" },
-        { "code": "A1", "criterion": "Factorises to 3(n + 1) and concludes this is always a multiple of 3" }
+        {
+          "code": "M1",
+          "criterion": "Represents three consecutive integers algebraically, e.g. n, n + 1, n + 2"
+        },
+        {
+          "code": "M1",
+          "criterion": "Sums them to get 3n + 3"
+        },
+        {
+          "code": "A1",
+          "criterion": "Factorises to 3(n + 1) and concludes this is always a multiple of 3"
+        }
       ],
-      "answer": "n + (n+1) + (n+2) = 3n + 3 = 3(n + 1), a multiple of 3"
+      "answer": "n + (n+1) + (n+2) = 3n + 3 = 3(n + 1), a multiple of 3",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "geo3-f-01", "cluster": "geometry-construction", "spec_ref": "G1", "tier": "foundation",
+      "id": "geo3-f-01",
+      "cluster": "geometry-construction",
+      "spec_ref": "G1",
+      "tier": "foundation",
       "question": "Find the circumference of a circle with radius 7 cm. Give your answer to 1 decimal place.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Uses C = 2πr (or πd)" },
-        { "code": "A1", "criterion": "44.0 cm" }
+        {
+          "code": "M1",
+          "criterion": "Uses C = 2\u03c0r (or \u03c0d)"
+        },
+        {
+          "code": "A1",
+          "criterion": "44.0 cm"
+        }
       ],
-      "answer": "44.0 cm"
+      "answer": "44.0 cm",
+      "calculator": true,
+      "paper_group": 2
     },
     {
-      "id": "geo3-b-02", "cluster": "geometry-construction", "spec_ref": "G2", "tier": "both",
+      "id": "geo3-b-02",
+      "cluster": "geometry-construction",
+      "spec_ref": "G2",
+      "tier": "both",
       "question": "Find the area of a circle with radius 5 cm. Give your answer to 1 decimal place.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Uses A = πr²" },
-        { "code": "A1", "criterion": "78.5 cm²" }
+        {
+          "code": "M1",
+          "criterion": "Uses A = \u03c0r\u00b2"
+        },
+        {
+          "code": "A1",
+          "criterion": "78.5 cm\u00b2"
+        }
       ],
-      "answer": "78.5 cm²"
+      "answer": "78.5 cm\u00b2",
+      "calculator": true,
+      "paper_group": 3
     },
     {
-      "id": "geo3-b-01", "cluster": "geometry-construction", "spec_ref": "G25", "tier": "both",
-      "question": "The bearing of B from A is 070°. Find the bearing of A from B.",
+      "id": "geo3-b-01",
+      "cluster": "geometry-construction",
+      "spec_ref": "G25",
+      "tier": "both",
+      "question": "The bearing of B from A is 070\u00b0. Find the bearing of A from B.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Recognises the back bearing requires adding or subtracting 180°" },
-        { "code": "A1", "criterion": "250°" }
+        {
+          "code": "M1",
+          "criterion": "Recognises the back bearing requires adding or subtracting 180\u00b0"
+        },
+        {
+          "code": "A1",
+          "criterion": "250\u00b0"
+        }
       ],
-      "answer": "250°"
+      "answer": "250\u00b0",
+      "calculator": false,
+      "paper_group": 1
     },
     {
-      "id": "geo3-h-01", "cluster": "geometry-construction", "spec_ref": "G4", "tier": "higher",
-      "question": "A sector of a circle has radius 6 cm and angle 60°. Find the arc length. Give your answer to 1 decimal place.",
+      "id": "geo3-h-01",
+      "cluster": "geometry-construction",
+      "spec_ref": "G4",
+      "tier": "higher",
+      "question": "A sector of a circle has radius 6 cm and angle 60\u00b0. Find the arc length. Give your answer to 1 decimal place.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Sets up (60/360) × 2π × 6" },
-        { "code": "A1", "criterion": "6.3 cm" }
+        {
+          "code": "M1",
+          "criterion": "Sets up (60/360) \u00d7 2\u03c0 \u00d7 6"
+        },
+        {
+          "code": "A1",
+          "criterion": "6.3 cm"
+        }
       ],
-      "answer": "6.3 cm"
+      "answer": "6.3 cm",
+      "calculator": true,
+      "paper_group": 2
     },
     {
-      "id": "geo3-h-02", "cluster": "geometry-construction", "spec_ref": "G5", "tier": "higher",
-      "question": "A sector of a circle has radius 8 cm and angle 45°. Find the area of the sector. Give your answer to 1 decimal place.",
+      "id": "geo3-h-02",
+      "cluster": "geometry-construction",
+      "spec_ref": "G5",
+      "tier": "higher",
+      "question": "A sector of a circle has radius 8 cm and angle 45\u00b0. Find the area of the sector. Give your answer to 1 decimal place.",
       "marks": 2,
       "rubric": [
-        { "code": "M1", "criterion": "Sets up (45/360) × π × 8²" },
-        { "code": "A1", "criterion": "25.1 cm²" }
+        {
+          "code": "M1",
+          "criterion": "Sets up (45/360) \u00d7 \u03c0 \u00d7 8\u00b2"
+        },
+        {
+          "code": "A1",
+          "criterion": "25.1 cm\u00b2"
+        }
       ],
-      "answer": "25.1 cm²"
+      "answer": "25.1 cm\u00b2",
+      "calculator": true,
+      "paper_group": 2
     },
     {
-      "id": "geo3-h-03", "cluster": "geometry-construction", "spec_ref": "G3", "tier": "higher",
-      "question": "Triangle ABC has AB = 5 cm, BC = 7 cm and angle B = 40°. Triangle DEF has DE = 5 cm, EF = 7 cm and angle E = 40°. State the condition that proves triangles ABC and DEF are congruent.",
+      "id": "geo3-h-03",
+      "cluster": "geometry-construction",
+      "spec_ref": "G3",
+      "tier": "higher",
+      "question": "Triangle ABC has AB = 5 cm, BC = 7 cm and angle B = 40\u00b0. Triangle DEF has DE = 5 cm, EF = 7 cm and angle E = 40\u00b0. State the condition that proves triangles ABC and DEF are congruent.",
       "marks": 1,
       "rubric": [
-        { "code": "B1", "criterion": "States SAS (Side-Angle-Side) — two pairs of equal sides with the equal angle included between them" }
+        {
+          "code": "B1",
+          "criterion": "States SAS (Side-Angle-Side) \u2014 two pairs of equal sides with the equal angle included between them"
+        }
       ],
-      "answer": "SAS"
+      "answer": "SAS",
+      "calculator": false,
+      "paper_group": 3
+    },
+    {
+      "id": "alg-f-03",
+      "cluster": "algebra-core",
+      "spec_ref": "A17",
+      "tier": "foundation",
+      "question": "Solve 4x \u2212 9 = 15",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Adds 9 to both sides (4x = 24) or equivalent rearrangement"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 6"
+        }
+      ],
+      "answer": "x = 6",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "num-f-04",
+      "cluster": "number-fluency",
+      "spec_ref": "N10",
+      "tier": "foundation",
+      "question": "Work out 2/5 + 1/3, giving your answer as a single fraction.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Finds a common denominator and converts both fractions (6/15 + 5/15)"
+        },
+        {
+          "code": "A1",
+          "criterion": "11/15"
+        }
+      ],
+      "answer": "11/15",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "geo-f-03",
+      "cluster": "geometry-staple",
+      "spec_ref": "G14",
+      "tier": "foundation",
+      "question": "A square has area 49 cm\u00b2. Find its perimeter.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Finds the side length (\u221a49 = 7 cm)"
+        },
+        {
+          "code": "A1",
+          "criterion": "28 cm"
+        }
+      ],
+      "answer": "28 cm",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "geo2-f-03",
+      "cluster": "geometry-shape",
+      "spec_ref": "G17",
+      "tier": "foundation",
+      "question": "Find the volume of a cylinder with radius 3 cm and height 7 cm. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Uses V = \u03c0r\u00b2h (\u03c0 \u00d7 3\u00b2 \u00d7 7)"
+        },
+        {
+          "code": "A1",
+          "criterion": "197.9 cm\u00b3 (accept 197.8\u2013198.0)"
+        }
+      ],
+      "answer": "197.9 cm\u00b3",
+      "calculator": true,
+      "paper_group": 2
+    },
+    {
+      "id": "rat-f-04",
+      "cluster": "ratio-percentages",
+      "spec_ref": "R9",
+      "tier": "foundation",
+      "question": "A meal costs \u00a348 plus a 12.5% service charge. Find the total cost.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Finds 12.5% of \u00a348 (= \u00a36) or multiplies by 1.125"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u00a354"
+        }
+      ],
+      "answer": "\u00a354",
+      "calculator": true,
+      "paper_group": 3
+    },
+    {
+      "id": "stat-f-03",
+      "cluster": "statistics-core",
+      "spec_ref": "S1",
+      "tier": "foundation",
+      "question": "Find the median of 12, 7, 15, 9, 20, 3, 18",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Orders the values (3, 7, 9, 12, 15, 18, 20)"
+        },
+        {
+          "code": "A1",
+          "criterion": "12"
+        }
+      ],
+      "answer": "12",
+      "calculator": false,
+      "paper_group": 2
+    },
+    {
+      "id": "alg-h-03",
+      "cluster": "algebra-core",
+      "spec_ref": "A11",
+      "tier": "both",
+      "question": "Factorise x\u00b2 \u2212 9",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Recognises the difference of two squares"
+        },
+        {
+          "code": "A1",
+          "criterion": "(x \u2212 3)(x + 3)"
+        }
+      ],
+      "answer": "(x \u2212 3)(x + 3)",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "num-h-04",
+      "cluster": "number-fluency",
+      "spec_ref": "N3",
+      "tier": "higher",
+      "question": "Write 4.5 \u00d7 10\u00b2 \u00d7 2 \u00d7 10\u00b3 as a single number in standard form.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Multiplies the coefficients and adds the indices (4.5 \u00d7 2, 10^(2+3))"
+        },
+        {
+          "code": "A1",
+          "criterion": "9 \u00d7 10\u2075"
+        }
+      ],
+      "answer": "9 \u00d7 10\u2075",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "algf-h-05",
+      "cluster": "algebra-functions",
+      "spec_ref": "A19",
+      "tier": "higher",
+      "question": "Solve algebraically the simultaneous equations y = x + 1 and y = x\u00b2 \u2212 5",
+      "marks": 4,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Sets x + 1 = x\u00b2 \u2212 5"
+        },
+        {
+          "code": "M1",
+          "criterion": "Rearranges to x\u00b2 \u2212 x \u2212 6 = 0"
+        },
+        {
+          "code": "M1",
+          "criterion": "Factorises correctly ((x \u2212 3)(x + 2) = 0) or uses the quadratic formula"
+        },
+        {
+          "code": "A1",
+          "criterion": "x = 3, y = 4 and x = \u22122, y = \u22121"
+        }
+      ],
+      "answer": "x = 3, y = 4 or x = \u22122, y = \u22121",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "geo-h-02",
+      "cluster": "geometry-staple",
+      "spec_ref": "G21",
+      "tier": "higher",
+      "question": "A right-angled triangle has an adjacent side of 9 cm and an angle of 42\u00b0. Find the length of the hypotenuse, to 1 decimal place.",
+      "marks": 3,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Identifies cos(42\u00b0) = adjacent \u00f7 hypotenuse"
+        },
+        {
+          "code": "M1",
+          "criterion": "Rearranges to hypotenuse = 9 \u00f7 cos(42\u00b0)"
+        },
+        {
+          "code": "A1",
+          "criterion": "12.1 cm"
+        }
+      ],
+      "answer": "12.1 cm",
+      "calculator": true,
+      "paper_group": 2
+    },
+    {
+      "id": "stat-h-04",
+      "cluster": "statistics-core",
+      "spec_ref": "S6",
+      "tier": "higher",
+      "question": "The table shows grouped data: 10\u201320 (frequency 6), 20\u201330 (frequency 9), 30\u201340 (frequency 5). Estimate the mean.",
+      "marks": 3,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Uses midpoints (15, 25, 35)"
+        },
+        {
+          "code": "M1",
+          "criterion": "Finds \u03a3(midpoint \u00d7 frequency) = 490"
+        },
+        {
+          "code": "A1",
+          "criterion": "24.5"
+        }
+      ],
+      "answer": "24.5",
+      "calculator": true,
+      "paper_group": 3
+    },
+    {
+      "id": "ratp-h-03",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R5",
+      "tier": "higher",
+      "question": "\u00a35000 is invested at 2.5% compound interest per year. Find the value of the investment after 3 years, to the nearest penny.",
+      "marks": 3,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Uses multiplier 1.025"
+        },
+        {
+          "code": "M1",
+          "criterion": "Applies it 3 times (1.025\u00b3) or an equivalent year-by-year method"
+        },
+        {
+          "code": "A1",
+          "criterion": "\u00a35384.45"
+        }
+      ],
+      "answer": "\u00a35384.45",
+      "calculator": true,
+      "paper_group": 2
+    },
+    {
+      "id": "alg-b-02",
+      "cluster": "algebra-core",
+      "spec_ref": "A20",
+      "tier": "both",
+      "question": "Expand and simplify 3(2x + 1) \u2212 2(x \u2212 4)",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Expands both brackets (6x + 3 \u2212 2x + 8)"
+        },
+        {
+          "code": "A1",
+          "criterion": "4x + 11"
+        }
+      ],
+      "answer": "4x + 11",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "num-b-02",
+      "cluster": "number-fluency",
+      "spec_ref": "N5",
+      "tier": "both",
+      "question": "Round 6.4826 to 2 decimal places.",
+      "marks": 1,
+      "rubric": [
+        {
+          "code": "B1",
+          "criterion": "6.48"
+        }
+      ],
+      "answer": "6.48",
+      "calculator": false,
+      "paper_group": 1
+    },
+    {
+      "id": "prob-b-04",
+      "cluster": "probability-core",
+      "spec_ref": "P4",
+      "tier": "both",
+      "question": "A fair six-sided dice is rolled twice. Find the probability of getting two 6s.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Multiplies 1/6 \u00d7 1/6"
+        },
+        {
+          "code": "A1",
+          "criterion": "1/36"
+        }
+      ],
+      "answer": "1/36",
+      "calculator": false,
+      "paper_group": 3
+    },
+    {
+      "id": "geo2-b-03",
+      "cluster": "geometry-shape",
+      "spec_ref": "G18",
+      "tier": "both",
+      "question": "Find the surface area of a sphere with radius 5 cm. Give your answer to 1 decimal place.",
+      "marks": 3,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Uses the formula SA = 4\u03c0r\u00b2"
+        },
+        {
+          "code": "M1",
+          "criterion": "Substitutes r = 5 (4 \u00d7 \u03c0 \u00d7 25)"
+        },
+        {
+          "code": "A1",
+          "criterion": "314.2 cm\u00b2"
+        }
+      ],
+      "answer": "314.2 cm\u00b2",
+      "calculator": true,
+      "paper_group": 3
+    },
+    {
+      "id": "ratp-b-03",
+      "cluster": "ratio-proportion",
+      "spec_ref": "R11",
+      "tier": "both",
+      "question": "A recipe for 4 people needs 300 g of flour. Find how much flour is needed for 10 people.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Finds the amount per person (300 \u00f7 4 = 75 g)"
+        },
+        {
+          "code": "A1",
+          "criterion": "750 g"
+        }
+      ],
+      "answer": "750 g",
+      "calculator": false,
+      "paper_group": 2
+    },
+    {
+      "id": "geo3-b-03",
+      "cluster": "geometry-construction",
+      "spec_ref": "G4",
+      "tier": "both",
+      "question": "Find the length of an arc with radius 10 cm and angle 90\u00b0. Give your answer to 1 decimal place.",
+      "marks": 2,
+      "rubric": [
+        {
+          "code": "M1",
+          "criterion": "Uses arc length = 2\u03c0r \u00d7 (\u03b8/360)"
+        },
+        {
+          "code": "A1",
+          "criterion": "15.7 cm"
+        }
+      ],
+      "answer": "15.7 cm",
+      "calculator": true,
+      "paper_group": 2
     }
   ]
 }
