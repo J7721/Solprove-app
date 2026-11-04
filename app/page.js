@@ -48,12 +48,12 @@ export default function Home() {
             <p className="hero-sub" style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(255,255,255,.82)", margin: "0 0 18px", maxWidth: 520 }}>
               The AI maths tutor that marks like a real examiner — your child photographs their GCSE maths homework, works through it, and <strong style={{ color: "#3ddc97" }}>proves</strong> they&apos;ve got it.
             </p>
-            <p className="hero-sub2" style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,.55)", margin: "0 0 34px", maxWidth: 520 }}>
-              Step-by-step help matched to the GCSE Maths curriculum, plus a weekly report showing exactly where they&apos;re improving.
+            <p className="hero-sub2" style={{ fontSize: 16, lineHeight: 1.6, color: "rgba(255,255,255,.72)", margin: "0 0 34px", maxWidth: 520 }}>
+              Explore worked solutions, practice questions, timed mocks and progress reports in the interactive preview.
             </p>
             <div className="hero-cta-row" style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", marginBottom: 20 }}>
-              <a href="/demo.html" style={{ background: "#3ddc97", color: "#0c2038", fontSize: 15, fontWeight: 700, padding: "16px 28px", borderRadius: 10, boxShadow: "0 8px 20px rgba(31,157,124,.35)" }}>
-                Try the marking demo
+              <a href="/product.html" style={{ background: "#3ddc97", color: "#0c2038", fontSize: 15, fontWeight: 700, padding: "16px 28px", borderRadius: 10, boxShadow: "0 8px 20px rgba(31,157,124,.35)" }}>
+                Explore the app
               </a>
               <a href={heroCta.href} style={{ color: "#ffffff", fontSize: 15, fontWeight: 700, padding: "16px 26px", borderRadius: 10, border: "1px solid rgba(255,255,255,.3)" }}>
                 {heroCta.label}

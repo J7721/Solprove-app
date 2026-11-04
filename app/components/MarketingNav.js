@@ -4,7 +4,7 @@ import { LAUNCHED, WAITLIST_HREF } from "../../lib/launch";
 
 const ALL_NAV_ITEMS = [
   { key: "home", label: "Home", href: "/" },
-  { key: "demo", label: "Demo", href: "/demo.html" },
+  { key: "product", label: "Explore the app", href: "/product.html" },
   { key: "app", label: "Program", href: "/app", launchedOnly: true },
   { key: "pricing", label: "Pricing", href: "/pricing" },
   { key: "about", label: "About", href: "/about" },
