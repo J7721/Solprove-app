@@ -9,6 +9,9 @@ export default function ComingSoon({ title = "Not open just yet", body = "Solpro
         Coming Soon - Join The Waitlist
       </a>
       <div style={{ marginTop: 18 }}>
+        <a href="/product.html" style={{ color: "#08674f", fontWeight: 700 }}>Explore the app preview</a>
+      </div>
+      <div style={{ marginTop: 12 }}>
         <a href="/" style={{ fontSize: 13, color: "#5b6b6f" }}>← Back to home</a>
       </div>
     </div>

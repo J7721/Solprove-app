@@ -3,6 +3,7 @@ import { LAUNCHED } from "../../lib/launch";
 const ALL_FOOTER_ITEMS = [
   { key: "home", label: "Home", href: "/" },
   { key: "app", label: "Program", href: "/app", launchedOnly: true },
+  { key: "product", label: "Explore the app", href: "/product.html" },
   { key: "pricing", label: "Pricing", href: "/pricing" },
   { key: "about", label: "About", href: "/about" },
   { key: "contact", label: "Contact", href: "/contact" },

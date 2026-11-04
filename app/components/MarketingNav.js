@@ -4,6 +4,7 @@ import { LAUNCHED, WAITLIST_HREF } from "../../lib/launch";
 
 const ALL_NAV_ITEMS = [
   { key: "home", label: "Home", href: "/" },
+  { key: "product", label: "Explore the app", href: "/product.html" },
   { key: "app", label: "Program", href: "/app", launchedOnly: true },
   { key: "pricing", label: "Pricing", href: "/pricing" },
   { key: "about", label: "About", href: "/about" },
@@ -24,7 +25,7 @@ export default function MarketingNav({ current }) {
         .nav-cta{display:inline-block}
         .nav-burger{display:none}
         .nav-mobile-panel{display:none}
-        @media(max-width:760px){
+        @media(max-width:900px){
           .nav-desktop{display:none}
           .nav-cta{display:none}
           .nav-burger{display:flex}

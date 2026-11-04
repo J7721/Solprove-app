@@ -20,10 +20,16 @@ function pickQuestion(tier, weak) {
 export async function POST(req) {
   const user = await getUserFromRequest(req);
   const { tier } = await req.json().catch(() => ({}));
-  const weak = await weakTopics(user?.id);
-  const stats = await topicStats(user?.id);
-  const overall = await overallStats(user?.id);
-  const mistakeDNA = await mistakeBreakdown(user?.id);
+  // Guests can get a practice question, but progress requires a verified user ID.
+  // The store treats an omitted ID as an unfiltered query.
+  const [weak, stats, overall, mistakeDNA] = user?.id
+    ? await Promise.all([
+        weakTopics(user.id),
+        topicStats(user.id),
+        overallStats(user.id),
+        mistakeBreakdown(user.id),
+      ])
+    : [[], [], { attempts: 0, earned: 0, available: 0, accuracy: null }, []];
   const q = pickQuestion(tier || "foundation", weak);
 
   return Response.json({

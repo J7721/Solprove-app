@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Solprove’s GCSE Maths tutor, examiner-style feedback, timed mocks and progress reports with an interactive sample workspace.">
+  <meta name="theme-color" content="#0c2038">
+  <title>Explore the app | Solprove</title>
+  <style>
+    :root { color-scheme:light; --ink:#142c41; --navy:#0c2038; --green:#08674f; --muted:#506572; --line:#dce7e3; --paper:#f4f8f6; font-family:system-ui,-apple-system,sans-serif; }
+    *, *::before, *::after { box-sizing:border-box; }
+    html { scroll-padding-top:1rem; }
+    body { margin:0; color:var(--ink); background:var(--paper); line-height:1.55; }
+    [hidden] { display:none!important; }
+    .wrap { width:min(100% - 2rem,70rem); margin-inline:auto; }
+    header, footer { background:#fff; }
+    .bar { min-height:4rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem 1rem; padding-block:.55rem; }
+    .brand { color:var(--navy); text-decoration:none; font-size:1.24rem; font-weight:820; }
+    .brand::before { content:""; display:inline-block; width:.65em; height:.65em; border-radius:.2em; background:#168264; margin-right:.48em; }
+    a { color:var(--green); font-weight:680; text-underline-offset:.18em; }
+    :focus-visible { outline:3px solid #0c8867; outline-offset:4px; }
+    .hero { background:linear-gradient(120deg,#0c2038,#12334c); color:#fff; padding:clamp(2.3rem,6vw,4.6rem) 0; }
+    .eyebrow { color:#80ecc1; text-transform:uppercase; font-size:.79rem; letter-spacing:.09em; font-weight:790; margin:0 0 .55rem; }
+    h1 { margin:0; font-size:clamp(2.4rem,6vw,4.25rem); letter-spacing:-.05em; line-height:1.05; }
+    .hero p:not(.eyebrow) { color:#deebf3; max-width:43rem; margin:.9rem 0 1.1rem; }
+    .hero .button { color:var(--navy); background:#75e7b7; }
+    .hero .button:hover { background:#a1f1d0; }
+    .hero .button:focus-visible { outline-color:#a1f1d0; }
+    .jump { display:flex; flex-wrap:wrap; gap:.45rem .65rem; margin:1rem auto 1.45rem; }
+    .jump a { padding:.35rem .7rem; border-radius:2rem; background:#e6f2eb; text-decoration:none; font-size:.89rem; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-bottom:2rem; align-items:start; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:.95rem; padding:clamp(1rem,3vw,1.55rem); min-width:0; }
+    .tag { color:var(--green); background:#eaf6ef; border-radius:.4rem; padding:.2rem .5rem; font-size:.75rem; font-weight:780; display:inline-block; }
+    h2 { margin:.42rem 0 .45rem; font-size:1.45rem; line-height:1.2; letter-spacing:-.025em; }
+    h3 { margin:1.1rem 0 .35rem; font-size:1rem; }
+    p { margin:.45rem 0 .75rem; }
+    .note { color:var(--muted); font-size:.91rem; }
+    .question { background:var(--paper); padding:.65rem .8rem; border-radius:.55rem; font-weight:680; }
+    .button, button { min-height:2.6rem; display:inline-flex; align-items:center; justify-content:center; border-radius:.55rem; border:1px solid transparent; padding:.45rem .85rem; font:inherit; font-weight:730; background:var(--green); color:#fff; cursor:pointer; text-decoration:none; }
+    .button:hover, button:hover { background:#07523f; }
+    .secondary { background:#fff; color:var(--green); border-color:var(--line); }
+    .secondary:hover { background:#eaf6ef; }
+    button:disabled { opacity:.58; cursor:default; }
+    .actions, .fields { display:flex; flex-wrap:wrap; align-items:end; gap:.55rem; margin:.65rem 0; }
+    label { display:block; font-size:.91rem; font-weight:700; }
+    input, select { font:inherit; color:inherit; background:#fff; border:1px solid #a9beb8; border-radius:.45rem; min-height:2.55rem; padding:.4rem .55rem; }
+    label :is(input,select) { display:block; margin-top:.2rem; }
+    input[type=number] { width:8.6rem; max-width:100%; }
+    output { display:block; font-weight:700; margin:.45rem 0; }
+    output:empty { margin:0; }
+    .details, details { border-top:1px solid var(--line); margin-top:.9rem; padding-top:.65rem; }
+    summary { cursor:pointer; color:var(--green); font-weight:720; }
+    .scan { border:1px dashed #a7beb4; border-radius:.55rem; padding:.55rem .85rem; background:#fffaf0; }
+    .stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; margin:.8rem 0; }
+    .stats div { background:var(--paper); padding:.6rem .8rem; border-radius:.6rem; }
+    .stats strong { display:block; font-size:1.27rem; }
+    .list { margin:.55rem 0; padding-left:1.15rem; }
+    .list li + li { margin-top:.3rem; }
+    .chat { padding:.55rem .75rem; background:var(--paper); border-radius:.65rem; }
+    .chat p:last-child { margin-bottom:.35rem; }
+    footer { border-top:1px solid var(--line); padding:1.15rem 0; }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+  </style>
+  <script defer src="/product-demo.js"></script>
+</head>
+<body>
+  <header><div class="wrap bar">
+    <a class="brand" href="/">Solprove</a>
+    <a href="/#waitlist">Join the waitlist</a>
+  </div></header>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <p class="eyebrow">Interactive product preview</p>
+        <h1 id="page-title">Explore the Solprove app</h1>
+        <p>Work through a GCSE Maths question, see where marks are earned, and watch your sample results appear in progress reports.</p>
+        <a class="button" href="#tutor">Try the tutor</a>
+        <p class="note">No account needed. This preview uses sample questions and fictional accounts. Answers stay in this page and reset when you reload.</p>
+      </div>
+    </section>
+    <noscript><p class="wrap note">Enable JavaScript to try the interactive examples. You can still read the feature overview.</p></noscript>
+    <nav class="wrap jump" aria-label="App features">
+      <a href="#tutor">Tutor</a><a href="#practice">Practice</a><a href="#mocks">Mock exam</a>
+      <a href="#progress">Progress</a><a href="#parents">Parent report</a><a href="#friends">Friends</a>
+      <a href="#calculator">Calculator</a><a href="#account">Accounts and support</a>
+    </nav>
+    <div class="wrap grid">
+      <section class="card" id="tutor" aria-labelledby="tutor-title">
+        <span class="tag">Try it</span><h2 id="tutor-title">Solve and mark working</h2>
+        <p>The tutor supports typed questions and photos of student working. Try a sample scan to see how extracted steps are shown before marking.</p>
+        <button class="secondary" type="button" id="scan-button" aria-controls="sample-scan" aria-expanded="false" disabled data-enable>Show sample scan</button>
+        <div class="scan details" id="sample-scan" hidden>
+          <p><strong>Sample scan:</strong> 3x + 7 = 19. Working: 3x = 12, x = 3.</p>
+          <p><strong>Extracted steps:</strong> Subtract 7, then divide by 3. The second step should give x = 4.</p>
+          <p class="note">This example illustrates photo extraction; no image is uploaded.</p>
+        </div>
+        <p class="question">Solve 3x + 7 = 19</p>
+        <form id="tutor-form" class="fields">
+          <label for="tutor-answer">Sample working<select id="tutor-answer"><option value="3">3x = 12, so x = 3</option><option value="4">3x = 12, so x = 4</option></select></label>
+          <button type="submit" disabled data-enable>Mark sample</button>
+        </form>
+        <output id="tutor-result" aria-live="polite"></output>
+        <details><summary>View the worked solution</summary><p>Subtract 7 from both sides to get 3x = 12. Divide both sides by 3 to get x = 4. Check: 3 × 4 + 7 = 19.</p></details>
+        <p class="note"><a href="/demo.html">Open the mark-by-mark demo</a></p>
+      </section>
+      <section class="card" id="practice" aria-labelledby="practice-title">
+        <span class="tag">Try it</span><h2 id="practice-title">Practice by topic</h2>
+        <p>Choose a tier and try a sample from Solprove’s question bank. The next question can revisit a topic you missed in this session.</p>
+        <div class="fields">
+          <label for="tier">Tier<select id="tier"><option value="foundation">Foundation</option><option value="higher">Higher</option></select></label>
+          <button class="secondary" id="next-question" type="button" disabled data-enable>Next question</button>
+        </div>
+        <p id="practice-question" class="question" aria-live="polite">Solve 5(x − 2) = 20</p>
+        <form id="practice-form" class="fields">
+          <label for="practice-answer">Your answer<input id="practice-answer" type="number" step="any" required></label>
+          <button type="submit" disabled data-enable>Check answer</button>
+        </form>
+        <output id="practice-result" aria-live="polite"></output>
+        <p class="note">The practice preview checks the final number. The marking demo shows marks for individual steps.</p>
+      </section>
+      <section class="card" id="mocks" aria-labelledby="mock-title">
+        <span class="tag">Try it</span><h2 id="mock-title">Timed mock exams</h2>
+        <p>The app supports Foundation and Higher papers and calculator and non-calculator modes. This sample mock has two questions and a 90-second timer.</p>
+        <button id="start-mock" type="button" disabled data-enable>Start mini mock</button>
+        <p id="timer" class="note" hidden>Time left: <strong id="time-left">1:30</strong></p>
+        <form id="mock-form" hidden>
+          <label for="mock-a">1. Solve 5(x − 2) = 20<input id="mock-a" type="number" step="any"></label>
+          <label for="mock-b">2. Find 35% of £240<input id="mock-b" type="number" step="any"></label>
+          <p class="actions"><button type="submit">Finish mock</button></p>
+        </form>
+        <output id="mock-result" aria-live="polite"></output>
+      </section>
+      <section class="card" id="progress" aria-labelledby="progress-title">
+        <span class="tag">Updates as you practise</span><h2 id="progress-title">Progress and weak topics</h2>
+        <div class="stats" aria-live="polite">
+          <div><strong id="attempts">0</strong> Sample answers</div>
+          <div><strong id="accuracy">—</strong> Fully correct</div>
+        </div>
+        <p id="weak-topic">Try a practice question or the mini mock to see your progress here.</p>
+        <p class="note">The full workspace also tracks common mistakes, revision streaks and a rough GCSE grade estimate.</p>
+      </section>
+      <section class="card" id="parents" aria-labelledby="parent-title">
+        <span class="tag">Sample report</span><h2 id="parent-title">Parent progress reports</h2>
+        <p>The parent dashboard summarises recent practice and topics to revisit. Open a sample report using your activity on this page.</p>
+        <details><summary>View sample weekly report</summary><p id="report">No sample attempts yet.</p><p class="note">The full app can send weekly reports. This preview sends no email.</p></details>
+      </section>
+      <section class="card" id="friends" aria-labelledby="friends-title">
+        <span class="tag">Fictional profiles</span><h2 id="friends-title">Friends and revision streaks</h2>
+        <p>The friends area includes invite codes, age-based discovery settings, messaging, block and report controls, and optional progress sharing.</p>
+        <details><summary>See a sample friend conversation</summary><div class="chat"><p><strong>Sam:</strong> I practised percentages today. Want to try the next paper together?</p><p><strong>Alex:</strong> Yes, let’s do the non-calculator questions first.</p></div><p class="note">These are sample messages. This page does not contact another person.</p></details>
+      </section>
+      <section class="card" id="calculator" aria-labelledby="calc-title">
+        <span class="tag">Try it</span><h2 id="calc-title">Built-in calculator</h2>
+        <p>Use a simple version of the calculator available in the tutor and on calculator papers.</p>
+        <form id="calc-form" class="fields">
+          <label for="calc-a">First number<input id="calc-a" type="number" step="any" required></label>
+          <label for="operator">Operation<select id="operator"><option value="add">+</option><option value="subtract">−</option><option value="multiply">×</option><option value="divide">÷</option></select></label>
+          <label for="calc-b">Second number<input id="calc-b" type="number" step="any" required></label>
+          <button type="submit" disabled data-enable>Calculate</button>
+        </form>
+        <output id="calc-result" aria-live="polite"></output>
+      </section>
+      <section class="card" id="account" aria-labelledby="account-title">
+        <span class="tag">Feature overview</span><h2 id="account-title">Accounts, plans and support</h2>
+        <ul class="list">
+          <li>Account sign-in, profile preferences and password reset.</li>
+          <li>Free marking allowance, subscription checkout and plan status.</li>
+          <li>Help chat, contact form and waitlist.</li>
+        </ul>
+        <p class="note">The full student workspace is pre-launch. This page does not create accounts, start a trial or take payment.</p>
+        <p class="actions"><a href="/pricing">See plans</a><a href="/contact">Contact Solprove</a></p>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap bar"><span>Solprove · GCSE Maths revision prototype</span><a href="/">Back to home</a></div></footer>
+</body>
+</html>
