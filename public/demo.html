@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try a sample GCSE Maths question and see how Solprove gives marks and feedback for each step.">
+  <meta name="theme-color" content="#0c2038">
+  <title>Marking demo | Solprove</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0c2038;
+      --ink: #173047;
+      --muted: #526573;
+      --green: #08674f;
+      --line: #dbe5e2;
+      --paper: #f4f7f5;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); line-height: 1.55; }
+    [hidden] { display: none !important; }
+    a { color: var(--green); text-underline-offset: .18em; }
+    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+      outline: 3px solid #087458; outline-offset: 4px;
+    }
+    .wrap { width: min(100% - 2.5rem, 66rem); margin-inline: auto; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 4rem; }
+    .brand { font-weight: 800; font-size: 1.2rem; color: var(--navy); text-decoration: none; }
+    .brand::before { content: ""; display: inline-block; width: .65em; height: .65em; background: #178766; border-radius: .2em; margin-right: .45em; }
+    .back { font-size: .9rem; font-weight: 650; }
+    .intro { background: var(--navy); color: #fff; padding: clamp(2.2rem, 7vw, 4.8rem) 0 2.85rem; }
+    .eyebrow { margin: 0 0 .6rem; color: #79e8bd; font-weight: 750; font-size: .82rem; letter-spacing: .07em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(2rem, 5.5vw, 3.65rem); line-height: 1.08; letter-spacing: -.04em; }
+    .intro p:last-child { color: #d3e0eb; margin: .9rem 0 0; max-width: 42rem; }
+    .workspace { padding: clamp(1.3rem, 4vw, 2.6rem) 0 3rem; display: grid; grid-template-columns: 1fr .9fr; gap: 1.25rem; align-items: start; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 1rem; padding: clamp(1rem, 3vw, 1.65rem); }
+    .tag { display: inline-block; margin: 0 0 .5rem; color: var(--green); background: #e8f5ef; padding: .25rem .55rem; border-radius: .4rem; font-weight: 750; font-size: .78rem; }
+    h2 { margin: 0 0 .5rem; line-height: 1.25; font-size: 1.4rem; letter-spacing: -.02em; }
+    .equation { margin: .7rem 0 1.25rem; font-size: clamp(1.45rem, 4vw, 2.2rem); color: var(--navy); font-weight: 750; letter-spacing: -.025em; }
+    fieldset { border: 0; padding: 0; margin: 0; min-inline-size: 0; }
+    legend { font-weight: 700; padding: 0; margin-bottom: .45rem; }
+    .choice { display: flex; align-items: baseline; gap: .65rem; padding: .65rem .8rem; margin: .45rem 0; border: 1px solid var(--line); border-radius: .65rem; cursor: pointer; }
+    .choice:hover, .choice:focus-within { border-color: #168266; }
+    .choice:has(input:checked) { border-color: #168266; background: #eef9f4; }
+    input[type=radio] { accent-color: var(--green); margin: 0; }
+    .action { margin-top: 1.05rem; border: 0; border-radius: .65rem; background: var(--green); color: #fff; font: inherit; font-weight: 750; cursor: pointer; padding: .72rem 1.15rem; min-height: 2.75rem; }
+    .action:hover { background: #07513f; }
+    .note { color: var(--muted); font-size: .91rem; margin: .75rem 0 0; }
+    .feedback { min-height: 12rem; }
+    .score { color: var(--green); margin: .45rem 0 .6rem; font-weight: 800; font-size: 1.55rem; }
+    .criteria { list-style: none; padding: 0; margin: .45rem 0 0; }
+    .criteria li { padding: .75rem .8rem; border-radius: .65rem; background: #eaf7ef; margin-top: .5rem; }
+    .criteria li.missed { background: #fff0e7; color: #71380e; }
+    .criteria strong { display: block; font-size: .87rem; }
+    details { margin-top: 1rem; border-top: 1px solid var(--line); padding-top: .65rem; }
+    summary { font-weight: 700; cursor: pointer; color: var(--green); }
+    details ol { padding-left: 1.35rem; margin-bottom: 0; }
+    footer { border-top: 1px solid var(--line); padding: .95rem 0; font-size: .88rem; color: var(--muted); }
+    @media (max-width: 700px) {
+      .workspace { grid-template-columns: 1fr; }
+      .feedback { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="/">Solprove</a>
+      <a class="back" href="/">Back to home</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div class="wrap">
+        <p class="eyebrow">Interactive product demo</p>
+        <h1 id="title">See how Solprove marks working</h1>
+        <p>Try a GCSE Maths question and see which steps earn marks. This demo uses two sample answers and a fixed marking rubric.</p>
+      </div>
+    </section>
+    <div class="wrap workspace">
+      <section class="card" aria-labelledby="question-title">
+        <span class="tag">Foundation · Algebra · 2 marks</span>
+        <h2 id="question-title">Solve for <var>x</var></h2>
+        <p class="equation">3<var>x</var> + 7 = 19</p>
+        <form id="attempt-form">
+          <fieldset>
+            <legend>Choose a sample answer</legend>
+            <label class="choice">
+              <input name="attempt" value="3" type="radio" checked>
+              <span>3<var>x</var> = 12, so <var>x</var> = 3</span>
+            </label>
+            <label class="choice">
+              <input name="attempt" value="4" type="radio">
+              <span>3<var>x</var> = 12, so <var>x</var> = 4</span>
+            </label>
+          </fieldset>
+          <button class="action" type="submit" disabled>Mark sample answer</button>
+        </form>
+        <p class="note">No account needed. The demo does not send your selection to an AI service.</p>
+        <noscript><p class="note">Enable JavaScript to try the two sample answers.</p></noscript>
+      </section>
+      <section class="card feedback" aria-labelledby="feedback-title">
+        <h2 id="feedback-title">Marking feedback</h2>
+        <p id="mark-status" class="score" role="status" aria-atomic="true"></p>
+        <p id="empty" class="note">Choose an answer and select “Mark sample answer” to see the breakdown.</p>
+        <div id="breakdown" hidden>
+          <ul class="criteria">
+            <li><strong>Method mark · earned</strong>Subtracting 7 from both sides correctly gives 3<var>x</var> = 12.</li>
+            <li id="accuracy"><strong id="accuracy-label"></strong><span id="accuracy-feedback"></span></li>
+          </ul>
+          <details id="solution">
+            <summary>Show the worked solution</summary>
+            <ol>
+              <li>Subtract 7 from both sides: 3<var>x</var> = 12.</li>
+              <li>Divide both sides by 3: <var>x</var> = 4.</li>
+              <li>Check: 3 × 4 + 7 = 19.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><div class="wrap">Solprove · GCSE Maths revision prototype</div></footer>
+  <script>
+    const form = document.getElementById("attempt-form");
+    const score = document.getElementById("mark-status");
+    const empty = document.getElementById("empty");
+    const breakdown = document.getElementById("breakdown");
+    const accuracy = document.getElementById("accuracy");
+    const accuracyLabel = document.getElementById("accuracy-label");
+    const accuracyFeedback = document.getElementById("accuracy-feedback");
+    const solution = document.getElementById("solution");
+
+    form.querySelector("button").disabled = false;
+
+    form.addEventListener("change", () => {
+      breakdown.hidden = true;
+      empty.hidden = false;
+      solution.open = false;
+      score.textContent = "";
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const answer = new FormData(form).get("attempt");
+      if (answer !== "3" && answer !== "4") return;
+      // Both samples correctly rearrange the equation. Only x = 4 earns the accuracy mark.
+      const correct = answer === "4";
+      accuracy.classList.toggle("missed", !correct);
+      accuracyLabel.textContent = correct ? "Accuracy mark · earned" : "Accuracy mark · missed";
+      accuracyFeedback.textContent = correct
+        ? "Dividing 12 by 3 gives the correct answer, x = 4."
+        : "The rearrangement is right. Divide 12 by 3 to get x = 4.";
+      empty.hidden = true;
+      breakdown.hidden = false;
+      score.textContent = correct ? "2 / 2 marks" : "1 / 2 marks";
+    });
+  </script>
+</body>
+</html>

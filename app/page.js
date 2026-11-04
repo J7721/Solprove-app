@@ -7,7 +7,7 @@ import { LAUNCHED, WAITLIST_HREF } from "../lib/launch";
 export default function Home() {
   const heroCta = LAUNCHED
     ? { label: "Start free trial", href: "/app" }
-    : { label: "Coming Soon - Join The Waitlist", href: WAITLIST_HREF };
+    : { label: "Join the waitlist", href: WAITLIST_HREF };
   const finalCta = LAUNCHED
     ? { label: "Start free trial", href: "/app", sub: "5 questions marked free every day — no card required." }
     : { label: "Coming Soon - Join The Waitlist", href: WAITLIST_HREF, sub: "Be the first to know the moment we launch." };
@@ -40,7 +40,7 @@ export default function Home() {
         <div className="hero-grid" style={{ maxWidth: 1240, margin: "0 auto", padding: "0 20px", display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 40, alignItems: "center" }}>
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.85)", fontSize: 13, fontWeight: 700, padding: "9px 18px", borderRadius: 100, marginBottom: 26 }}>
-              🇬🇧 Built for UK GCSE Maths · Launching September
+              🇬🇧 Built for UK GCSE Maths · Try a sample now
             </div>
             <h1 className="hero-h1" style={{ fontFamily: "'Sora', sans-serif", fontSize: 52, lineHeight: 1.1, fontWeight: 800, color: "#ffffff", margin: "0 0 26px", letterSpacing: "-0.02em" }}>
               Solve it to prove.<br /><span style={{ color: "#3ddc97" }}>Every time.</span>
@@ -52,11 +52,11 @@ export default function Home() {
               Step-by-step help matched to the GCSE Maths curriculum, plus a weekly report showing exactly where they&apos;re improving.
             </p>
             <div className="hero-cta-row" style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap", marginBottom: 20 }}>
-              <a href={heroCta.href} style={{ background: "#1f9d7c", color: "#ffffff", fontSize: 15, fontWeight: 700, padding: "16px 28px", borderRadius: 10, boxShadow: "0 8px 20px rgba(31,157,124,.35)" }}>
-                {heroCta.label}
+              <a href="/demo.html" style={{ background: "#3ddc97", color: "#0c2038", fontSize: 15, fontWeight: 700, padding: "16px 28px", borderRadius: 10, boxShadow: "0 8px 20px rgba(31,157,124,.35)" }}>
+                Try the marking demo
               </a>
-              <a href="#feature-carousel" style={{ color: "#ffffff", fontSize: 15, fontWeight: 700, padding: "16px 26px", borderRadius: 10, border: "1px solid rgba(255,255,255,.3)" }}>
-                How it works
+              <a href={heroCta.href} style={{ color: "#ffffff", fontSize: 15, fontWeight: 700, padding: "16px 26px", borderRadius: 10, border: "1px solid rgba(255,255,255,.3)" }}>
+                {heroCta.label}
               </a>
             </div>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,.45)", margin: 0 }}>£11.99/month at launch · 7-day free trial · Cancel in two clicks, always</p>
